@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="421fd1bb93834bd4ab57c85c3caa5a5c" Name="Diagram1">
+        <EntityTypeShape EntityType="AjusteIpaDBModel.CodigoCatastrofico" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Cuenta" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Especialidad" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.IPA" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Municipio" Width="1.5" PointX="3.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Reclamaciones" Width="1.875" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.RegistroCatastrofico" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Rol" Width="1.5" PointX="8.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Tier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.TipoServicio" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Usuario" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__IdCod__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__RegistroC__IdCod__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__Cuent__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__Espec__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__Numer__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__Munic__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="AjusteIpaDBModel.FK__Usuario__rolid__403A8C7D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

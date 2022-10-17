@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AjusteIpaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CodigoCatastrofico">
+          <Key>
+            <PropertyRef Name="idCodigoCatastrofico" />
+          </Key>
+          <Property Name="idCodigoCatastrofico" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="idCuenta" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Especialidad">
+          <Key>
+            <PropertyRef Name="idEspecialidad" />
+          </Key>
+          <Property Name="idEspecialidad" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="IPA">
+          <Key>
+            <PropertyRef Name="NumeroIPA" />
+          </Key>
+          <Property Name="NumeroIPA" Type="int" Nullable="false" />
+          <Property Name="NombreIPA" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroPCP" Type="varchar" MaxLength="50" />
+          <Property Name="NombrePCP" Type="varchar" MaxLength="50" />
+          <Property Name="FechaEfectividad" Type="datetime" />
+          <Property Name="FechaTerminacion" Type="datetime" />
+          <Property Name="Estatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA\AJUSTEIPADB.MDF.dbo.LogReclamacionesAjustadas' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="LogReclamacionesAjustadas">
+          <Property Name="idReclamacion" Type="int" />
+          <Property Name="NumReclamacion" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroIPA" Type="int" />
+          <Property Name="NumeroPCP" Type="varchar" MaxLength="50" />
+          <Property Name="NombrePCP" Type="varchar" MaxLength="50" />
+          <Property Name="Tier" Type="int" />
+          <Property Name="Cuenta" Type="int" />
+          <Property Name="NumeroContrato" Type="varchar" MaxLength="50" />
+          <Property Name="NombreAsegurado" Type="varchar" MaxLength="50" />
+          <Property Name="Edad" Type="varchar" MaxLength="50" />
+          <Property Name="FechaServicio" Type="datetime" />
+          <Property Name="FechaPago" Type="datetime" />
+          <Property Name="TipoServicio" Type="int" />
+          <Property Name="LugarServicio" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroServicio" Type="varchar" MaxLength="50" />
+          <Property Name="ICD9" Type="varchar" MaxLength="50" />
+          <Property Name="ICD10" Type="varchar" MaxLength="50" />
+          <Property Name="IdCodigoCatastrofico" Type="int" />
+          <Property Name="Especialidad" Type="int" />
+          <Property Name="Municipio" Type="int" />
+          <Property Name="CantidadPagada" Type="float" />
+          <Property Name="EstatusAjuste" Type="varchar" MaxLength="50" />
+          <Property Name="CantidadAjustada" Type="float" />
+          <Property Name="FechaAjuste" Type="datetime" />
+          <Property Name="EstatusReclamacion" Type="varchar" MaxLength="50" />
+          <Property Name="IDUsuario" Type="int" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="idMunicipio" />
+          </Key>
+          <Property Name="idMunicipio" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Region" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Reclamaciones">
+          <Key>
+            <PropertyRef Name="idReclamacion" />
+          </Key>
+          <Property Name="idReclamacion" Type="int" Nullable="false" />
+          <Property Name="NumReclamacion" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroIPA" Type="int" />
+          <Property Name="NumeroPCP" Type="varchar" MaxLength="50" />
+          <Property Name="NombrePCP" Type="varchar" MaxLength="50" />
+          <Property Name="Tier" Type="int" />
+          <Property Name="Cuenta" Type="int" />
+          <Property Name="NumeroContrato" Type="varchar" MaxLength="50" />
+          <Property Name="NombreAsegurado" Type="varchar" MaxLength="50" />
+          <Property Name="Edad" Type="varchar" MaxLength="50" />
+          <Property Name="FechaServicio" Type="datetime" />
+          <Property Name="FechaPago" Type="datetime" />
+          <Property Name="TipoServicio" Type="int" />
+          <Property Name="LugarServicio" Type="varchar" MaxLength="50" />
+          <Property Name="NumeroServicio" Type="varchar" MaxLength="50" />
+          <Property Name="CargoTotal" Type="float" />
+          <Property Name="ICD9" Type="varchar" MaxLength="50" />
+          <Property Name="ICD10" Type="varchar" MaxLength="50" />
+          <Property Name="IdCodigoCatastrofico" Type="int" />
+          <Property Name="Especialidad" Type="int" />
+          <Property Name="Municipio" Type="int" />
+          <Property Name="CantidadPagada" Type="float" />
+          <Property Name="EstatusAjuste" Type="varchar" MaxLength="50" />
+          <Property Name="CantidadAjustada" Type="float" />
+          <Property Name="FechaAjuste" Type="datetime" />
+          <Property Name="EstatusReclamacion" Type="varchar" MaxLength="50" />
+          <Property Name="IDUsuario" Type="int" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RegistroCatastrofico">
+          <Key>
+            <PropertyRef Name="idRegCatastrofico" />
+          </Key>
+          <Property Name="idRegCatastrofico" Type="int" Nullable="false" />
+          <Property Name="NumeroContrato" Type="varchar" MaxLength="50" />
+          <Property Name="NombreAsegurado" Type="varchar" MaxLength="50" />
+          <Property Name="IdCodigoCatastrofico" Type="int" />
+          <Property Name="FechaComienzo" Type="datetime" />
+          <Property Name="FechaTerminacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tier">
+          <Key>
+            <PropertyRef Name="idTier" />
+          </Key>
+          <Property Name="idTier" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TipoServicio">
+          <Key>
+            <PropertyRef Name="idServicio" />
+          </Key>
+          <Property Name="idServicio" Type="int" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idusuario" />
+          </Key>
+          <Property Name="idusuario" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" />
+          <Property Name="numempleado" Type="varchar" MaxLength="8" />
+          <Property Name="rolid" Type="int" />
+          <Property Name="password" Type="varchar" MaxLength="25" />
+          <Property Name="Estatus" Type="char" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK__Reclamaci__Cuent__37A5467C">
+          <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta">
+              <PropertyRef Name="idCuenta" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="Cuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Espec__38996AB5">
+          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidad">
+              <PropertyRef Name="idEspecialidad" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="Especialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__IdCod__398D8EEE">
+          <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCatastrofico">
+              <PropertyRef Name="idCodigoCatastrofico" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="IdCodigoCatastrofico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Munic__3B75D760">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="Municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Numer__3C69FB99">
+          <End Role="IPA" Type="Self.IPA" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IPA">
+              <PropertyRef Name="NumeroIPA" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="NumeroIPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegistroC__IdCod__3F466844">
+          <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
+          <End Role="RegistroCatastrofico" Type="Self.RegistroCatastrofico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCatastrofico">
+              <PropertyRef Name="idCodigoCatastrofico" />
+            </Principal>
+            <Dependent Role="RegistroCatastrofico">
+              <PropertyRef Name="IdCodigoCatastrofico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__rolid__403A8C7D">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="rolid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AjusteIpaDBModelStoreContainer">
+          <EntitySet Name="CodigoCatastrofico" EntityType="Self.CodigoCatastrofico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuenta" EntityType="Self.Cuenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IPA" EntityType="Self.IPA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reclamaciones" EntityType="Self.Reclamaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegistroCatastrofico" EntityType="Self.RegistroCatastrofico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tier" EntityType="Self.Tier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Reclamaci__Cuent__37A5467C" Association="Self.FK__Reclamaci__Cuent__37A5467C">
+            <End Role="Cuenta" EntitySet="Cuenta" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Espec__38996AB5" Association="Self.FK__Reclamaci__Espec__38996AB5">
+            <End Role="Especialidad" EntitySet="Especialidad" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__IdCod__398D8EEE" Association="Self.FK__Reclamaci__IdCod__398D8EEE">
+            <End Role="CodigoCatastrofico" EntitySet="CodigoCatastrofico" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Munic__3B75D760" Association="Self.FK__Reclamaci__Munic__3B75D760">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Numer__3C69FB99" Association="Self.FK__Reclamaci__Numer__3C69FB99">
+            <End Role="IPA" EntitySet="IPA" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegistroC__IdCod__3F466844" Association="Self.FK__RegistroC__IdCod__3F466844">
+            <End Role="CodigoCatastrofico" EntitySet="CodigoCatastrofico" />
+            <End Role="RegistroCatastrofico" EntitySet="RegistroCatastrofico" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__rolid__403A8C7D" Association="Self.FK__Usuario__rolid__403A8C7D">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AjusteIpaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CodigoCatastrofico">
+          <Key>
+            <PropertyRef Name="idCodigoCatastrofico" />
+          </Key>
+          <Property Name="idCodigoCatastrofico" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__IdCod__398D8EEE" FromRole="CodigoCatastrofico" ToRole="Reclamaciones" />
+          <NavigationProperty Name="RegistroCatastroficoes" Relationship="Self.FK__RegistroC__IdCod__3F466844" FromRole="CodigoCatastrofico" ToRole="RegistroCatastrofico" />
+        </EntityType>
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="idCuenta" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Cuent__37A5467C" FromRole="Cuenta" ToRole="Reclamaciones" />
+        </EntityType>
+        <EntityType Name="Especialidad">
+          <Key>
+            <PropertyRef Name="idEspecialidad" />
+          </Key>
+          <Property Name="idEspecialidad" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Espec__38996AB5" FromRole="Especialidad" ToRole="Reclamaciones" />
+        </EntityType>
+        <EntityType Name="IPA">
+          <Key>
+            <PropertyRef Name="NumeroIPA" />
+          </Key>
+          <Property Name="NumeroIPA" Type="Int32" Nullable="false" />
+          <Property Name="NombreIPA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroPCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombrePCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaEfectividad" Type="DateTime" Precision="3" />
+          <Property Name="FechaTerminacion" Type="DateTime" Precision="3" />
+          <Property Name="Estatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Numer__3C69FB99" FromRole="IPA" ToRole="Reclamaciones" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="idMunicipio" />
+          </Key>
+          <Property Name="idMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Munic__3B75D760" FromRole="Municipio" ToRole="Reclamaciones" />
+        </EntityType>
+        <EntityType Name="Reclamaciones">
+          <Key>
+            <PropertyRef Name="idReclamacion" />
+          </Key>
+          <Property Name="idReclamacion" Type="Int32" Nullable="false" />
+          <Property Name="NumReclamacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroIPA" Type="Int32" />
+          <Property Name="NumeroPCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombrePCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tier" Type="Int32" />
+          <Property Name="Cuenta" Type="Int32" />
+          <Property Name="NumeroContrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreAsegurado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaServicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaPago" Type="DateTime" Precision="3" />
+          <Property Name="TipoServicio" Type="Int32" />
+          <Property Name="LugarServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CargoTotal" Type="Double" />
+          <Property Name="ICD9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ICD10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCodigoCatastrofico" Type="Int32" />
+          <Property Name="Especialidad" Type="Int32" />
+          <Property Name="Municipio" Type="Int32" />
+          <Property Name="CantidadPagada" Type="Double" />
+          <Property Name="EstatusAjuste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadAjustada" Type="Double" />
+          <Property Name="FechaAjuste" Type="DateTime" Precision="3" />
+          <Property Name="EstatusReclamacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDUsuario" Type="Int32" />
+          <Property Name="Comentarios" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CodigoCatastrofico" Relationship="Self.FK__Reclamaci__IdCod__398D8EEE" FromRole="Reclamaciones" ToRole="CodigoCatastrofico" />
+          <NavigationProperty Name="Cuenta1" Relationship="Self.FK__Reclamaci__Cuent__37A5467C" FromRole="Reclamaciones" ToRole="Cuenta" />
+          <NavigationProperty Name="Especialidad1" Relationship="Self.FK__Reclamaci__Espec__38996AB5" FromRole="Reclamaciones" ToRole="Especialidad" />
+          <NavigationProperty Name="IPA" Relationship="Self.FK__Reclamaci__Numer__3C69FB99" FromRole="Reclamaciones" ToRole="IPA" />
+          <NavigationProperty Name="Municipio1" Relationship="Self.FK__Reclamaci__Munic__3B75D760" FromRole="Reclamaciones" ToRole="Municipio" />
+        </EntityType>
+        <EntityType Name="RegistroCatastrofico">
+          <Key>
+            <PropertyRef Name="idRegCatastrofico" />
+          </Key>
+          <Property Name="idRegCatastrofico" Type="Int32" Nullable="false" />
+          <Property Name="NumeroContrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreAsegurado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCodigoCatastrofico" Type="Int32" />
+          <Property Name="FechaComienzo" Type="DateTime" Precision="3" />
+          <Property Name="FechaTerminacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CodigoCatastrofico" Relationship="Self.FK__RegistroC__IdCod__3F466844" FromRole="RegistroCatastrofico" ToRole="CodigoCatastrofico" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__rolid__403A8C7D" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Tier">
+          <Key>
+            <PropertyRef Name="idTier" />
+          </Key>
+          <Property Name="idTier" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TipoServicio">
+          <Key>
+            <PropertyRef Name="idServicio" />
+          </Key>
+          <Property Name="idServicio" Type="Int32" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idusuario" />
+          </Key>
+          <Property Name="idusuario" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="numempleado" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="rolid" Type="Int32" />
+          <Property Name="password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Estatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__rolid__403A8C7D" FromRole="Usuario" ToRole="Rol" />
+        </EntityType>
+        <Association Name="FK__Reclamaci__IdCod__398D8EEE">
+          <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCatastrofico">
+              <PropertyRef Name="idCodigoCatastrofico" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="IdCodigoCatastrofico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegistroC__IdCod__3F466844">
+          <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
+          <End Role="RegistroCatastrofico" Type="Self.RegistroCatastrofico" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCatastrofico">
+              <PropertyRef Name="idCodigoCatastrofico" />
+            </Principal>
+            <Dependent Role="RegistroCatastrofico">
+              <PropertyRef Name="IdCodigoCatastrofico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Cuent__37A5467C">
+          <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuenta">
+              <PropertyRef Name="idCuenta" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="Cuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Espec__38996AB5">
+          <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Especialidad">
+              <PropertyRef Name="idEspecialidad" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="Especialidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Numer__3C69FB99">
+          <End Role="IPA" Type="Self.IPA" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IPA">
+              <PropertyRef Name="NumeroIPA" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="NumeroIPA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Munic__3B75D760">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="Municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__rolid__403A8C7D">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="rolid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AjusteIpaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CodigoCatastroficoes" EntityType="Self.CodigoCatastrofico" />
+          <EntitySet Name="Cuentas" EntityType="Self.Cuenta" />
+          <EntitySet Name="Especialidads" EntityType="Self.Especialidad" />
+          <EntitySet Name="IPAs" EntityType="Self.IPA" />
+          <EntitySet Name="Municipios" EntityType="Self.Municipio" />
+          <EntitySet Name="Reclamaciones1" EntityType="AjusteIpaDBModel.Reclamaciones" />
+          <EntitySet Name="RegistroCatastroficoes" EntityType="Self.RegistroCatastrofico" />
+          <EntitySet Name="Rols" EntityType="Self.Rol" />
+          <EntitySet Name="Tiers" EntityType="Self.Tier" />
+          <EntitySet Name="TipoServicios" EntityType="Self.TipoServicio" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Reclamaci__IdCod__398D8EEE" Association="Self.FK__Reclamaci__IdCod__398D8EEE">
+            <End Role="CodigoCatastrofico" EntitySet="CodigoCatastroficoes" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegistroC__IdCod__3F466844" Association="Self.FK__RegistroC__IdCod__3F466844">
+            <End Role="CodigoCatastrofico" EntitySet="CodigoCatastroficoes" />
+            <End Role="RegistroCatastrofico" EntitySet="RegistroCatastroficoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Cuent__37A5467C" Association="Self.FK__Reclamaci__Cuent__37A5467C">
+            <End Role="Cuenta" EntitySet="Cuentas" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Espec__38996AB5" Association="Self.FK__Reclamaci__Espec__38996AB5">
+            <End Role="Especialidad" EntitySet="Especialidads" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Numer__3C69FB99" Association="Self.FK__Reclamaci__Numer__3C69FB99">
+            <End Role="IPA" EntitySet="IPAs" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Munic__3B75D760" Association="Self.FK__Reclamaci__Munic__3B75D760">
+            <End Role="Municipio" EntitySet="Municipios" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__rolid__403A8C7D" Association="Self.FK__Usuario__rolid__403A8C7D">
+            <End Role="Rol" EntitySet="Rols" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AjusteIpaDBModelStoreContainer" CdmEntityContainer="AjusteIpaEntities">
+          <EntitySetMapping Name="CodigoCatastroficoes">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.CodigoCatastrofico">
+              <MappingFragment StoreEntitySet="CodigoCatastrofico">
+                <ScalarProperty Name="idCodigoCatastrofico" ColumnName="idCodigoCatastrofico" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Cuenta">
+              <MappingFragment StoreEntitySet="Cuenta">
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Especialidads">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Especialidad">
+              <MappingFragment StoreEntitySet="Especialidad">
+                <ScalarProperty Name="idEspecialidad" ColumnName="idEspecialidad" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IPAs">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.IPA">
+              <MappingFragment StoreEntitySet="IPA">
+                <ScalarProperty Name="NumeroIPA" ColumnName="NumeroIPA" />
+                <ScalarProperty Name="NombreIPA" ColumnName="NombreIPA" />
+                <ScalarProperty Name="NumeroPCP" ColumnName="NumeroPCP" />
+                <ScalarProperty Name="NombrePCP" ColumnName="NombrePCP" />
+                <ScalarProperty Name="FechaEfectividad" ColumnName="FechaEfectividad" />
+                <ScalarProperty Name="FechaTerminacion" ColumnName="FechaTerminacion" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipios">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reclamaciones1">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Reclamaciones">
+              <MappingFragment StoreEntitySet="Reclamaciones">
+                <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
+                <ScalarProperty Name="NumReclamacion" ColumnName="NumReclamacion" />
+                <ScalarProperty Name="NumeroIPA" ColumnName="NumeroIPA" />
+                <ScalarProperty Name="NumeroPCP" ColumnName="NumeroPCP" />
+                <ScalarProperty Name="NombrePCP" ColumnName="NombrePCP" />
+                <ScalarProperty Name="Tier" ColumnName="Tier" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
+                <ScalarProperty Name="NombreAsegurado" ColumnName="NombreAsegurado" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="FechaServicio" ColumnName="FechaServicio" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+                <ScalarProperty Name="LugarServicio" ColumnName="LugarServicio" />
+                <ScalarProperty Name="NumeroServicio" ColumnName="NumeroServicio" />
+                <ScalarProperty Name="CargoTotal" ColumnName="CargoTotal" />
+                <ScalarProperty Name="ICD9" ColumnName="ICD9" />
+                <ScalarProperty Name="ICD10" ColumnName="ICD10" />
+                <ScalarProperty Name="IdCodigoCatastrofico" ColumnName="IdCodigoCatastrofico" />
+                <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="CantidadPagada" ColumnName="CantidadPagada" />
+                <ScalarProperty Name="EstatusAjuste" ColumnName="EstatusAjuste" />
+                <ScalarProperty Name="CantidadAjustada" ColumnName="CantidadAjustada" />
+                <ScalarProperty Name="FechaAjuste" ColumnName="FechaAjuste" />
+                <ScalarProperty Name="EstatusReclamacion" ColumnName="EstatusReclamacion" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistroCatastroficoes">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.RegistroCatastrofico">
+              <MappingFragment StoreEntitySet="RegistroCatastrofico">
+                <ScalarProperty Name="idRegCatastrofico" ColumnName="idRegCatastrofico" />
+                <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
+                <ScalarProperty Name="NombreAsegurado" ColumnName="NombreAsegurado" />
+                <ScalarProperty Name="IdCodigoCatastrofico" ColumnName="IdCodigoCatastrofico" />
+                <ScalarProperty Name="FechaComienzo" ColumnName="FechaComienzo" />
+                <ScalarProperty Name="FechaTerminacion" ColumnName="FechaTerminacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rols">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tiers">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Tier">
+              <MappingFragment StoreEntitySet="Tier">
+                <ScalarProperty Name="idTier" ColumnName="idTier" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoServicios">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.TipoServicio">
+              <MappingFragment StoreEntitySet="TipoServicio">
+                <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="numempleado" ColumnName="numempleado" />
+                <ScalarProperty Name="rolid" ColumnName="rolid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
