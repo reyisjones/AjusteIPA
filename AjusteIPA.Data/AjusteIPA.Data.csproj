@@ -129,6 +129,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Scripts\RestoreAjusteIpaDB.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjusteIpaDB.mdf">
@@ -149,6 +150,7 @@
       <LastGenOutput>AjusteIpaModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\AjusteIPAscript.sql" />
+    <Content Include="Scripts\AjusteIPAscriptAll.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
