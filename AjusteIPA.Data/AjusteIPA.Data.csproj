@@ -129,16 +129,9 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Scripts\RestoreAjusteIpaDB.ps1" />
+    <None Include="Scripts\setupDB.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AjusteIpaDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AjusteIpaDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>AjusteIpaDB.mdf</DependentUpon>
-    </Content>
     <Content Include="AjusteIpaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AjusteIpaModel.edmx</DependentUpon>
@@ -149,8 +142,7 @@
       <DependentUpon>AjusteIpaModel.edmx</DependentUpon>
       <LastGenOutput>AjusteIpaModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\AjusteIPAscript.sql" />
-    <Content Include="Scripts\AjusteIPAscriptAll.sql" />
+    <Content Include="Scripts\database.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
@@ -169,12 +161,5 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\AjusteIPA\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\AjusteIPA\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\AjusteIPA\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\AjusteIPA\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
   <Import Project="..\AjusteIPA\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\AjusteIPA\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
