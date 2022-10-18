@@ -310,10 +310,6 @@
       <Project>{35c90109-be7b-4b5a-aa88-0bb70ae707f7}</Project>
       <Name>AjusteIPA.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\TestData\TestData.csproj">
-      <Project>{902a1ae8-597f-4fed-8276-306abfda927d}</Project>
-      <Name>TestData</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="favicon.ico" />

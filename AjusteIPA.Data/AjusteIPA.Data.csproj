@@ -142,6 +142,7 @@
       <DependentUpon>AjusteIpaModel.edmx</DependentUpon>
       <LastGenOutput>AjusteIpaModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\BusinessRules.sql" />
     <Content Include="Scripts\database.sql" />
   </ItemGroup>
   <ItemGroup>
