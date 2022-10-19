@@ -13,10 +13,10 @@ namespace AjusteIPA.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AjusteIpaEntities : DbContext
+    public partial class AjusteIpaDBEntities : DbContext
     {
-        public AjusteIpaEntities()
-            : base("name=AjusteIpaEntities")
+        public AjusteIpaDBEntities()
+            : base("name=AjusteIpaDBEntities")
         {
         }
     
@@ -25,14 +25,14 @@ namespace AjusteIPA.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CodigoCatastrofico> CodigoCatastroficos { get; set; }
+        public virtual DbSet<CodigoCatastrofico> CodigoCatastroficoes { get; set; }
         public virtual DbSet<Cuenta> Cuentas { get; set; }
-        public virtual DbSet<Especialidad> Especialidades { get; set; }
+        public virtual DbSet<Especialidad> Especialidads { get; set; }
         public virtual DbSet<IPA> IPAs { get; set; }
         public virtual DbSet<Municipio> Municipios { get; set; }
         public virtual DbSet<Reclamaciones> Reclamaciones { get; set; }
-        public virtual DbSet<RegistroCatastrofico> RegistroCatastroficos { get; set; }
-        public virtual DbSet<Rol> Roles { get; set; }
+        public virtual DbSet<RegistroCatastrofico> RegistroCatastroficoes { get; set; }
+        public virtual DbSet<Rol> Rols { get; set; }
         public virtual DbSet<Tier> Tiers { get; set; }
         public virtual DbSet<TipoServicio> TipoServicios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }

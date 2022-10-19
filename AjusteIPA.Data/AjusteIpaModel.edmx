@@ -39,7 +39,7 @@
           <Property Name="Estatus" Type="char" MaxLength="1" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA\AJUSTEIPADB.MDF.dbo.LogReclamacionesAjustadas' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="LogReclamacionesAjustadas">
           <Property Name="idReclamacion" Type="int" />
           <Property Name="NumReclamacion" Type="varchar" MaxLength="50" />
@@ -56,6 +56,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="TipoServicio" Type="int" />
           <Property Name="LugarServicio" Type="varchar" MaxLength="50" />
           <Property Name="NumeroServicio" Type="varchar" MaxLength="50" />
+          <Property Name="CargoTotal" Type="float" />
           <Property Name="ICD9" Type="varchar" MaxLength="50" />
           <Property Name="ICD10" Type="varchar" MaxLength="50" />
           <Property Name="IdCodigoCatastrofico" Type="int" />
@@ -154,7 +155,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="password" Type="varchar" MaxLength="25" />
           <Property Name="Estatus" Type="char" MaxLength="1" />
         </EntityType>
-        <Association Name="FK__Reclamaci__Cuent__37A5467C">
+        <Association Name="FK__Reclamaci__Cuent__38996AB5">
           <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -166,7 +167,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Espec__38996AB5">
+        <Association Name="FK__Reclamaci__Espec__398D8EEE">
           <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -178,7 +179,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__IdCod__398D8EEE">
+        <Association Name="FK__Reclamaci__IdCod__3A81B327">
           <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -190,7 +191,19 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Munic__3B75D760">
+        <Association Name="FK__Reclamaci__IDUsu__3B75D760">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idusuario" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reclamaci__Munic__3C69FB99">
           <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -202,7 +215,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Numer__3C69FB99">
+        <Association Name="FK__Reclamaci__Numer__3D5E1FD2">
           <End Role="IPA" Type="Self.IPA" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -214,7 +227,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RegistroC__IdCod__3F466844">
+        <Association Name="FK__RegistroC__IdCod__3E52440B">
           <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
           <End Role="RegistroCatastrofico" Type="Self.RegistroCatastrofico" Multiplicity="*" />
           <ReferentialConstraint>
@@ -226,7 +239,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__rolid__403A8C7D">
+        <Association Name="FK__Usuario__rolid__3F466844">
           <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -250,31 +263,35 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <EntitySet Name="Tier" EntityType="Self.Tier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Reclamaci__Cuent__37A5467C" Association="Self.FK__Reclamaci__Cuent__37A5467C">
+          <AssociationSet Name="FK__Reclamaci__Cuent__38996AB5" Association="Self.FK__Reclamaci__Cuent__38996AB5">
             <End Role="Cuenta" EntitySet="Cuenta" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Espec__38996AB5" Association="Self.FK__Reclamaci__Espec__38996AB5">
+          <AssociationSet Name="FK__Reclamaci__Espec__398D8EEE" Association="Self.FK__Reclamaci__Espec__398D8EEE">
             <End Role="Especialidad" EntitySet="Especialidad" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__IdCod__398D8EEE" Association="Self.FK__Reclamaci__IdCod__398D8EEE">
+          <AssociationSet Name="FK__Reclamaci__IdCod__3A81B327" Association="Self.FK__Reclamaci__IdCod__3A81B327">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastrofico" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Munic__3B75D760" Association="Self.FK__Reclamaci__Munic__3B75D760">
+          <AssociationSet Name="FK__Reclamaci__IDUsu__3B75D760" Association="Self.FK__Reclamaci__IDUsu__3B75D760">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reclamaci__Munic__3C69FB99" Association="Self.FK__Reclamaci__Munic__3C69FB99">
             <End Role="Municipio" EntitySet="Municipio" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Numer__3C69FB99" Association="Self.FK__Reclamaci__Numer__3C69FB99">
+          <AssociationSet Name="FK__Reclamaci__Numer__3D5E1FD2" Association="Self.FK__Reclamaci__Numer__3D5E1FD2">
             <End Role="IPA" EntitySet="IPA" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__RegistroC__IdCod__3F466844" Association="Self.FK__RegistroC__IdCod__3F466844">
+          <AssociationSet Name="FK__RegistroC__IdCod__3E52440B" Association="Self.FK__RegistroC__IdCod__3E52440B">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastrofico" />
             <End Role="RegistroCatastrofico" EntitySet="RegistroCatastrofico" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__rolid__403A8C7D" Association="Self.FK__Usuario__rolid__403A8C7D">
+          <AssociationSet Name="FK__Usuario__rolid__3F466844" Association="Self.FK__Usuario__rolid__3F466844">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -290,8 +307,8 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           </Key>
           <Property Name="idCodigoCatastrofico" Type="Int32" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__IdCod__398D8EEE" FromRole="CodigoCatastrofico" ToRole="Reclamaciones" />
-          <NavigationProperty Name="RegistroCatastroficoes" Relationship="Self.FK__RegistroC__IdCod__3F466844" FromRole="CodigoCatastrofico" ToRole="RegistroCatastrofico" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__IdCod__3A81B327" FromRole="CodigoCatastrofico" ToRole="Reclamaciones" />
+          <NavigationProperty Name="RegistroCatastroficoes" Relationship="Self.FK__RegistroC__IdCod__3E52440B" FromRole="CodigoCatastrofico" ToRole="RegistroCatastrofico" />
         </EntityType>
         <EntityType Name="Cuenta">
           <Key>
@@ -299,7 +316,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           </Key>
           <Property Name="idCuenta" Type="Int32" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Cuent__37A5467C" FromRole="Cuenta" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Cuent__38996AB5" FromRole="Cuenta" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="Especialidad">
           <Key>
@@ -307,7 +324,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           </Key>
           <Property Name="idEspecialidad" Type="Int32" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Espec__38996AB5" FromRole="Especialidad" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Espec__398D8EEE" FromRole="Especialidad" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="IPA">
           <Key>
@@ -320,7 +337,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="FechaEfectividad" Type="DateTime" Precision="3" />
           <Property Name="FechaTerminacion" Type="DateTime" Precision="3" />
           <Property Name="Estatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Numer__3C69FB99" FromRole="IPA" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Numer__3D5E1FD2" FromRole="IPA" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -329,7 +346,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="idMunicipio" Type="Int32" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Munic__3B75D760" FromRole="Municipio" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__Munic__3C69FB99" FromRole="Municipio" ToRole="Reclamaciones" />
         </EntityType>
         <EntityType Name="Reclamaciones">
           <Key>
@@ -363,11 +380,12 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="EstatusReclamacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="IDUsuario" Type="Int32" />
           <Property Name="Comentarios" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="CodigoCatastrofico" Relationship="Self.FK__Reclamaci__IdCod__398D8EEE" FromRole="Reclamaciones" ToRole="CodigoCatastrofico" />
-          <NavigationProperty Name="Cuenta1" Relationship="Self.FK__Reclamaci__Cuent__37A5467C" FromRole="Reclamaciones" ToRole="Cuenta" />
-          <NavigationProperty Name="Especialidad1" Relationship="Self.FK__Reclamaci__Espec__38996AB5" FromRole="Reclamaciones" ToRole="Especialidad" />
-          <NavigationProperty Name="IPA" Relationship="Self.FK__Reclamaci__Numer__3C69FB99" FromRole="Reclamaciones" ToRole="IPA" />
-          <NavigationProperty Name="Municipio1" Relationship="Self.FK__Reclamaci__Munic__3B75D760" FromRole="Reclamaciones" ToRole="Municipio" />
+          <NavigationProperty Name="CodigoCatastrofico" Relationship="Self.FK__Reclamaci__IdCod__3A81B327" FromRole="Reclamaciones" ToRole="CodigoCatastrofico" />
+          <NavigationProperty Name="Cuenta1" Relationship="Self.FK__Reclamaci__Cuent__38996AB5" FromRole="Reclamaciones" ToRole="Cuenta" />
+          <NavigationProperty Name="Especialidad1" Relationship="Self.FK__Reclamaci__Espec__398D8EEE" FromRole="Reclamaciones" ToRole="Especialidad" />
+          <NavigationProperty Name="IPA" Relationship="Self.FK__Reclamaci__Numer__3D5E1FD2" FromRole="Reclamaciones" ToRole="IPA" />
+          <NavigationProperty Name="Municipio1" Relationship="Self.FK__Reclamaci__Munic__3C69FB99" FromRole="Reclamaciones" ToRole="Municipio" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Reclamaci__IDUsu__3B75D760" FromRole="Reclamaciones" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="RegistroCatastrofico">
           <Key>
@@ -379,7 +397,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="IdCodigoCatastrofico" Type="Int32" />
           <Property Name="FechaComienzo" Type="DateTime" Precision="3" />
           <Property Name="FechaTerminacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CodigoCatastrofico" Relationship="Self.FK__RegistroC__IdCod__3F466844" FromRole="RegistroCatastrofico" ToRole="CodigoCatastrofico" />
+          <NavigationProperty Name="CodigoCatastrofico" Relationship="Self.FK__RegistroC__IdCod__3E52440B" FromRole="RegistroCatastrofico" ToRole="CodigoCatastrofico" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -387,7 +405,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__rolid__403A8C7D" FromRole="Rol" ToRole="Usuario" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuario__rolid__3F466844" FromRole="Rol" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Tier">
           <Key>
@@ -414,9 +432,10 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <Property Name="rolid" Type="Int32" />
           <Property Name="password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="Estatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__rolid__403A8C7D" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="Reclamaciones" Relationship="Self.FK__Reclamaci__IDUsu__3B75D760" FromRole="Usuario" ToRole="Reclamaciones" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK__Usuario__rolid__3F466844" FromRole="Usuario" ToRole="Rol" />
         </EntityType>
-        <Association Name="FK__Reclamaci__IdCod__398D8EEE">
+        <Association Name="FK__Reclamaci__IdCod__3A81B327">
           <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -428,7 +447,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RegistroC__IdCod__3F466844">
+        <Association Name="FK__RegistroC__IdCod__3E52440B">
           <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
           <End Role="RegistroCatastrofico" Type="Self.RegistroCatastrofico" Multiplicity="*" />
           <ReferentialConstraint>
@@ -440,7 +459,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Cuent__37A5467C">
+        <Association Name="FK__Reclamaci__Cuent__38996AB5">
           <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -452,7 +471,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Espec__38996AB5">
+        <Association Name="FK__Reclamaci__Espec__398D8EEE">
           <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -464,7 +483,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Numer__3C69FB99">
+        <Association Name="FK__Reclamaci__Numer__3D5E1FD2">
           <End Role="IPA" Type="Self.IPA" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -476,7 +495,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Munic__3B75D760">
+        <Association Name="FK__Reclamaci__Munic__3C69FB99">
           <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -488,7 +507,19 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__rolid__403A8C7D">
+        <Association Name="FK__Reclamaci__IDUsu__3B75D760">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Reclamaciones" Type="AjusteIpaDBModel.Reclamaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idusuario" />
+            </Principal>
+            <Dependent Role="Reclamaciones">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__rolid__3F466844">
           <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -500,7 +531,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AjusteIpaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AjusteIpaDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CodigoCatastroficoes" EntityType="Self.CodigoCatastrofico" />
           <EntitySet Name="Cuentas" EntityType="Self.Cuenta" />
           <EntitySet Name="Especialidads" EntityType="Self.Especialidad" />
@@ -512,31 +543,35 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
           <EntitySet Name="Tiers" EntityType="Self.Tier" />
           <EntitySet Name="TipoServicios" EntityType="Self.TipoServicio" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK__Reclamaci__IdCod__398D8EEE" Association="Self.FK__Reclamaci__IdCod__398D8EEE">
+          <AssociationSet Name="FK__Reclamaci__IdCod__3A81B327" Association="Self.FK__Reclamaci__IdCod__3A81B327">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastroficoes" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
           </AssociationSet>
-          <AssociationSet Name="FK__RegistroC__IdCod__3F466844" Association="Self.FK__RegistroC__IdCod__3F466844">
+          <AssociationSet Name="FK__RegistroC__IdCod__3E52440B" Association="Self.FK__RegistroC__IdCod__3E52440B">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastroficoes" />
             <End Role="RegistroCatastrofico" EntitySet="RegistroCatastroficoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Cuent__37A5467C" Association="Self.FK__Reclamaci__Cuent__37A5467C">
+          <AssociationSet Name="FK__Reclamaci__Cuent__38996AB5" Association="Self.FK__Reclamaci__Cuent__38996AB5">
             <End Role="Cuenta" EntitySet="Cuentas" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Espec__38996AB5" Association="Self.FK__Reclamaci__Espec__38996AB5">
+          <AssociationSet Name="FK__Reclamaci__Espec__398D8EEE" Association="Self.FK__Reclamaci__Espec__398D8EEE">
             <End Role="Especialidad" EntitySet="Especialidads" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Numer__3C69FB99" Association="Self.FK__Reclamaci__Numer__3C69FB99">
+          <AssociationSet Name="FK__Reclamaci__Numer__3D5E1FD2" Association="Self.FK__Reclamaci__Numer__3D5E1FD2">
             <End Role="IPA" EntitySet="IPAs" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Munic__3B75D760" Association="Self.FK__Reclamaci__Munic__3B75D760">
+          <AssociationSet Name="FK__Reclamaci__Munic__3C69FB99" Association="Self.FK__Reclamaci__Munic__3C69FB99">
             <End Role="Municipio" EntitySet="Municipios" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__rolid__403A8C7D" Association="Self.FK__Usuario__rolid__403A8C7D">
+          <AssociationSet Name="FK__Reclamaci__IDUsu__3B75D760" Association="Self.FK__Reclamaci__IDUsu__3B75D760">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__rolid__3F466844" Association="Self.FK__Usuario__rolid__3F466844">
             <End Role="Rol" EntitySet="Rols" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
@@ -546,7 +581,7 @@ warning 6013: The table/view 'C:\PRSS\DEV\AJUSTEIPA\AJUSTEIPA-APP\AJUSTEIPA.DATA
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AjusteIpaDBModelStoreContainer" CdmEntityContainer="AjusteIpaEntities">
+        <EntityContainerMapping StorageEntityContainer="AjusteIpaDBModelStoreContainer" CdmEntityContainer="AjusteIpaDBEntities">
           <EntitySetMapping Name="CodigoCatastroficoes">
             <EntityTypeMapping TypeName="AjusteIpaDBModel.CodigoCatastrofico">
               <MappingFragment StoreEntitySet="CodigoCatastrofico">

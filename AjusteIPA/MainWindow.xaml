@@ -141,6 +141,7 @@
                       BorderThickness="0"
                       Command="{Binding DemoItems[1].Content}" 
                       DockPanel.Dock="Top"
+                      Click="TransferButton_OnClick"
                       Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
                             <StackPanel Orientation="Horizontal">
                                 <!--<materialDesign:PackIcon Width="24"
@@ -163,7 +164,7 @@
                       materialDesign:ButtonAssist.CornerRadius="16"
                       Background="#4472c4"
                       BorderThickness="0"
-                      Click="LoadButton_OnClick"
+                      Click="LoadReports_OnClick"
                       DockPanel.Dock="Top"
                       Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
                             <StackPanel Orientation="Horizontal">
@@ -187,7 +188,7 @@
                       materialDesign:ButtonAssist.CornerRadius="16"
                       Background="#a5a5a5"
                       BorderThickness="0"
-                      Click="LoadButton_OnClick"
+                      Click="LoadAdmin_OnClick"
                       DockPanel.Dock="Top"
                       Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
                             <StackPanel Orientation="Horizontal">
@@ -211,7 +212,7 @@
                       materialDesign:ButtonAssist.CornerRadius="16"
                       Background="#70ad47"
                       BorderThickness="0"
-                      Click="LoadButton_OnClick"
+                      Click="LoadUserGuide_OnClick"
                       DockPanel.Dock="Top"
                       Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
                             <StackPanel Orientation="Horizontal">

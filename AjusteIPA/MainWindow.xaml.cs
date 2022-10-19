@@ -4,6 +4,7 @@ using MaterialDesignThemes.Wpf;
 using System;
 using System.Configuration;
 using System.Diagnostics;
+using System.Drawing.Printing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,6 +29,9 @@ namespace AjusteIPA
                 //note you can use the message queue from any thread, but just for the demo here we 
                 //need to get the message queue from the snackbar, so need to be on the dispatcher
                 MainSnackbar.MessageQueue?.Enqueue("Bienvenido al Sistema de Ajustes de Reclamaciones Catastróficas de IPA");
+                MainSnackbar.MessageQueue?.Enqueue("GC Inc., subsidiaria de GCC Management Corporation");
+                // GC Inc., subsidiaria de GCC Management Corporation 
+
             }, TaskScheduler.FromCurrentSynchronizationContext());
 
             DataContext = new Domain.MainWindowViewModel(MainSnackbar.MessageQueue);
@@ -151,7 +155,9 @@ namespace AjusteIPA
             => MainScrollViewer.ScrollToHome();
 
         private void GitHubButton_OnClick(object sender, RoutedEventArgs e)
-            => Link.OpenInBrowser(ConfigurationManager.AppSettings["GitHub"]);
+        { 
+            // Link.OpenInBrowser(ConfigurationManager.AppSettings["GitHub"]);
+        }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -200,7 +206,34 @@ namespace AjusteIPA
 
         private void LoadButton_OnClick(object sender, RoutedEventArgs e)
         {
-            //Main.Content = new AjusteIPA.Claims.ClaimsDetail();
+            //Link.OpenInBrowser(ConfigurationManager.AppSettings["GitHub"]);
+            var window = new AjusteIPA.Claims.ClaimsWindow();
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void TransferButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var window = new AjusteIPA.Transfers.TransferWindow();
+            window.Owner = this;
+            window.ShowDialog();
+        }
+
+        private void LoadReports_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoadUserGuide_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoadAdmin_OnClick(object sender, RoutedEventArgs e)
+        {
+            var window = new AjusteIPA.Admin.AdminWindow();
+            window.Owner = this;
+            window.ShowDialog();
         }
 
         //private void CloseNotificationPanel_Click(object sender, RoutedEventArgs e) => NotificationPanel.Visibility = Visibility.Collapsed;

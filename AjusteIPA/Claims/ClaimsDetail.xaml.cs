@@ -11,7 +11,7 @@ namespace AjusteIPA.Claims
     /// </summary>
     public partial class ClaimsDetail : Page
     {
-        AjusteIpaEntities context = new AjusteIpaEntities();
+        AjusteIpaDBEntities context = new AjusteIpaDBEntities();
         CollectionViewSource claimsViewSource;
 
         public ClaimsDetail()

@@ -48,5 +48,6 @@ namespace AjusteIPA.Data
         public virtual Especialidad Especialidad1 { get; set; }
         public virtual IPA IPA { get; set; }
         public virtual Municipio Municipio1 { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

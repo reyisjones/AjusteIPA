@@ -134,6 +134,14 @@
     <Compile Include="Admin\AdminTool.xaml.cs">
       <DependentUpon>AdminTool.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjusteIpaDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AjusteIpaDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Claims\ClaimsDetail.xaml.cs">
       <DependentUpon>ClaimsDetail.xaml</DependentUpon>
     </Compile>
@@ -141,6 +149,9 @@
       <DependentUpon>ClaimsTool.xaml</DependentUpon>
     </Compile>
     <Compile Include="Claims\ClaimsToolViewModel.cs" />
+    <Compile Include="Claims\ClaimsWindow.xaml.cs">
+      <DependentUpon>ClaimsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BorderClipConverter.cs" />
     <Compile Include="Converters\BrushRoundConverter.cs" />
     <Compile Include="Domain\AnotherCommandImplementation.cs" />
@@ -188,10 +199,17 @@
     <Compile Include="Themes\PackIconDataFactory.cs" />
     <Compile Include="Themes\PackIconKind.cs" />
     <Compile Include="Themes\Ripple.cs" />
+    <Compile Include="Transfers\TransferWindow.xaml.cs">
+      <DependentUpon>TransferWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User\User.xaml.cs">
       <DependentUpon>User.xaml</DependentUpon>
     </Compile>
     <Page Include="Admin\AdminTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,6 +218,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Claims\ClaimsTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Claims\ClaimsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -251,6 +273,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Transfers\TransferWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User\User.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -274,6 +300,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="AjusteIpaDBDataSet.xsc">
+      <DependentUpon>AjusteIpaDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AjusteIpaDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AjusteIpaDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AjusteIpaDBDataSet.xss">
+      <DependentUpon>AjusteIpaDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AjusteIPA.Data.CodigoCatastrofico.datasource" />
     <None Include="Properties\DataSources\AjusteIPA.Data.Cuenta.datasource" />

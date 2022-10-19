@@ -54,6 +54,14 @@ namespace AjusteIPA.Domain
             _demoItemsView = CollectionViewSource.GetDefaultView(DemoItems);
             _demoItemsView.Filter = DemoItemsFilter;
 
+
+            ClaimsCommand = new AnotherCommandImplementation(
+                _ =>
+                {
+                    SearchKeyword = string.Empty;
+                    SelectedIndex = 0;
+                });
+
             HomeCommand = new AnotherCommandImplementation(
                 _ =>
                 {
@@ -120,6 +128,7 @@ namespace AjusteIPA.Domain
             set => SetProperty(ref _controlsEnabled, value);
         }
 
+        public AnotherCommandImplementation ClaimsCommand { get; }
         public AnotherCommandImplementation HomeCommand { get; }
         public AnotherCommandImplementation MovePrevCommand { get; }
         public AnotherCommandImplementation MoveNextCommand { get; }
@@ -142,6 +151,23 @@ namespace AjusteIPA.Domain
                 },
                 selectedIcon: PackIconKind.StoreEditOutline,
                 unselectedIcon: PackIconKind.StoreEditOutline);
+
+
+            yield return new DemoItem(
+                "Claims Tools",
+                typeof(ClaimsTool),
+                new[]
+                {
+                    DocumentationLink.WikiLink("Brush-Names", "Brushes"),
+                    DocumentationLink.WikiLink("Custom-Palette-Hues", "Custom Palettes"),
+                    DocumentationLink.WikiLink("Swatches-and-Recommended-Colors", "Swatches"),
+                    DocumentationLink.DemoPageLink<ClaimsTool>("Demo View"),
+                    DocumentationLink.DemoPageLink<ClaimsToolViewModel>("Demo View Model"),
+                    DocumentationLink.ApiLink<PaletteHelper>()
+                },
+                selectedIcon: PackIconKind.Eyedropper,
+                unselectedIcon: PackIconKind.EyedropperVariant);
+
 
 
             //yield return new DemoItem(
