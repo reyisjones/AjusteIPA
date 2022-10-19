@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AjusteIPA"
         xmlns:system="clr-namespace:System;assembly=mscorlib"        
-        Title="Ajuste IPA" Height="700" Width="1100"
+        Title="Sistema de Ajustes de Reclamaciones Catastróficas de IPA" Height="700" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:domain="clr-namespace:AjusteIPA.Domain"
         d:DataContext="{d:DesignInstance domain:MainWindowViewModel}"
@@ -59,7 +59,7 @@
                         <Image Width="36"
                    Height="36"
                    DockPanel.Dock="Left"
-                   Source="Resources/ms-icon-310x310.png"
+                   Source="Resources/medic-logo.png"
                    Stretch="Uniform" />
                         <TextBlock Margin="10,0,10,0"
                        HorizontalAlignment="Center"
@@ -190,7 +190,8 @@
                        VerticalAlignment="Center"
                        AutomationProperties.Name="Ajuste IPA"
                        FontSize="22"
-                       Text="Ajuste IPA" />
+                       Text="Sistema de Ajustes de Reclamaciones Catastróficas de IPA" />
+                        
 
                         <materialDesign:PopupBox Grid.Column="2"
                                      PlacementMode="BottomAndAlignRightEdges"
@@ -311,7 +312,7 @@
                               DataContextChanged="OnSelectedItemChanged" />
                         </ScrollViewer>
 
-                        <materialDesign:Card x:Name="NotificationPanel"
+                        <!--<materialDesign:Card x:Name="NotificationPanel"
                                  Grid.Row="0"
                                  Grid.RowSpan="2"
                                  Margin="10"
@@ -351,7 +352,7 @@
                                 </StackPanel>
 
                             </Grid>
-                        </materialDesign:Card>
+                        </materialDesign:Card>-->
 
                         <materialDesign:Snackbar x:Name="MainSnackbar"
                                      Grid.Row="1"

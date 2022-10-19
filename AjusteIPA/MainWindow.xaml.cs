@@ -26,7 +26,7 @@ namespace AjusteIPA
             {
                 //note you can use the message queue from any thread, but just for the demo here we 
                 //need to get the message queue from the snackbar, so need to be on the dispatcher
-                MainSnackbar.MessageQueue?.Enqueue("Bienvenido a la aplicación Ajuste IPA");
+                MainSnackbar.MessageQueue?.Enqueue("Bienvenido al Sistema de Ajustes de Reclamaciones Catastróficas de IPA");
             }, TaskScheduler.FromCurrentSynchronizationContext());
 
             DataContext = new MainWindowViewModel(MainSnackbar.MessageQueue);
@@ -190,6 +190,6 @@ namespace AjusteIPA
 
         }
 
-        private void CloseNotificationPanel_Click(object sender, RoutedEventArgs e) => NotificationPanel.Visibility = Visibility.Collapsed;
+        //private void CloseNotificationPanel_Click(object sender, RoutedEventArgs e) => NotificationPanel.Visibility = Visibility.Collapsed;
     }
 }

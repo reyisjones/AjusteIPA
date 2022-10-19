@@ -16,7 +16,7 @@ namespace AjusteIPA.Menu
         }
 
         private void GitHubButton_OnClick(object sender, RoutedEventArgs e)
-            => Link.OpenInBrowser(ConfigurationManager.AppSettings["GitHub"]);
+            => Link.OpenInBrowser(ConfigurationManager.AppSettings["AjusteIPA"]);
 
         private void TwitterButton_OnClick(object sender, RoutedEventArgs e)
             => Link.OpenInBrowser("https://twitter.com/James_Willock");

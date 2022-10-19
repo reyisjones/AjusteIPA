@@ -74,6 +74,7 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="ShowMeTheXAML, Version=2.0.0.62, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ShowMeTheXAML.2.0.0\lib\net472\ShowMeTheXAML.dll</HintPath>
     </Reference>
@@ -174,6 +175,10 @@
     <Compile Include="Menu\Typography.xaml.cs">
       <DependentUpon>Typography.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportContainer.xaml.cs">
+      <DependentUpon>ReportContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportHelper.cs" />
     <Compile Include="Themes\BadgedAssist.cs" />
     <Compile Include="Themes\NavigationDrawerAssist.cs" />
     <Compile Include="Themes\PackIcon.cs" />
@@ -235,6 +240,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Reports\ReportContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\MaterialDesign3.NavigationDrawer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -280,6 +289,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Reports\ProcessedAdjustedClaims.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -302,12 +312,19 @@
     <Resource Include="Resources\img\medical-logo2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\medic-logo.png" />
+    <Resource Include="Resources\ms-icon-260x260.png" />
     <Resource Include="Resources\Chartridge046_small.jpg" />
     <Resource Include="Resources\Contact.png" />
     <Resource Include="Resources\favicon.ico" />
+    <Resource Include="Resources\gcprofile.jpg" />
+    <Resource Include="Resources\backgroundHome.png" />
     <Content Include="Resources\img\github-logo.svg" />
     <Resource Include="Resources\ms-icon-310x310.png" />
     <Resource Include="Resources\ProfilePic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CatastrophicCode\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" />
