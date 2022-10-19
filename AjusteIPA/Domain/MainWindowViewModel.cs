@@ -1,4 +1,5 @@
-﻿using AjusteIPA.Claims;
+﻿using AjusteIPA;
+using AjusteIPA.Claims;
 using AjusteIPA.Menu;
 using MaterialDesignThemes.Wpf;
 using System;
@@ -29,7 +30,20 @@ namespace AjusteIPA.Domain
                         DocumentationLink.DemoPageLink<Home>()
                     },
                     selectedIcon: PackIconKind.Home,
-                    unselectedIcon: PackIconKind.HomeOutline)
+                    unselectedIcon: PackIconKind.HomeOutline),
+                new DemoItem(
+                    "Claims",
+                    typeof(ClaimsTool),
+                    new[]
+                    {
+                        new DocumentationLink(
+                            DocumentationLinkType.Wiki,
+                            $"{ConfigurationManager.AppSettings["GitHub"]}/wiki",
+                            "WIKI"),
+                        DocumentationLink.DemoPageLink<ClaimsTool>()
+                    },
+                    selectedIcon: PackIconKind.MedicalBag,
+                    unselectedIcon: PackIconKind.MedicalBag),
             });
 
             foreach (var item in GenerateDemoItems(snackbarMessageQueue).OrderBy(i => i.Name))

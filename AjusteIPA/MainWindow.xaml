@@ -8,6 +8,7 @@
         Title="Sistema de Ajustes de Reclamaciones Catastróficas de IPA" Height="700" Width="1100"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:domain="clr-namespace:AjusteIPA.Domain"
+        xmlns:themes="clr-namespace:AjusteIPA.Themes"
         d:DataContext="{d:DesignInstance domain:MainWindowViewModel}"
         AutomationProperties.Name="{Binding Title, RelativeSource={RelativeSource Self}}"
         Icon="favicon.ico"
@@ -82,30 +83,152 @@
                         </Button>
                     </DockPanel>
 
+                    <StackPanel Grid.ColumnSpan="6" Grid.Row="3" Name="sp1" >
+
                     <Button x:Name="DrawerFAB"
-                  Height="56"
-                  Margin="16,6,16,32"
-                  HorizontalContentAlignment="Left"
-                  materialDesign:ButtonAssist.CornerRadius="16"
-                  Background="{DynamicResource SecondaryHueMidBrush}"
-                  BorderThickness="0"
-                  Click="GitHubButton_OnClick"
-                  DockPanel.Dock="Top"
-                  Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Width="24"
+                      Height="56"
+                      Width="300"                            
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="{DynamicResource SecondaryHueMidBrush}"
+                      BorderThickness="0"
+                      Click="GitHubButton_OnClick"
+                      DockPanel.Dock="Top"
+                      Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Width="24"
+                                           Height="24"
+                                           VerticalAlignment="Center"
+                                           Kind="MedicalBag" />
+                                <TextBlock Margin="20,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="20"
+                             Text="Inicio" />
+                            </StackPanel>
+                        </Button>
+
+                    <Button x:Name="btnLoad"
+                      Height="56" 
+                      Width="300"
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="#f4bf00"
+                      BorderThickness="0"
+                      Click="LoadButton_OnClick"
+                      DockPanel.Dock="Top"
+                      Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
+                            <StackPanel Orientation="Horizontal">
+                                <!--<materialDesign:PackIcon Width="24"
                                        Height="24"
                                        VerticalAlignment="Center"
-                                       Kind="MedicalBag" />
-                            <TextBlock Margin="20,0,0,0"
-                         VerticalAlignment="Center"
-                         FontSize="20"
-                         Text="Inicio" />
-                        </StackPanel>
-                    </Button>
+                                       Kind="MedicalBag" />-->
+                                <TextBlock Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Text="Cargar Reclamaciones para Ajuste" />
+                            </StackPanel>
+                        </Button>
+
+                    <Button x:Name="btnTransfer"
+                      Height="56" 
+                      Width="300"
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="#ed7d31"
+                      BorderThickness="0"
+                      Command="{Binding DemoItems[1].Content}" 
+                      DockPanel.Dock="Top"
+                      Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
+                            <StackPanel Orientation="Horizontal">
+                                <!--<materialDesign:PackIcon Width="24"
+                                       Height="24"
+                                       VerticalAlignment="Center"
+                                       Kind="MedicalBag" />-->
+                                <TextBlock Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Text="Transferir Reclamaciones Ajustadas" />
+                            </StackPanel>
+                        </Button>
 
 
-                    <TextBox x:Name="DemoItemsSearchBox"
+                        <Button x:Name="btnReports"
+                      Height="56" 
+                      Width="300"
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="#4472c4"
+                      BorderThickness="0"
+                      Click="LoadButton_OnClick"
+                      DockPanel.Dock="Top"
+                      Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
+                            <StackPanel Orientation="Horizontal">
+                                <!--<materialDesign:PackIcon Width="24"
+                                       Height="24"
+                                       VerticalAlignment="Center"
+                                       Kind="MedicalBag" />-->
+                                <TextBlock Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Text="Informes" />
+                            </StackPanel>
+                        </Button>
+
+
+                        <Button x:Name="btnAdmin"
+                      Height="56" 
+                      Width="300"
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="#a5a5a5"
+                      BorderThickness="0"
+                      Click="LoadButton_OnClick"
+                      DockPanel.Dock="Top"
+                      Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
+                            <StackPanel Orientation="Horizontal">
+                                <!--<materialDesign:PackIcon Width="24"
+                                       Height="24"
+                                       VerticalAlignment="Center"
+                                       Kind="MedicalBag" />-->
+                                <TextBlock Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Text="Administración del Sistema" />
+                            </StackPanel>
+                        </Button>
+
+
+                        <Button x:Name="btnUserGuide"
+                      Height="56" 
+                      Width="300"
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="#70ad47"
+                      BorderThickness="0"
+                      Click="LoadButton_OnClick"
+                      DockPanel.Dock="Top"
+                      Foreground="{DynamicResource SecondaryHueMidBrushForeground}">
+                            <StackPanel Orientation="Horizontal">
+                                <!--<materialDesign:PackIcon Width="24"
+                                       Height="24"
+                                       VerticalAlignment="Center"
+                                       Kind="MedicalBag" />-->
+                                <TextBlock Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Text="Manual del Usuario" />
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+
+                    <!--<TextBox x:Name="DemoItemsSearchBox"
                    Margin="16,4,16,4"
                    materialDesign:HintAssist.Hint="Search"
                    materialDesign:HintAssist.IsFloating="True"
@@ -114,14 +237,14 @@
                    materialDesign:TextFieldAssist.HasOutlinedTextField="True"
                    materialDesign:TextFieldAssist.TextFieldCornerRadius="8"
                    DockPanel.Dock="Top"
-                   Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />
-                    <ListBox x:Name="DemoItemsListBox"
+                   Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />-->
+                    <!--<ListBox x:Name="DemoItemsListBox"
                    Margin="12,16,12,16"
                    AutomationProperties.Name="DemoPagesListBox"
                    ItemsSource="{Binding DemoItems}"
                    PreviewMouseLeftButtonUp="UIElement_OnPreviewMouseLeftButtonUp"
                    SelectedIndex="{Binding SelectedIndex}"
-                   SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}">
+                   SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}" Height="150">
                         <ListBox.Resources>
                             <Style TargetType="ScrollViewer" BasedOn="{StaticResource MaterialDesignScrollViewer}" />
                             <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}" />
@@ -129,14 +252,16 @@
                                 <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
                             </DataTemplate>
                         </ListBox.Resources>
-                        <!--<ListBox.ItemContainerStyle>
-                            <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesign3.NavigationDrawerPrimaryListBoxItem}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem" BasedOn="{StaticResource MaterialDesignNavigationPrimaryListBoxItem}">
                                 <Setter Property="materialDesign:BadgedAssist.Badge" Value="{Binding Notifications}" />
                                 <Setter Property="materialDesign:NavigationDrawerAssist.SelectedIcon" Value="{Binding SelectedIcon}" />
                                 <Setter Property="materialDesign:NavigationDrawerAssist.UnselectedIcon" Value="{Binding UnselectedIcon}" />
                             </Style>
-                        </ListBox.ItemContainerStyle>-->
-                    </ListBox>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>-->
+
+
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
 
@@ -309,7 +434,12 @@
                             <ContentControl Margin="{Binding MarginRequirement, FallbackValue=16}"
                               Content="{Binding Content, UpdateSourceTrigger=PropertyChanged, FallbackValue={x:Null}}"
                               DataContext="{Binding SelectedItem}"
-                              DataContextChanged="OnSelectedItemChanged" />
+                              DataContextChanged="OnSelectedItemChanged" >
+                                <ContentControl.Background>
+                                    <SolidColorBrush Color="Brown"></SolidColorBrush>
+                                    <!--<ImageBrush ImageSource="/backgroundHome.png" Stretch="Uniform"/>-->
+                                </ContentControl.Background>
+                            </ContentControl>
                         </ScrollViewer>
 
                         <!--<materialDesign:Card x:Name="NotificationPanel"

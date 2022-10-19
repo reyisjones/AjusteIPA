@@ -45,12 +45,12 @@ namespace AjusteIPA
 
             Snackbar = MainSnackbar;
 
-            var login = new AjusteIPA.Login.LoginView();
-            bool? isLogged = login.ShowDialog();
-            if (isLogged.HasValue)
-                if (!isLogged.Value) {
-                    login.Close();
-                }
+            //var login = new AjusteIPA.Login.LoginView();
+            //bool? isLogged = login.ShowDialog();
+            //if (isLogged.HasValue)
+            //    if (!isLogged.Value) {
+            //        login.Close();
+            //    }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -125,7 +125,7 @@ namespace AjusteIPA
 
         private void MenuToggleButton_OnClick(object sender, RoutedEventArgs e)
         {
-            DemoItemsSearchBox.Focus();
+            //DemoItemsSearchBox.Focus();
             if (ActualWidth > 1600)
             {
                 NavRail.Visibility = Visibility.Collapsed;
@@ -163,7 +163,7 @@ namespace AjusteIPA
                 NavDrawer.IsLeftDrawerOpen = false;
                 MenuToggleButton.Visibility = Visibility.Visible;
                 FAB.Visibility = Visibility.Visible;
-                DrawerFAB.Visibility = Visibility.Collapsed;
+                //DrawerFAB.Visibility = Visibility.Collapsed;
             }
             else if (ActualWidth > 700 && ActualWidth <= 1600)
             {
@@ -173,7 +173,7 @@ namespace AjusteIPA
                 NavDrawer.IsLeftDrawerOpen = false;
                 MenuToggleButton.Visibility = Visibility.Visible;
                 FAB.Visibility = Visibility.Collapsed;
-                DrawerFAB.Visibility = Visibility.Collapsed;
+                //DrawerFAB.Visibility = Visibility.Collapsed;
             }
             else if (ActualWidth > 1600)
             {
@@ -183,7 +183,7 @@ namespace AjusteIPA
                 NavDrawer.IsLeftDrawerOpen = true;
                 MenuToggleButton.Visibility = Visibility.Collapsed;
                 FAB.Visibility = Visibility.Collapsed;
-                DrawerFAB.Visibility = Visibility.Visible;
+                //DrawerFAB.Visibility = Visibility.Visible;
             }
         }
 
@@ -196,6 +196,11 @@ namespace AjusteIPA
                 MenuToggleButton.Visibility = Visibility.Visible;
             }
 
+        }
+
+        private void LoadButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            //Main.Content = new AjusteIPA.Claims.ClaimsDetail();
         }
 
         //private void CloseNotificationPanel_Click(object sender, RoutedEventArgs e) => NotificationPanel.Visibility = Visibility.Collapsed;

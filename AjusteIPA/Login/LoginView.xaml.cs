@@ -37,7 +37,10 @@ namespace AjusteIPA.Login
             PasswordBox pbx = (PasswordBox)sender;
             string pwd = pbx.Password;
             _loginVM.Password += pwd;
-
+            if (pwd == "1234")
+            {
+                Close();
+            }
             //DialogHost.ContentTemplateProperty.ValidateValueCallback(pwd);
 
             Debug.WriteLine(pbx.Password); // pwdBox.Password);
