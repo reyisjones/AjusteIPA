@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls.Adapters;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -40,7 +41,7 @@ namespace AjusteIPA.Login
 
         private bool CanLogin()
         {
-            return !string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password);
+            return !string.IsNullOrWhiteSpace(Username); //&& !string.IsNullOrWhiteSpace(Password);
         }
 
         private async void OnLogin()
@@ -48,7 +49,7 @@ namespace AjusteIPA.Login
             bool result = await ValidateLogin(Username, Password);
             if (result)
             {
-                Close?.Invoke(this, EventArgs.Empty);
+                Close?.Invoke(this, EventArgs.Empty); 
             }
             //TODO: Else show error indicating failed login
         }
@@ -61,7 +62,7 @@ namespace AjusteIPA.Login
                 //TODO: actual validation
                 await Task.Delay(TimeSpan.FromSeconds(2));
                 
-                return username == "admin" && password == "password";
+                return username == "admin" && password == null;
             }
             finally
             {

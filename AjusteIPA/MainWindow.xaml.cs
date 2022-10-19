@@ -1,4 +1,5 @@
 ﻿using AjusteIPA.Domain;
+using AjusteIPA.Login;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Configuration;
@@ -29,7 +30,7 @@ namespace AjusteIPA
                 MainSnackbar.MessageQueue?.Enqueue("Bienvenido al Sistema de Ajustes de Reclamaciones Catastróficas de IPA");
             }, TaskScheduler.FromCurrentSynchronizationContext());
 
-            DataContext = new MainWindowViewModel(MainSnackbar.MessageQueue);
+            DataContext = new Domain.MainWindowViewModel(MainSnackbar.MessageQueue);
 
             var paletteHelper = new PaletteHelper();
             var theme = paletteHelper.GetTheme();
@@ -43,6 +44,13 @@ namespace AjusteIPA
             }
 
             Snackbar = MainSnackbar;
+
+            var login = new AjusteIPA.Login.LoginView();
+            bool? isLogged = login.ShowDialog();
+            if (isLogged.HasValue)
+                if (!isLogged.Value) {
+                    login.Close();
+                }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

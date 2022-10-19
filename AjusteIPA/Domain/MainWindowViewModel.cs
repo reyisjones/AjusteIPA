@@ -1,7 +1,5 @@
 ﻿using AjusteIPA.Claims;
-using AjusteIPA.Login;
 using AjusteIPA.Menu;
-using GalaSoft.MvvmLight.CommandWpf;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -10,19 +8,11 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Linq;
 using System.Windows.Data;
-using System.Windows.Input;
-using MDIXDialogHost = MaterialDesignThemes.Wpf.DialogHost;
+
 namespace AjusteIPA.Domain
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public ICommand ShowLoginFormCommand { get; }
-
-        public MainWindowViewModel()
-        {
-            ShowLoginFormCommand = new RelayCommand(OnShowLoginForm);
-        }
-
         public MainWindowViewModel(ISnackbarMessageQueue snackbarMessageQueue)
         {
             DemoItems = new ObservableCollection<DemoItem>(new[]
@@ -140,17 +130,17 @@ namespace AjusteIPA.Domain
                 unselectedIcon: PackIconKind.StoreEditOutline);
 
 
-            yield return new DemoItem(
-                "Ajuste1",
-                typeof(ClaimsTool),
-                new[]
-                {
-                    DocumentationLink.DemoPageLink<ClaimsTool>("Demo View"),
-                    DocumentationLink.DemoPageLink<ClaimsToolViewModel>("Demo View Model"),
-                    DocumentationLink.ApiLink<PaletteHelper>()
-                },
-                selectedIcon: PackIconKind.StoreEditOutline,
-                unselectedIcon: PackIconKind.StoreEditOutline);
+            //yield return new DemoItem(
+            //    "Ajuste1",
+            //    typeof(ClaimsTool),
+            //    new[]
+            //    {
+            //        DocumentationLink.DemoPageLink<ClaimsTool>("Demo View"),
+            //        DocumentationLink.DemoPageLink<ClaimsToolViewModel>("Demo View Model"),
+            //        DocumentationLink.ApiLink<PaletteHelper>()
+            //    },
+            //    selectedIcon: PackIconKind.StoreEditOutline,
+            //    unselectedIcon: PackIconKind.StoreEditOutline);
 
             //yield return new DemoItem(
             //    "Rating",
@@ -186,21 +176,6 @@ namespace AjusteIPA.Domain
 
             return obj is DemoItem item
                    && item.Name.ToLower().Contains(_searchKeyword.ToLower());
-        }
-
-
-        private async void OnShowLoginForm()
-        {
-            var vm = new LoginViewModel();
-            await MDIXDialogHost.Show(vm, (object sender, DialogOpenedEventArgs e) =>
-            {
-                void OnClose(object _, EventArgs args)
-                {
-                    vm.Close -= OnClose;
-                    e.Session.Close();
-                }
-                vm.Close += OnClose;
-            });
         }
 
     }
