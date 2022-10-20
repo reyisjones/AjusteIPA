@@ -85,7 +85,7 @@
 
                     <StackPanel Grid.ColumnSpan="6" Grid.Row="3" Name="sp1" >
 
-                    <Button x:Name="DrawerFAB"
+                    <!--<Button x:Name="DrawerFAB"
                       Height="56"
                       Width="300"                            
                       Margin="16,6,16,32"
@@ -106,7 +106,7 @@
                              FontSize="20"
                              Text="Inicio" />
                             </StackPanel>
-                        </Button>
+                        </Button>-->
 
                     <Button x:Name="btnLoad"
                       Height="56" 

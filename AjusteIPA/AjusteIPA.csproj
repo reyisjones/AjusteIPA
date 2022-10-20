@@ -162,6 +162,9 @@
     <Compile Include="Admin\AdminTool.xaml.cs">
       <DependentUpon>AdminTool.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AdminUserControl.xaml.cs">
+      <DependentUpon>AdminUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -216,7 +219,13 @@
     <Compile Include="Menu\Typography.xaml.cs">
       <DependentUpon>Typography.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportContainer.xaml.cs">
+      <DependentUpon>ReportContainer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportHelper.cs" />
+    <Compile Include="Reports\ReportPage1.xaml.cs">
+      <DependentUpon>ReportPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportWindow.xaml.cs">
       <DependentUpon>ReportWindow.xaml</DependentUpon>
     </Compile>
@@ -237,6 +246,10 @@
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Admin\AdminTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\AdminUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -311,6 +324,14 @@
     <Page Include="Login\Styles\UserControlResourceDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reports\ReportContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Reports\ReportPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Reports\ReportWindow.xaml">
       <SubType>Designer</SubType>

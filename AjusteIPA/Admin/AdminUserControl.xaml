@@ -1,0 +1,28 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AjusteIPA.Admin"
+             xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data" x:Class="AjusteIPA.Admin.AdminUserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="usuarioViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Usuario}}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource usuarioViewSource}">
+
+        <DataGrid x:Name="usuarioDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="10,67,16,21">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="apellidoColumn" Binding="{Binding apellido}" Header="apellido" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="estatusColumn" Binding="{Binding Estatus}" Header="Estatus" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="idusuarioColumn" Binding="{Binding idusuario}" Header="idusuario" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nombreColumn" Binding="{Binding nombre}" Header="nombre" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numempleadoColumn" Binding="{Binding numempleado}" Header="numempleado" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="passwordColumn" Binding="{Binding password}" Header="password" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="rolidColumn" Binding="{Binding rolid}" Header="rolid" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

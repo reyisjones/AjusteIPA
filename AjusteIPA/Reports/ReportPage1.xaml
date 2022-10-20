@@ -1,0 +1,21 @@
+﻿<Page x:Class="AjusteIPA.Reports.ReportPage1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:AjusteIPA.Reports" 
+        xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data" 
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        mc:Ignorable="d"
+        Title="Informe de  Reclamaciones de Ajuste Procesadas del Mes Corriente" Height="450" Width="800">
+    <Page.Resources>
+        <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource reclamacionesViewSource}">
+        <WindowsFormsHost Name="winForms">
+            <rv:ReportViewer x:Name="rptWellBalanceClaims" DocumentMapCollapsed="True">
+
+            </rv:ReportViewer>
+        </WindowsFormsHost>
+    </Grid>
+</Page>
