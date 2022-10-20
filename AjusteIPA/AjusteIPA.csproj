@@ -115,6 +115,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -124,12 +125,14 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="VirtualizingWrapPanel, Version=1.5.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\VirtualizingWrapPanel.1.5.7\lib\net452\VirtualizingWrapPanel.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -193,10 +196,10 @@
     <Compile Include="Menu\Typography.xaml.cs">
       <DependentUpon>Typography.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ReportContainer.xaml.cs">
-      <DependentUpon>ReportContainer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Reports\ReportHelper.cs" />
+    <Compile Include="Reports\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Themes\BadgedAssist.cs" />
     <Compile Include="Themes\NavigationDrawerAssist.cs" />
     <Compile Include="Themes\PackIcon.cs" />
@@ -233,8 +236,8 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Domain\SampleMessageDialog.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Login\LoginWindow.xaml">
       <SubType>Designer</SubType>
@@ -272,10 +275,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Reports\ReportContainer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Login\Styles\Blue.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -291,6 +290,10 @@
     <Page Include="Login\Styles\UserControlResourceDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reports\ReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\MaterialDesign3.NavigationDrawer.xaml">
       <SubType>Designer</SubType>
