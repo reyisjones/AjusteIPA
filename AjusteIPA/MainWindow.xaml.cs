@@ -49,12 +49,9 @@ namespace AjusteIPA
 
             Snackbar = MainSnackbar;
 
-            //var login = new AjusteIPA.Login.LoginView();
-            //bool? isLogged = login.ShowDialog();
-            //if (isLogged.HasValue)
-            //    if (!isLogged.Value) {
-            //        login.Close();
-            //    }
+            var login = new AjusteIPA.Login.LoginWindow();
+            login.ShowDialog();
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -81,7 +78,7 @@ namespace AjusteIPA
 
         private void UIElement_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (!NavDrawer.OpenMode.Equals( DrawerHostOpenMode.Standard))
+            if (!NavDrawer.OpenMode.Equals(DrawerHostOpenMode.Standard))
             {
                 //until we had a StaysOpen flag to Drawer, this will help with scroll bars
                 var dependencyObject = Mouse.Captured as DependencyObject;
@@ -155,7 +152,7 @@ namespace AjusteIPA
             => MainScrollViewer.ScrollToHome();
 
         private void GitHubButton_OnClick(object sender, RoutedEventArgs e)
-        { 
+        {
             // Link.OpenInBrowser(ConfigurationManager.AppSettings["GitHub"]);
         }
 
@@ -226,7 +223,9 @@ namespace AjusteIPA
 
         private void LoadUserGuide_OnClick(object sender, RoutedEventArgs e)
         {
-
+            var window = new AjusteIPA.User.UserWindow();
+            window.Owner = this;
+            window.ShowDialog();
         }
 
         private void LoadAdmin_OnClick(object sender, RoutedEventArgs e)

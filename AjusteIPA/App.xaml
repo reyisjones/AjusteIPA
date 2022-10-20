@@ -7,6 +7,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+
+                <!-- Themes -->
+                <ResourceDictionary Source="Login/Styles/Blue.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Login/Styles/CoreResourceDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Login/Styles/DataWindowResourceDictionary.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Login/Styles/UserControlResourceDictionary.xaml"></ResourceDictionary>
+                
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>

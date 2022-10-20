@@ -22,28 +22,23 @@ namespace AjusteIPA.Login
     /// </summary>
     public partial class LoginView : Window
     {
-        LoginViewModel _loginVM;
+        public bool PasswordMatch { get; set; }
 
         public LoginView()
         {
             InitializeComponent();
-            _loginVM = new LoginViewModel();
         }
 
         private void OnPasswordChanged(object sender, RoutedEventArgs e)
         {
-            // Text="{Binding Password}" 
             // TODO: Set Binding Password
             PasswordBox pbx = (PasswordBox)sender;
             string pwd = pbx.Password;
-            _loginVM.Password += pwd;
             if (pwd == "1234")
             {
+                PasswordMatch = true;
                 Close();
             }
-            //DialogHost.ContentTemplateProperty.ValidateValueCallback(pwd);
-
-            Debug.WriteLine(pbx.Password); // pwdBox.Password);
         }
     }
 }
