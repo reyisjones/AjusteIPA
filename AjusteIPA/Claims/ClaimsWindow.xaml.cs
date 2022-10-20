@@ -40,7 +40,7 @@ namespace AjusteIPA.Claims
 
             // After the data is loaded, call the DbSet<T>.Local property    
             // to use the DbSet<T> as a binding source.   
-            claimsViewSource.Source = context.Reclamaciones.Local;
+            claimsViewSource.Source = context.Reclamaciones.Local.Where(x=> x.EstatusReclamacion == "Pendiente");
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Mouse.OverrideCursor = null;
