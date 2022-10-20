@@ -174,9 +174,6 @@
     </Compile>
     <Compile Include="Domain\ViewModelBase.cs" />
     <Compile Include="Extensions\PaletteHelperExtensions.cs" />
-    <Compile Include="Login\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Login\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -236,10 +233,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Domain\SampleMessageDialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Login\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -39,9 +39,9 @@
                 </StackPanel>
                 <Thumb Opacity="0" Background="Transparent" Foreground="{x:Null}" DragDelta="Thumb_OnDragDelta"/>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,8,0">
-                    <Button ToolTip="System Information" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionSystemInformation_OnClick">
+                    <!--<Button ToolTip="System Information" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionSystemInformation_OnClick">
                         <Image Source="Icons/gears.png" Height="20" Width="20" Style="{StaticResource UserControlImageStyle}" ></Image>
-                    </Button>
+                    </Button>-->
                     <Button ToolTip="Minimize" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionMinimize_OnClick">
                         <Rectangle Fill="{Binding Foreground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button}}" Margin="0,16,1,2" Width="9" Height="2" VerticalAlignment="Bottom" d:LayoutOverrides="Height"/>
                     </Button>
@@ -66,11 +66,13 @@
                             <Image Source="Icons/employees-server.png" Height="64" Width="64" Margin="0,20,0,0" />
                             <Label Content="Login" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
                             <Grid Margin="0,0,0,8">
-                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="22" Text="Username" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
+                                <Label> User Name</Label>
+                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" md:HintAssist.Hint="User Name"  TextAlignment="Center" FontSize="16" Height="22" Text="Username" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
                                            Visibility="{Binding ElementName=LocalUserNameTextBox, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 <TextBox Style="{StaticResource LoginTextBoxStyle}" Name="LocalUserNameTextBox" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" CharacterCasing="Lower" TabIndex="4" />
                             </Grid>
                             <Grid Margin="0,0,0,8">
+                                <Label>Password</Label>
                                 <PasswordBox Background="Transparent" HorizontalContentAlignment="Center" BorderBrush="{StaticResource MainBlackFontColor}" HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="LocalPasswordBox" Height="36" Width="220" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" TabIndex="5" />
                             </Grid>
                             <!--<Grid Margin="0,0,0,8">
