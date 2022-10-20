@@ -443,6 +443,14 @@
                             </ContentControl>
                         </ScrollViewer>
 
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="5" Width="800" Height="300" VerticalAlignment="Center" Opacity="0.7" Margin="0,0,0,70" >
+                            <TextBlock.Background>
+                                <ImageBrush ImageSource="/backgroundHome.png" Stretch="UniformToFill"/>
+                            </TextBlock.Background>
+                        </TextBlock>
+
+
+
                         <!--<materialDesign:Card x:Name="NotificationPanel"
                                  Grid.Row="0"
                                  Grid.RowSpan="2"
