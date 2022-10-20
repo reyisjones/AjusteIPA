@@ -218,7 +218,9 @@ namespace AjusteIPA
 
         private void LoadReports_OnClick(object sender, RoutedEventArgs e)
         {
-
+            var window = new AjusteIPA.Reports.ReportWindow();
+            window.Owner = this;
+            window.ShowDialog();
         }
 
         private void LoadUserGuide_OnClick(object sender, RoutedEventArgs e)
