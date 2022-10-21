@@ -43,7 +43,6 @@
             </DataTemplate>-->
         </ResourceDictionary>
     </Window.Resources>
-
     <materialDesign:DialogHost DialogTheme="Inherit"
                              Identifier="RootDialog"
                              SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">
@@ -383,7 +382,7 @@
                     Margin="0,25,0,60"
                     materialDesign:ButtonAssist.CornerRadius="16"
                     BorderThickness="0"
-                    Click="GitHubButton_OnClick"
+                    Click="MenuToggleButton_OnClick" 
                     Foreground="{DynamicResource SecondaryHueMidBrushForeground}" Background="#FF39E7EC">
                             <materialDesign:PackIcon Width="24"
                                        Height="24"
