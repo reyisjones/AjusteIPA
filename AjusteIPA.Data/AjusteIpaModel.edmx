@@ -582,7 +582,7 @@
             <End Role="Rol" EntitySet="Rols" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
-          <EntitySet Name="LogReclamacionesAjustadas1" EntityType="AjusteIpaDBModel.LogReclamacionesAjustada" />
+          <EntitySet Name="LogReclamacionesAjustadas" EntityType="AjusteIpaDBModel.LogReclamacionesAjustada" />
           </EntityContainer>
         <EntityType Name="LogReclamacionesAjustada">
           <Key>
@@ -757,7 +757,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LogReclamacionesAjustadas1">
+          <EntitySetMapping Name="LogReclamacionesAjustadas">
             <EntityTypeMapping TypeName="AjusteIpaDBModel.LogReclamacionesAjustada">
               <MappingFragment StoreEntitySet="LogReclamacionesAjustadas">
                 <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
