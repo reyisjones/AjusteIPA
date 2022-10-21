@@ -81,13 +81,14 @@
                 <DataGridTextColumn x:Name="numReclamacionColumn" Binding="{Binding NumReclamacion}" Header="Num Reclamacion" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="tierColumn" Binding="{Binding Tier}" Header="Tier" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="tipoServicioColumn" Binding="{Binding TipoServicio}" Header="Tipo Servicio" Width="SizeToHeader"/>
+                <DataGridCheckBoxColumn x:Name="seleccionar" Binding="{Binding Seleccionar}" Header="Seleccionar" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
 
 
 
         <TextBox x:Name="btnSearchBox"
-                    Grid.Row="1"
+                   Grid.Row="1"
                    Margin="16,4,16,4"
                    materialDesign:HintAssist.Hint="Search"
                    materialDesign:HintAssist.IsFloating="True"
@@ -100,16 +101,15 @@
 
         <Button x:Name="btnAdjustClaim" 
                       Grid.Row="2" 
-                      Height="56" 
-                      Width="300"
-                      Margin="16,6,16,32"
+                      Height="56"
+                      Margin="5,5,5,5"
                       HorizontalContentAlignment="Left"
                       materialDesign:ButtonAssist.CornerRadius="16"
                       Background="#4472c4"
                       BorderThickness="0"
                       Click="Adjust_OnClick"
                       DockPanel.Dock="Top"
-                      Foreground="White">
+                      Foreground="White" >
             <StackPanel Orientation="Horizontal">
                 <!--<materialDesign:PackIcon Width="24"
                                        Height="24"

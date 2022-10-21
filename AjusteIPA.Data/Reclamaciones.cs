@@ -42,6 +42,7 @@ namespace AjusteIPA.Data
         public string EstatusReclamacion { get; set; }
         public Nullable<int> IDUsuario { get; set; }
         public string Comentarios { get; set; }
+        public Nullable<bool> Seleccionar { get; set; }
     
         public virtual CodigoCatastrofico CodigoCatastrofico { get; set; }
         public virtual Cuenta Cuenta1 { get; set; }

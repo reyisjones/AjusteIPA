@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AjusteIpaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AjusteIpaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CodigoCatastrofico">
           <Key>
             <PropertyRef Name="idCodigoCatastrofico" />
@@ -69,6 +69,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <Property Name="EstatusReclamacion" Type="varchar" MaxLength="50" />
           <Property Name="IDUsuario" Type="int" />
           <Property Name="Comentarios" Type="varchar" MaxLength="50" />
+          <Property Name="Seleccionar" Type="bit" />
         </EntityType>-->
         <EntityType Name="Municipio">
           <Key>
@@ -110,6 +111,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <Property Name="EstatusReclamacion" Type="varchar" MaxLength="50" />
           <Property Name="IDUsuario" Type="int" />
           <Property Name="Comentarios" Type="varchar" MaxLength="50" />
+          <Property Name="Seleccionar" Type="bit" />
         </EntityType>
         <EntityType Name="RegistroCatastrofico">
           <Key>
@@ -296,8 +298,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AjusteIpaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -386,6 +387,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <NavigationProperty Name="IPA" Relationship="Self.FK__Reclamaci__Numer__3D5E1FD2" FromRole="Reclamaciones" ToRole="IPA" />
           <NavigationProperty Name="Municipio1" Relationship="Self.FK__Reclamaci__Munic__3C69FB99" FromRole="Reclamaciones" ToRole="Municipio" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Reclamaci__IDUsu__3B75D760" FromRole="Reclamaciones" ToRole="Usuario" />
+          <Property Name="Seleccionar" Type="Boolean" />
         </EntityType>
         <EntityType Name="RegistroCatastrofico">
           <Key>
@@ -631,6 +633,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <EntitySetMapping Name="Reclamaciones1">
             <EntityTypeMapping TypeName="AjusteIpaDBModel.Reclamaciones">
               <MappingFragment StoreEntitySet="Reclamaciones">
+                <ScalarProperty Name="Seleccionar" ColumnName="Seleccionar" />
                 <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
                 <ScalarProperty Name="NumReclamacion" ColumnName="NumReclamacion" />
                 <ScalarProperty Name="NumeroIPA" ColumnName="NumeroIPA" />
