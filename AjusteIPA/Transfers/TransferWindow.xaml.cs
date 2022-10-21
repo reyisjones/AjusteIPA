@@ -51,7 +51,9 @@ namespace AjusteIPA.Transfers
             });
         }
 
+        private void Transfer_OnClick(object sender, RoutedEventArgs e)
+        {
 
-      
+        }
     }
 }

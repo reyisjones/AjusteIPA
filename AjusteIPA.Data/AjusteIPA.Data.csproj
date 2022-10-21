@@ -97,6 +97,9 @@
     <Compile Include="IPA.cs">
       <DependentUpon>AjusteIpaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LogReclamacionesAjustada.cs">
+      <DependentUpon>AjusteIpaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Municipio.cs">
       <DependentUpon>AjusteIpaModel.tt</DependentUpon>
     </Compile>

@@ -410,7 +410,6 @@
     <None Include="Properties\DataSources\AjusteIPA.Data.Cuenta.datasource" />
     <None Include="Properties\DataSources\AjusteIPA.Data.Especialidad.datasource" />
     <None Include="Properties\DataSources\AjusteIPA.Data.IPA.datasource" />
-    <None Include="Properties\DataSources\AjusteIPA.Data.LogReclamacione.datasource" />
     <None Include="Properties\DataSources\AjusteIPA.Data.Municipio.datasource" />
     <None Include="Properties\DataSources\AjusteIPA.Data.Reclamaciones.datasource" />
     <None Include="Properties\DataSources\AjusteIPA.Data.Reclamaciones1.datasource" />

@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="AjusteIpaDBModel.Especialidad" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AjusteIpaDBModel.IPA" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AjusteIpaDBModel.Municipio" Width="1.5" PointX="3.75" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="AjusteIpaDBModel.Reclamaciones" Width="4.25" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.Reclamaciones" Width="4.25" PointX="5.875" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AjusteIpaDBModel.RegistroCatastrofico" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AjusteIpaDBModel.Rol" Width="1.5" PointX="1.5" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AjusteIpaDBModel.Tier" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
@@ -24,6 +24,7 @@
         <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__Munic__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="AjusteIpaDBModel.FK__Reclamaci__IDUsu__3B75D760" ManuallyRouted="false" />
         <AssociationConnector Association="AjusteIpaDBModel.FK__Usuario__rolid__3F466844" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AjusteIpaDBModel.LogReclamacionesAjustada" Width="2.5" PointX="0.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -38,10 +38,12 @@
           <Property Name="FechaTerminacion" Type="datetime" />
           <Property Name="Estatus" Type="char" MaxLength="1" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="LogReclamacionesAjustadas">
-          <Property Name="idReclamacion" Type="int" />
+          <Key>
+            <PropertyRef Name="idLogReclamacionesAjustadas" />
+          </Key>
+          <Property Name="idLogReclamacionesAjustadas" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="idReclamacion" Type="int" Nullable="false" />
           <Property Name="NumReclamacion" Type="varchar" MaxLength="50" />
           <Property Name="NumeroIPA" Type="int" />
           <Property Name="NumeroPCP" Type="varchar" MaxLength="50" />
@@ -70,7 +72,9 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <Property Name="IDUsuario" Type="int" />
           <Property Name="Comentarios" Type="varchar" MaxLength="50" />
           <Property Name="Seleccionar" Type="bit" />
-        </EntityType>-->
+          <Property Name="FechaEntrada" Type="datetime" Nullable="false" />
+          <Property Name="TIMESTAMP" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
         <EntityType Name="Municipio">
           <Key>
             <PropertyRef Name="idMunicipio" />
@@ -157,7 +161,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <Property Name="password" Type="varchar" MaxLength="25" />
           <Property Name="Estatus" Type="char" MaxLength="1" />
         </EntityType>
-        <Association Name="FK__Reclamaci__Cuent__38996AB5">
+        <Association Name="FK__Reclamaci__Cuent__3B75D760">
           <End Role="Cuenta" Type="Self.Cuenta" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -169,7 +173,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Espec__398D8EEE">
+        <Association Name="FK__Reclamaci__Espec__3C69FB99">
           <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,7 +185,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__IdCod__3A81B327">
+        <Association Name="FK__Reclamaci__IdCod__3D5E1FD2">
           <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -193,7 +197,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__IDUsu__3B75D760">
+        <Association Name="FK__Reclamaci__IDUsu__3E52440B">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -205,7 +209,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Munic__3C69FB99">
+        <Association Name="FK__Reclamaci__Munic__3F466844">
           <End Role="Municipio" Type="Self.Municipio" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -217,7 +221,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reclamaci__Numer__3D5E1FD2">
+        <Association Name="FK__Reclamaci__Numer__403A8C7D">
           <End Role="IPA" Type="Self.IPA" Multiplicity="0..1" />
           <End Role="Reclamaciones" Type="Self.Reclamaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,7 +233,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__RegistroC__IdCod__3E52440B">
+        <Association Name="FK__RegistroC__IdCod__412EB0B6">
           <End Role="CodigoCatastrofico" Type="Self.CodigoCatastrofico" Multiplicity="0..1" />
           <End Role="RegistroCatastrofico" Type="Self.RegistroCatastrofico" Multiplicity="*" />
           <ReferentialConstraint>
@@ -241,7 +245,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuario__rolid__3F466844">
+        <Association Name="FK__Usuario__rolid__4222D4EF">
           <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -258,6 +262,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <EntitySet Name="Cuenta" EntityType="Self.Cuenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IPA" EntityType="Self.IPA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogReclamacionesAjustadas" EntityType="Self.LogReclamacionesAjustadas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reclamaciones" EntityType="Self.Reclamaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegistroCatastrofico" EntityType="Self.RegistroCatastrofico" Schema="dbo" store:Type="Tables" />
@@ -265,35 +270,35 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <EntitySet Name="Tier" EntityType="Self.Tier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Reclamaci__Cuent__38996AB5" Association="Self.FK__Reclamaci__Cuent__38996AB5">
+          <AssociationSet Name="FK__Reclamaci__Cuent__3B75D760" Association="Self.FK__Reclamaci__Cuent__3B75D760">
             <End Role="Cuenta" EntitySet="Cuenta" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Espec__398D8EEE" Association="Self.FK__Reclamaci__Espec__398D8EEE">
+          <AssociationSet Name="FK__Reclamaci__Espec__3C69FB99" Association="Self.FK__Reclamaci__Espec__3C69FB99">
             <End Role="Especialidad" EntitySet="Especialidad" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__IdCod__3A81B327" Association="Self.FK__Reclamaci__IdCod__3A81B327">
+          <AssociationSet Name="FK__Reclamaci__IdCod__3D5E1FD2" Association="Self.FK__Reclamaci__IdCod__3D5E1FD2">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastrofico" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__IDUsu__3B75D760" Association="Self.FK__Reclamaci__IDUsu__3B75D760">
+          <AssociationSet Name="FK__Reclamaci__IDUsu__3E52440B" Association="Self.FK__Reclamaci__IDUsu__3E52440B">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Munic__3C69FB99" Association="Self.FK__Reclamaci__Munic__3C69FB99">
+          <AssociationSet Name="FK__Reclamaci__Munic__3F466844" Association="Self.FK__Reclamaci__Munic__3F466844">
             <End Role="Municipio" EntitySet="Municipio" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reclamaci__Numer__3D5E1FD2" Association="Self.FK__Reclamaci__Numer__3D5E1FD2">
+          <AssociationSet Name="FK__Reclamaci__Numer__403A8C7D" Association="Self.FK__Reclamaci__Numer__403A8C7D">
             <End Role="IPA" EntitySet="IPA" />
             <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__RegistroC__IdCod__3E52440B" Association="Self.FK__RegistroC__IdCod__3E52440B">
+          <AssociationSet Name="FK__RegistroC__IdCod__412EB0B6" Association="Self.FK__RegistroC__IdCod__412EB0B6">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastrofico" />
             <End Role="RegistroCatastrofico" EntitySet="RegistroCatastrofico" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuario__rolid__3F466844" Association="Self.FK__Usuario__rolid__3F466844">
+          <AssociationSet Name="FK__Usuario__rolid__4222D4EF" Association="Self.FK__Usuario__rolid__4222D4EF">
             <End Role="Rol" EntitySet="Rol" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
@@ -539,7 +544,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <EntitySet Name="Especialidads" EntityType="Self.Especialidad" />
           <EntitySet Name="IPAs" EntityType="Self.IPA" />
           <EntitySet Name="Municipios" EntityType="Self.Municipio" />
-          <EntitySet Name="Reclamaciones1" EntityType="AjusteIpaDBModel.Reclamaciones" />
+          <EntitySet Name="Reclamaciones" EntityType="AjusteIpaDBModel.Reclamaciones" />
           <EntitySet Name="RegistroCatastroficoes" EntityType="Self.RegistroCatastrofico" />
           <EntitySet Name="Rols" EntityType="Self.Rol" />
           <EntitySet Name="Tiers" EntityType="Self.Tier" />
@@ -547,7 +552,7 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
           <AssociationSet Name="FK__Reclamaci__IdCod__3A81B327" Association="Self.FK__Reclamaci__IdCod__3A81B327">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastroficoes" />
-            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
           <AssociationSet Name="FK__RegistroC__IdCod__3E52440B" Association="Self.FK__RegistroC__IdCod__3E52440B">
             <End Role="CodigoCatastrofico" EntitySet="CodigoCatastroficoes" />
@@ -555,29 +560,67 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
           </AssociationSet>
           <AssociationSet Name="FK__Reclamaci__Cuent__38996AB5" Association="Self.FK__Reclamaci__Cuent__38996AB5">
             <End Role="Cuenta" EntitySet="Cuentas" />
-            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
           <AssociationSet Name="FK__Reclamaci__Espec__398D8EEE" Association="Self.FK__Reclamaci__Espec__398D8EEE">
             <End Role="Especialidad" EntitySet="Especialidads" />
-            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
           <AssociationSet Name="FK__Reclamaci__Numer__3D5E1FD2" Association="Self.FK__Reclamaci__Numer__3D5E1FD2">
             <End Role="IPA" EntitySet="IPAs" />
-            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
           <AssociationSet Name="FK__Reclamaci__Munic__3C69FB99" Association="Self.FK__Reclamaci__Munic__3C69FB99">
             <End Role="Municipio" EntitySet="Municipios" />
-            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
           <AssociationSet Name="FK__Reclamaci__IDUsu__3B75D760" Association="Self.FK__Reclamaci__IDUsu__3B75D760">
             <End Role="Usuario" EntitySet="Usuarios" />
-            <End Role="Reclamaciones" EntitySet="Reclamaciones1" />
+            <End Role="Reclamaciones" EntitySet="Reclamaciones" />
           </AssociationSet>
           <AssociationSet Name="FK__Usuario__rolid__3F466844" Association="Self.FK__Usuario__rolid__3F466844">
             <End Role="Rol" EntitySet="Rols" />
             <End Role="Usuario" EntitySet="Usuarios" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="LogReclamacionesAjustadas1" EntityType="AjusteIpaDBModel.LogReclamacionesAjustada" />
+          </EntityContainer>
+        <EntityType Name="LogReclamacionesAjustada">
+          <Key>
+            <PropertyRef Name="idLogReclamacionesAjustadas" />
+          </Key>
+          <Property Name="idLogReclamacionesAjustadas" Type="Guid" Nullable="false" />
+          <Property Name="idReclamacion" Type="Int32" Nullable="false" />
+          <Property Name="NumReclamacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroIPA" Type="Int32" />
+          <Property Name="NumeroPCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombrePCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tier" Type="Int32" />
+          <Property Name="Cuenta" Type="Int32" />
+          <Property Name="NumeroContrato" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NombreAsegurado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaServicio" Type="DateTime" Precision="3" />
+          <Property Name="FechaPago" Type="DateTime" Precision="3" />
+          <Property Name="TipoServicio" Type="Int32" />
+          <Property Name="LugarServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroServicio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CargoTotal" Type="Double" />
+          <Property Name="ICD9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ICD10" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCodigoCatastrofico" Type="Int32" />
+          <Property Name="Especialidad" Type="Int32" />
+          <Property Name="Municipio" Type="Int32" />
+          <Property Name="CantidadPagada" Type="Double" />
+          <Property Name="EstatusAjuste" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CantidadAjustada" Type="Double" />
+          <Property Name="FechaAjuste" Type="DateTime" Precision="3" />
+          <Property Name="EstatusReclamacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDUsuario" Type="Int32" />
+          <Property Name="Comentarios" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Seleccionar" Type="Boolean" />
+          <Property Name="FechaEntrada" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TIMESTAMP" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -630,38 +673,38 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reclamaciones1">
-            <EntityTypeMapping TypeName="AjusteIpaDBModel.Reclamaciones">
+          <EntitySetMapping Name="Reclamaciones">
+            <EntityTypeMapping TypeName="IsTypeOf(AjusteIpaDBModel.Reclamaciones)">
               <MappingFragment StoreEntitySet="Reclamaciones">
-                <ScalarProperty Name="Seleccionar" ColumnName="Seleccionar" />
                 <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
-                <ScalarProperty Name="NumReclamacion" ColumnName="NumReclamacion" />
-                <ScalarProperty Name="NumeroIPA" ColumnName="NumeroIPA" />
-                <ScalarProperty Name="NumeroPCP" ColumnName="NumeroPCP" />
-                <ScalarProperty Name="NombrePCP" ColumnName="NombrePCP" />
-                <ScalarProperty Name="Tier" ColumnName="Tier" />
-                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
-                <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
-                <ScalarProperty Name="NombreAsegurado" ColumnName="NombreAsegurado" />
-                <ScalarProperty Name="Edad" ColumnName="Edad" />
-                <ScalarProperty Name="FechaServicio" ColumnName="FechaServicio" />
-                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
-                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
-                <ScalarProperty Name="LugarServicio" ColumnName="LugarServicio" />
-                <ScalarProperty Name="NumeroServicio" ColumnName="NumeroServicio" />
-                <ScalarProperty Name="CargoTotal" ColumnName="CargoTotal" />
-                <ScalarProperty Name="ICD9" ColumnName="ICD9" />
-                <ScalarProperty Name="ICD10" ColumnName="ICD10" />
-                <ScalarProperty Name="IdCodigoCatastrofico" ColumnName="IdCodigoCatastrofico" />
-                <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
-                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
-                <ScalarProperty Name="CantidadPagada" ColumnName="CantidadPagada" />
-                <ScalarProperty Name="EstatusAjuste" ColumnName="EstatusAjuste" />
-                <ScalarProperty Name="CantidadAjustada" ColumnName="CantidadAjustada" />
-                <ScalarProperty Name="FechaAjuste" ColumnName="FechaAjuste" />
-                <ScalarProperty Name="EstatusReclamacion" ColumnName="EstatusReclamacion" />
-                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
                 <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="EstatusReclamacion" ColumnName="EstatusReclamacion" />
+                <ScalarProperty Name="FechaAjuste" ColumnName="FechaAjuste" />
+                <ScalarProperty Name="CantidadAjustada" ColumnName="CantidadAjustada" />
+                <ScalarProperty Name="EstatusAjuste" ColumnName="EstatusAjuste" />
+                <ScalarProperty Name="CantidadPagada" ColumnName="CantidadPagada" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+                <ScalarProperty Name="IdCodigoCatastrofico" ColumnName="IdCodigoCatastrofico" />
+                <ScalarProperty Name="ICD10" ColumnName="ICD10" />
+                <ScalarProperty Name="ICD9" ColumnName="ICD9" />
+                <ScalarProperty Name="CargoTotal" ColumnName="CargoTotal" />
+                <ScalarProperty Name="NumeroServicio" ColumnName="NumeroServicio" />
+                <ScalarProperty Name="LugarServicio" ColumnName="LugarServicio" />
+                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="FechaServicio" ColumnName="FechaServicio" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="NombreAsegurado" ColumnName="NombreAsegurado" />
+                <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="Tier" ColumnName="Tier" />
+                <ScalarProperty Name="NombrePCP" ColumnName="NombrePCP" />
+                <ScalarProperty Name="NumeroPCP" ColumnName="NumeroPCP" />
+                <ScalarProperty Name="NumeroIPA" ColumnName="NumeroIPA" />
+                <ScalarProperty Name="NumReclamacion" ColumnName="NumReclamacion" />
+                <ScalarProperty Name="Seleccionar" ColumnName="Seleccionar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -714,7 +757,45 @@ warning 6013: The table/view 'AjusteIpaDB.dbo.LogReclamacionesAjustadas' does no
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="LogReclamacionesAjustadas1">
+            <EntityTypeMapping TypeName="AjusteIpaDBModel.LogReclamacionesAjustada">
+              <MappingFragment StoreEntitySet="LogReclamacionesAjustadas">
+                <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+                <ScalarProperty Name="FechaEntrada" ColumnName="FechaEntrada" />
+                <ScalarProperty Name="Seleccionar" ColumnName="Seleccionar" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="EstatusReclamacion" ColumnName="EstatusReclamacion" />
+                <ScalarProperty Name="FechaAjuste" ColumnName="FechaAjuste" />
+                <ScalarProperty Name="CantidadAjustada" ColumnName="CantidadAjustada" />
+                <ScalarProperty Name="EstatusAjuste" ColumnName="EstatusAjuste" />
+                <ScalarProperty Name="CantidadPagada" ColumnName="CantidadPagada" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+                <ScalarProperty Name="IdCodigoCatastrofico" ColumnName="IdCodigoCatastrofico" />
+                <ScalarProperty Name="ICD10" ColumnName="ICD10" />
+                <ScalarProperty Name="ICD9" ColumnName="ICD9" />
+                <ScalarProperty Name="CargoTotal" ColumnName="CargoTotal" />
+                <ScalarProperty Name="NumeroServicio" ColumnName="NumeroServicio" />
+                <ScalarProperty Name="LugarServicio" ColumnName="LugarServicio" />
+                <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="FechaServicio" ColumnName="FechaServicio" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="NombreAsegurado" ColumnName="NombreAsegurado" />
+                <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="Tier" ColumnName="Tier" />
+                <ScalarProperty Name="NombrePCP" ColumnName="NombrePCP" />
+                <ScalarProperty Name="NumeroPCP" ColumnName="NumeroPCP" />
+                <ScalarProperty Name="NumeroIPA" ColumnName="NumeroIPA" />
+                <ScalarProperty Name="NumReclamacion" ColumnName="NumReclamacion" />
+                <ScalarProperty Name="idReclamacion" ColumnName="idReclamacion" />
+                <ScalarProperty Name="idLogReclamacionesAjustadas" ColumnName="idLogReclamacionesAjustadas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -48,21 +48,21 @@ namespace AjusteIPA {
         
         private UsuarioDataTable tableUsuario;
         
-        private global::System.Data.DataRelation relationFK__Reclamaci__Cuent__38996AB5;
+        private global::System.Data.DataRelation relationFK__Reclamaci__Cuent__3B75D760;
         
-        private global::System.Data.DataRelation relationFK__Reclamaci__Espec__398D8EEE;
+        private global::System.Data.DataRelation relationFK__Reclamaci__Espec__3C69FB99;
         
-        private global::System.Data.DataRelation relationFK__Reclamaci__IdCod__3A81B327;
+        private global::System.Data.DataRelation relationFK__Reclamaci__IdCod__3D5E1FD2;
         
-        private global::System.Data.DataRelation relationFK__Reclamaci__IDUsu__3B75D760;
+        private global::System.Data.DataRelation relationFK__Reclamaci__IDUsu__3E52440B;
         
-        private global::System.Data.DataRelation relationFK__Reclamaci__Munic__3C69FB99;
+        private global::System.Data.DataRelation relationFK__Reclamaci__Munic__3F466844;
         
-        private global::System.Data.DataRelation relationFK__Reclamaci__Numer__3D5E1FD2;
+        private global::System.Data.DataRelation relationFK__Reclamaci__Numer__403A8C7D;
         
-        private global::System.Data.DataRelation relationFK__RegistroC__IdCod__3E52440B;
+        private global::System.Data.DataRelation relationFK__RegistroC__IdCod__412EB0B6;
         
-        private global::System.Data.DataRelation relationFK__Usuario__rolid__3F466844;
+        private global::System.Data.DataRelation relationFK__Usuario__rolid__4222D4EF;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -474,14 +474,14 @@ namespace AjusteIPA {
                     this.tableUsuario.InitVars();
                 }
             }
-            this.relationFK__Reclamaci__Cuent__38996AB5 = this.Relations["FK__Reclamaci__Cuent__38996AB5"];
-            this.relationFK__Reclamaci__Espec__398D8EEE = this.Relations["FK__Reclamaci__Espec__398D8EEE"];
-            this.relationFK__Reclamaci__IdCod__3A81B327 = this.Relations["FK__Reclamaci__IdCod__3A81B327"];
-            this.relationFK__Reclamaci__IDUsu__3B75D760 = this.Relations["FK__Reclamaci__IDUsu__3B75D760"];
-            this.relationFK__Reclamaci__Munic__3C69FB99 = this.Relations["FK__Reclamaci__Munic__3C69FB99"];
-            this.relationFK__Reclamaci__Numer__3D5E1FD2 = this.Relations["FK__Reclamaci__Numer__3D5E1FD2"];
-            this.relationFK__RegistroC__IdCod__3E52440B = this.Relations["FK__RegistroC__IdCod__3E52440B"];
-            this.relationFK__Usuario__rolid__3F466844 = this.Relations["FK__Usuario__rolid__3F466844"];
+            this.relationFK__Reclamaci__Cuent__3B75D760 = this.Relations["FK__Reclamaci__Cuent__3B75D760"];
+            this.relationFK__Reclamaci__Espec__3C69FB99 = this.Relations["FK__Reclamaci__Espec__3C69FB99"];
+            this.relationFK__Reclamaci__IdCod__3D5E1FD2 = this.Relations["FK__Reclamaci__IdCod__3D5E1FD2"];
+            this.relationFK__Reclamaci__IDUsu__3E52440B = this.Relations["FK__Reclamaci__IDUsu__3E52440B"];
+            this.relationFK__Reclamaci__Munic__3F466844 = this.Relations["FK__Reclamaci__Munic__3F466844"];
+            this.relationFK__Reclamaci__Numer__403A8C7D = this.Relations["FK__Reclamaci__Numer__403A8C7D"];
+            this.relationFK__RegistroC__IdCod__412EB0B6 = this.Relations["FK__RegistroC__IdCod__412EB0B6"];
+            this.relationFK__Usuario__rolid__4222D4EF = this.Relations["FK__Usuario__rolid__4222D4EF"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -516,38 +516,38 @@ namespace AjusteIPA {
             base.Tables.Add(this.tableTipoServicio);
             this.tableUsuario = new UsuarioDataTable();
             base.Tables.Add(this.tableUsuario);
-            this.relationFK__Reclamaci__Cuent__38996AB5 = new global::System.Data.DataRelation("FK__Reclamaci__Cuent__38996AB5", new global::System.Data.DataColumn[] {
+            this.relationFK__Reclamaci__Cuent__3B75D760 = new global::System.Data.DataRelation("FK__Reclamaci__Cuent__3B75D760", new global::System.Data.DataColumn[] {
                         this.tableCuenta.idCuentaColumn}, new global::System.Data.DataColumn[] {
                         this.tableReclamaciones.CuentaColumn}, false);
-            this.Relations.Add(this.relationFK__Reclamaci__Cuent__38996AB5);
-            this.relationFK__Reclamaci__Espec__398D8EEE = new global::System.Data.DataRelation("FK__Reclamaci__Espec__398D8EEE", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Reclamaci__Cuent__3B75D760);
+            this.relationFK__Reclamaci__Espec__3C69FB99 = new global::System.Data.DataRelation("FK__Reclamaci__Espec__3C69FB99", new global::System.Data.DataColumn[] {
                         this.tableEspecialidad.idEspecialidadColumn}, new global::System.Data.DataColumn[] {
                         this.tableReclamaciones.EspecialidadColumn}, false);
-            this.Relations.Add(this.relationFK__Reclamaci__Espec__398D8EEE);
-            this.relationFK__Reclamaci__IdCod__3A81B327 = new global::System.Data.DataRelation("FK__Reclamaci__IdCod__3A81B327", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Reclamaci__Espec__3C69FB99);
+            this.relationFK__Reclamaci__IdCod__3D5E1FD2 = new global::System.Data.DataRelation("FK__Reclamaci__IdCod__3D5E1FD2", new global::System.Data.DataColumn[] {
                         this.tableCodigoCatastrofico.idCodigoCatastroficoColumn}, new global::System.Data.DataColumn[] {
                         this.tableReclamaciones.IdCodigoCatastroficoColumn}, false);
-            this.Relations.Add(this.relationFK__Reclamaci__IdCod__3A81B327);
-            this.relationFK__Reclamaci__IDUsu__3B75D760 = new global::System.Data.DataRelation("FK__Reclamaci__IDUsu__3B75D760", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Reclamaci__IdCod__3D5E1FD2);
+            this.relationFK__Reclamaci__IDUsu__3E52440B = new global::System.Data.DataRelation("FK__Reclamaci__IDUsu__3E52440B", new global::System.Data.DataColumn[] {
                         this.tableUsuario.idusuarioColumn}, new global::System.Data.DataColumn[] {
                         this.tableReclamaciones.IDUsuarioColumn}, false);
-            this.Relations.Add(this.relationFK__Reclamaci__IDUsu__3B75D760);
-            this.relationFK__Reclamaci__Munic__3C69FB99 = new global::System.Data.DataRelation("FK__Reclamaci__Munic__3C69FB99", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Reclamaci__IDUsu__3E52440B);
+            this.relationFK__Reclamaci__Munic__3F466844 = new global::System.Data.DataRelation("FK__Reclamaci__Munic__3F466844", new global::System.Data.DataColumn[] {
                         this.tableMunicipio.idMunicipioColumn}, new global::System.Data.DataColumn[] {
                         this.tableReclamaciones.MunicipioColumn}, false);
-            this.Relations.Add(this.relationFK__Reclamaci__Munic__3C69FB99);
-            this.relationFK__Reclamaci__Numer__3D5E1FD2 = new global::System.Data.DataRelation("FK__Reclamaci__Numer__3D5E1FD2", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Reclamaci__Munic__3F466844);
+            this.relationFK__Reclamaci__Numer__403A8C7D = new global::System.Data.DataRelation("FK__Reclamaci__Numer__403A8C7D", new global::System.Data.DataColumn[] {
                         this.tableIPA.NumeroIPAColumn}, new global::System.Data.DataColumn[] {
                         this.tableReclamaciones.NumeroIPAColumn}, false);
-            this.Relations.Add(this.relationFK__Reclamaci__Numer__3D5E1FD2);
-            this.relationFK__RegistroC__IdCod__3E52440B = new global::System.Data.DataRelation("FK__RegistroC__IdCod__3E52440B", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Reclamaci__Numer__403A8C7D);
+            this.relationFK__RegistroC__IdCod__412EB0B6 = new global::System.Data.DataRelation("FK__RegistroC__IdCod__412EB0B6", new global::System.Data.DataColumn[] {
                         this.tableCodigoCatastrofico.idCodigoCatastroficoColumn}, new global::System.Data.DataColumn[] {
                         this.tableRegistroCatastrofico.IdCodigoCatastroficoColumn}, false);
-            this.Relations.Add(this.relationFK__RegistroC__IdCod__3E52440B);
-            this.relationFK__Usuario__rolid__3F466844 = new global::System.Data.DataRelation("FK__Usuario__rolid__3F466844", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__RegistroC__IdCod__412EB0B6);
+            this.relationFK__Usuario__rolid__4222D4EF = new global::System.Data.DataRelation("FK__Usuario__rolid__4222D4EF", new global::System.Data.DataColumn[] {
                         this.tableRol.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsuario.rolidColumn}, false);
-            this.Relations.Add(this.relationFK__Usuario__rolid__3F466844);
+            this.Relations.Add(this.relationFK__Usuario__rolid__4222D4EF);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1885,6 +1885,8 @@ namespace AjusteIPA {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class LogReclamacionesAjustadasDataTable : global::System.Data.TypedTableBase<LogReclamacionesAjustadasRow> {
             
+            private global::System.Data.DataColumn columnidLogReclamacionesAjustadas;
+            
             private global::System.Data.DataColumn columnidReclamacion;
             
             private global::System.Data.DataColumn columnNumReclamacion;
@@ -1943,6 +1945,10 @@ namespace AjusteIPA {
             
             private global::System.Data.DataColumn columnSeleccionar;
             
+            private global::System.Data.DataColumn columnFechaEntrada;
+            
+            private global::System.Data.DataColumn columnTIMESTAMP;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public LogReclamacionesAjustadasDataTable() {
@@ -1974,6 +1980,14 @@ namespace AjusteIPA {
             protected LogReclamacionesAjustadasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn idLogReclamacionesAjustadasColumn {
+                get {
+                    return this.columnidLogReclamacionesAjustadas;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2210,6 +2224,22 @@ namespace AjusteIPA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FechaEntradaColumn {
+                get {
+                    return this.columnFechaEntrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TIMESTAMPColumn {
+                get {
+                    return this.columnTIMESTAMP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2246,6 +2276,7 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public LogReclamacionesAjustadasRow AddLogReclamacionesAjustadasRow(
+                        System.Guid idLogReclamacionesAjustadas, 
                         int idReclamacion, 
                         string NumReclamacion, 
                         int NumeroIPA, 
@@ -2274,9 +2305,12 @@ namespace AjusteIPA {
                         string EstatusReclamacion, 
                         int IDUsuario, 
                         string Comentarios, 
-                        bool Seleccionar) {
+                        bool Seleccionar, 
+                        System.DateTime FechaEntrada, 
+                        byte[] TIMESTAMP) {
                 LogReclamacionesAjustadasRow rowLogReclamacionesAjustadasRow = ((LogReclamacionesAjustadasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        idLogReclamacionesAjustadas,
                         idReclamacion,
                         NumReclamacion,
                         NumeroIPA,
@@ -2305,10 +2339,19 @@ namespace AjusteIPA {
                         EstatusReclamacion,
                         IDUsuario,
                         Comentarios,
-                        Seleccionar};
+                        Seleccionar,
+                        FechaEntrada,
+                        TIMESTAMP};
                 rowLogReclamacionesAjustadasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLogReclamacionesAjustadasRow);
                 return rowLogReclamacionesAjustadasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public LogReclamacionesAjustadasRow FindByidLogReclamacionesAjustadas(System.Guid idLogReclamacionesAjustadas) {
+                return ((LogReclamacionesAjustadasRow)(this.Rows.Find(new object[] {
+                            idLogReclamacionesAjustadas})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2328,6 +2371,7 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnidLogReclamacionesAjustadas = base.Columns["idLogReclamacionesAjustadas"];
                 this.columnidReclamacion = base.Columns["idReclamacion"];
                 this.columnNumReclamacion = base.Columns["NumReclamacion"];
                 this.columnNumeroIPA = base.Columns["NumeroIPA"];
@@ -2357,11 +2401,15 @@ namespace AjusteIPA {
                 this.columnIDUsuario = base.Columns["IDUsuario"];
                 this.columnComentarios = base.Columns["Comentarios"];
                 this.columnSeleccionar = base.Columns["Seleccionar"];
+                this.columnFechaEntrada = base.Columns["FechaEntrada"];
+                this.columnTIMESTAMP = base.Columns["TIMESTAMP"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnidLogReclamacionesAjustadas = new global::System.Data.DataColumn("idLogReclamacionesAjustadas", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidLogReclamacionesAjustadas);
                 this.columnidReclamacion = new global::System.Data.DataColumn("idReclamacion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidReclamacion);
                 this.columnNumReclamacion = new global::System.Data.DataColumn("NumReclamacion", typeof(string), null, global::System.Data.MappingType.Element);
@@ -2420,6 +2468,15 @@ namespace AjusteIPA {
                 base.Columns.Add(this.columnComentarios);
                 this.columnSeleccionar = new global::System.Data.DataColumn("Seleccionar", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSeleccionar);
+                this.columnFechaEntrada = new global::System.Data.DataColumn("FechaEntrada", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaEntrada);
+                this.columnTIMESTAMP = new global::System.Data.DataColumn("TIMESTAMP", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTIMESTAMP);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidLogReclamacionesAjustadas}, true));
+                this.columnidLogReclamacionesAjustadas.AllowDBNull = false;
+                this.columnidLogReclamacionesAjustadas.Unique = true;
+                this.columnidReclamacion.AllowDBNull = false;
                 this.columnNumReclamacion.MaxLength = 50;
                 this.columnNumeroPCP.MaxLength = 50;
                 this.columnNombrePCP.MaxLength = 50;
@@ -2433,6 +2490,8 @@ namespace AjusteIPA {
                 this.columnEstatusAjuste.MaxLength = 50;
                 this.columnEstatusReclamacion.MaxLength = 50;
                 this.columnComentarios.MaxLength = 50;
+                this.columnFechaEntrada.AllowDBNull = false;
+                this.columnTIMESTAMP.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3217,11 +3276,11 @@ namespace AjusteIPA {
             public ReclamacionesRow AddReclamacionesRow(
                         int idReclamacion, 
                         string NumReclamacion, 
-                        IPARow parentIPARowByFK__Reclamaci__Numer__3D5E1FD2, 
+                        IPARow parentIPARowByFK__Reclamaci__Numer__403A8C7D, 
                         string NumeroPCP, 
                         string NombrePCP, 
                         int Tier, 
-                        CuentaRow parentCuentaRowByFK__Reclamaci__Cuent__38996AB5, 
+                        CuentaRow parentCuentaRowByFK__Reclamaci__Cuent__3B75D760, 
                         string NumeroContrato, 
                         string NombreAsegurado, 
                         string Edad, 
@@ -3233,15 +3292,15 @@ namespace AjusteIPA {
                         double CargoTotal, 
                         string ICD9, 
                         string ICD10, 
-                        CodigoCatastroficoRow parentCodigoCatastroficoRowByFK__Reclamaci__IdCod__3A81B327, 
-                        EspecialidadRow parentEspecialidadRowByFK__Reclamaci__Espec__398D8EEE, 
-                        MunicipioRow parentMunicipioRowByFK__Reclamaci__Munic__3C69FB99, 
+                        CodigoCatastroficoRow parentCodigoCatastroficoRowByFK__Reclamaci__IdCod__3D5E1FD2, 
+                        EspecialidadRow parentEspecialidadRowByFK__Reclamaci__Espec__3C69FB99, 
+                        MunicipioRow parentMunicipioRowByFK__Reclamaci__Munic__3F466844, 
                         double CantidadPagada, 
                         string EstatusAjuste, 
                         double CantidadAjustada, 
                         System.DateTime FechaAjuste, 
                         string EstatusReclamacion, 
-                        UsuarioRow parentUsuarioRowByFK__Reclamaci__IDUsu__3B75D760, 
+                        UsuarioRow parentUsuarioRowByFK__Reclamaci__IDUsu__3E52440B, 
                         string Comentarios, 
                         bool Seleccionar) {
                 ReclamacionesRow rowReclamacionesRow = ((ReclamacionesRow)(this.NewRow()));
@@ -3275,23 +3334,23 @@ namespace AjusteIPA {
                         null,
                         Comentarios,
                         Seleccionar};
-                if ((parentIPARowByFK__Reclamaci__Numer__3D5E1FD2 != null)) {
-                    columnValuesArray[2] = parentIPARowByFK__Reclamaci__Numer__3D5E1FD2[0];
+                if ((parentIPARowByFK__Reclamaci__Numer__403A8C7D != null)) {
+                    columnValuesArray[2] = parentIPARowByFK__Reclamaci__Numer__403A8C7D[0];
                 }
-                if ((parentCuentaRowByFK__Reclamaci__Cuent__38996AB5 != null)) {
-                    columnValuesArray[6] = parentCuentaRowByFK__Reclamaci__Cuent__38996AB5[0];
+                if ((parentCuentaRowByFK__Reclamaci__Cuent__3B75D760 != null)) {
+                    columnValuesArray[6] = parentCuentaRowByFK__Reclamaci__Cuent__3B75D760[0];
                 }
-                if ((parentCodigoCatastroficoRowByFK__Reclamaci__IdCod__3A81B327 != null)) {
-                    columnValuesArray[18] = parentCodigoCatastroficoRowByFK__Reclamaci__IdCod__3A81B327[0];
+                if ((parentCodigoCatastroficoRowByFK__Reclamaci__IdCod__3D5E1FD2 != null)) {
+                    columnValuesArray[18] = parentCodigoCatastroficoRowByFK__Reclamaci__IdCod__3D5E1FD2[0];
                 }
-                if ((parentEspecialidadRowByFK__Reclamaci__Espec__398D8EEE != null)) {
-                    columnValuesArray[19] = parentEspecialidadRowByFK__Reclamaci__Espec__398D8EEE[0];
+                if ((parentEspecialidadRowByFK__Reclamaci__Espec__3C69FB99 != null)) {
+                    columnValuesArray[19] = parentEspecialidadRowByFK__Reclamaci__Espec__3C69FB99[0];
                 }
-                if ((parentMunicipioRowByFK__Reclamaci__Munic__3C69FB99 != null)) {
-                    columnValuesArray[20] = parentMunicipioRowByFK__Reclamaci__Munic__3C69FB99[0];
+                if ((parentMunicipioRowByFK__Reclamaci__Munic__3F466844 != null)) {
+                    columnValuesArray[20] = parentMunicipioRowByFK__Reclamaci__Munic__3F466844[0];
                 }
-                if ((parentUsuarioRowByFK__Reclamaci__IDUsu__3B75D760 != null)) {
-                    columnValuesArray[26] = parentUsuarioRowByFK__Reclamaci__IDUsu__3B75D760[0];
+                if ((parentUsuarioRowByFK__Reclamaci__IDUsu__3E52440B != null)) {
+                    columnValuesArray[26] = parentUsuarioRowByFK__Reclamaci__IDUsu__3E52440B[0];
                 }
                 rowReclamacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReclamacionesRow);
@@ -3694,7 +3753,7 @@ namespace AjusteIPA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public RegistroCatastroficoRow AddRegistroCatastroficoRow(int idRegCatastrofico, string NumeroContrato, string NombreAsegurado, CodigoCatastroficoRow parentCodigoCatastroficoRowByFK__RegistroC__IdCod__3E52440B, System.DateTime FechaComienzo, System.DateTime FechaTerminacion) {
+            public RegistroCatastroficoRow AddRegistroCatastroficoRow(int idRegCatastrofico, string NumeroContrato, string NombreAsegurado, CodigoCatastroficoRow parentCodigoCatastroficoRowByFK__RegistroC__IdCod__412EB0B6, System.DateTime FechaComienzo, System.DateTime FechaTerminacion) {
                 RegistroCatastroficoRow rowRegistroCatastroficoRow = ((RegistroCatastroficoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idRegCatastrofico,
@@ -3703,8 +3762,8 @@ namespace AjusteIPA {
                         null,
                         FechaComienzo,
                         FechaTerminacion};
-                if ((parentCodigoCatastroficoRowByFK__RegistroC__IdCod__3E52440B != null)) {
-                    columnValuesArray[3] = parentCodigoCatastroficoRowByFK__RegistroC__IdCod__3E52440B[0];
+                if ((parentCodigoCatastroficoRowByFK__RegistroC__IdCod__412EB0B6 != null)) {
+                    columnValuesArray[3] = parentCodigoCatastroficoRowByFK__RegistroC__IdCod__412EB0B6[0];
                 }
                 rowRegistroCatastroficoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRegistroCatastroficoRow);
@@ -4856,7 +4915,7 @@ namespace AjusteIPA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsuarioRow AddUsuarioRow(int idusuario, string nombre, string apellido, string numempleado, RolRow parentRolRowByFK__Usuario__rolid__3F466844, string password, string Estatus) {
+            public UsuarioRow AddUsuarioRow(int idusuario, string nombre, string apellido, string numempleado, RolRow parentRolRowByFK__Usuario__rolid__4222D4EF, string password, string Estatus) {
                 UsuarioRow rowUsuarioRow = ((UsuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idusuario,
@@ -4866,8 +4925,8 @@ namespace AjusteIPA {
                         null,
                         password,
                         Estatus};
-                if ((parentRolRowByFK__Usuario__rolid__3F466844 != null)) {
-                    columnValuesArray[4] = parentRolRowByFK__Usuario__rolid__3F466844[0];
+                if ((parentRolRowByFK__Usuario__rolid__4222D4EF != null)) {
+                    columnValuesArray[4] = parentRolRowByFK__Usuario__rolid__4222D4EF[0];
                 }
                 rowUsuarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuarioRow);
@@ -5115,22 +5174,22 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReclamacionesRow[] GetReclamacionesRows() {
-                if ((this.Table.ChildRelations["FK__Reclamaci__IdCod__3A81B327"] == null)) {
+                if ((this.Table.ChildRelations["FK__Reclamaci__IdCod__3D5E1FD2"] == null)) {
                     return new ReclamacionesRow[0];
                 }
                 else {
-                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__IdCod__3A81B327"])));
+                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__IdCod__3D5E1FD2"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RegistroCatastroficoRow[] GetRegistroCatastroficoRows() {
-                if ((this.Table.ChildRelations["FK__RegistroC__IdCod__3E52440B"] == null)) {
+                if ((this.Table.ChildRelations["FK__RegistroC__IdCod__412EB0B6"] == null)) {
                     return new RegistroCatastroficoRow[0];
                 }
                 else {
-                    return ((RegistroCatastroficoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__RegistroC__IdCod__3E52440B"])));
+                    return ((RegistroCatastroficoRow[])(base.GetChildRows(this.Table.ChildRelations["FK__RegistroC__IdCod__412EB0B6"])));
                 }
             }
         }
@@ -5191,11 +5250,11 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReclamacionesRow[] GetReclamacionesRows() {
-                if ((this.Table.ChildRelations["FK__Reclamaci__Cuent__38996AB5"] == null)) {
+                if ((this.Table.ChildRelations["FK__Reclamaci__Cuent__3B75D760"] == null)) {
                     return new ReclamacionesRow[0];
                 }
                 else {
-                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Cuent__38996AB5"])));
+                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Cuent__3B75D760"])));
                 }
             }
         }
@@ -5256,11 +5315,11 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReclamacionesRow[] GetReclamacionesRows() {
-                if ((this.Table.ChildRelations["FK__Reclamaci__Espec__398D8EEE"] == null)) {
+                if ((this.Table.ChildRelations["FK__Reclamaci__Espec__3C69FB99"] == null)) {
                     return new ReclamacionesRow[0];
                 }
                 else {
-                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Espec__398D8EEE"])));
+                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Espec__3C69FB99"])));
                 }
             }
         }
@@ -5461,11 +5520,11 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReclamacionesRow[] GetReclamacionesRows() {
-                if ((this.Table.ChildRelations["FK__Reclamaci__Numer__3D5E1FD2"] == null)) {
+                if ((this.Table.ChildRelations["FK__Reclamaci__Numer__403A8C7D"] == null)) {
                     return new ReclamacionesRow[0];
                 }
                 else {
-                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Numer__3D5E1FD2"])));
+                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Numer__403A8C7D"])));
                 }
             }
         }
@@ -5486,15 +5545,20 @@ namespace AjusteIPA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.Guid idLogReclamacionesAjustadas {
+                get {
+                    return ((global::System.Guid)(this[this.tableLogReclamacionesAjustadas.idLogReclamacionesAjustadasColumn]));
+                }
+                set {
+                    this[this.tableLogReclamacionesAjustadas.idLogReclamacionesAjustadasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int idReclamacion {
                 get {
-                    try {
-                        return ((int)(this[this.tableLogReclamacionesAjustadas.idReclamacionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'idReclamacion\' in table \'LogReclamacionesAjustadas\' is DBNu" +
-                                "ll.", e);
-                    }
+                    return ((int)(this[this.tableLogReclamacionesAjustadas.idReclamacionColumn]));
                 }
                 set {
                     this[this.tableLogReclamacionesAjustadas.idReclamacionColumn] = value;
@@ -5968,14 +6032,29 @@ namespace AjusteIPA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsidReclamacionNull() {
-                return this.IsNull(this.tableLogReclamacionesAjustadas.idReclamacionColumn);
+            public System.DateTime FechaEntrada {
+                get {
+                    return ((global::System.DateTime)(this[this.tableLogReclamacionesAjustadas.FechaEntradaColumn]));
+                }
+                set {
+                    this[this.tableLogReclamacionesAjustadas.FechaEntradaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetidReclamacionNull() {
-                this[this.tableLogReclamacionesAjustadas.idReclamacionColumn] = global::System.Convert.DBNull;
+            public byte[] TIMESTAMP {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableLogReclamacionesAjustadas.TIMESTAMPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TIMESTAMP\' in table \'LogReclamacionesAjustadas\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLogReclamacionesAjustadas.TIMESTAMPColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6313,6 +6392,18 @@ namespace AjusteIPA {
             public void SetSeleccionarNull() {
                 this[this.tableLogReclamacionesAjustadas.SeleccionarColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTIMESTAMPNull() {
+                return this.IsNull(this.tableLogReclamacionesAjustadas.TIMESTAMPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTIMESTAMPNull() {
+                this[this.tableLogReclamacionesAjustadas.TIMESTAMPColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -6399,11 +6490,11 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReclamacionesRow[] GetReclamacionesRows() {
-                if ((this.Table.ChildRelations["FK__Reclamaci__Munic__3C69FB99"] == null)) {
+                if ((this.Table.ChildRelations["FK__Reclamaci__Munic__3F466844"] == null)) {
                     return new ReclamacionesRow[0];
                 }
                 else {
-                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Munic__3C69FB99"])));
+                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__Munic__3F466844"])));
                 }
             }
         }
@@ -6885,10 +6976,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CuentaRow CuentaRow {
                 get {
-                    return ((CuentaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Cuent__38996AB5"])));
+                    return ((CuentaRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Cuent__3B75D760"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Cuent__38996AB5"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Cuent__3B75D760"]);
                 }
             }
             
@@ -6896,10 +6987,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public EspecialidadRow EspecialidadRow {
                 get {
-                    return ((EspecialidadRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Espec__398D8EEE"])));
+                    return ((EspecialidadRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Espec__3C69FB99"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Espec__398D8EEE"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Espec__3C69FB99"]);
                 }
             }
             
@@ -6907,10 +6998,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CodigoCatastroficoRow CodigoCatastroficoRow {
                 get {
-                    return ((CodigoCatastroficoRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__IdCod__3A81B327"])));
+                    return ((CodigoCatastroficoRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__IdCod__3D5E1FD2"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__IdCod__3A81B327"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__IdCod__3D5E1FD2"]);
                 }
             }
             
@@ -6918,10 +7009,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsuarioRow UsuarioRow {
                 get {
-                    return ((UsuarioRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__IDUsu__3B75D760"])));
+                    return ((UsuarioRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__IDUsu__3E52440B"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__IDUsu__3B75D760"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__IDUsu__3E52440B"]);
                 }
             }
             
@@ -6929,10 +7020,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MunicipioRow MunicipioRow {
                 get {
-                    return ((MunicipioRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Munic__3C69FB99"])));
+                    return ((MunicipioRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Munic__3F466844"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Munic__3C69FB99"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Munic__3F466844"]);
                 }
             }
             
@@ -6940,10 +7031,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public IPARow IPARow {
                 get {
-                    return ((IPARow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Numer__3D5E1FD2"])));
+                    return ((IPARow)(this.GetParentRow(this.Table.ParentRelations["FK__Reclamaci__Numer__403A8C7D"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Numer__3D5E1FD2"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Reclamaci__Numer__403A8C7D"]);
                 }
             }
             
@@ -7396,10 +7487,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CodigoCatastroficoRow CodigoCatastroficoRow {
                 get {
-                    return ((CodigoCatastroficoRow)(this.GetParentRow(this.Table.ParentRelations["FK__RegistroC__IdCod__3E52440B"])));
+                    return ((CodigoCatastroficoRow)(this.GetParentRow(this.Table.ParentRelations["FK__RegistroC__IdCod__412EB0B6"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__RegistroC__IdCod__3E52440B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__RegistroC__IdCod__412EB0B6"]);
                 }
             }
             
@@ -7520,11 +7611,11 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsuarioRow[] GetUsuarioRows() {
-                if ((this.Table.ChildRelations["FK__Usuario__rolid__3F466844"] == null)) {
+                if ((this.Table.ChildRelations["FK__Usuario__rolid__4222D4EF"] == null)) {
                     return new UsuarioRow[0];
                 }
                 else {
-                    return ((UsuarioRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Usuario__rolid__3F466844"])));
+                    return ((UsuarioRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Usuario__rolid__4222D4EF"])));
                 }
             }
         }
@@ -7762,10 +7853,10 @@ namespace AjusteIPA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public RolRow RolRow {
                 get {
-                    return ((RolRow)(this.GetParentRow(this.Table.ParentRelations["FK__Usuario__rolid__3F466844"])));
+                    return ((RolRow)(this.GetParentRow(this.Table.ParentRelations["FK__Usuario__rolid__4222D4EF"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Usuario__rolid__3F466844"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Usuario__rolid__4222D4EF"]);
                 }
             }
             
@@ -7844,11 +7935,11 @@ namespace AjusteIPA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ReclamacionesRow[] GetReclamacionesRows() {
-                if ((this.Table.ChildRelations["FK__Reclamaci__IDUsu__3B75D760"] == null)) {
+                if ((this.Table.ChildRelations["FK__Reclamaci__IDUsu__3E52440B"] == null)) {
                     return new ReclamacionesRow[0];
                 }
                 else {
-                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__IDUsu__3B75D760"])));
+                    return ((ReclamacionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Reclamaci__IDUsu__3E52440B"])));
                 }
             }
         }
@@ -9867,6 +9958,7 @@ SELECT NumeroIPA, NombreIPA, NumeroPCP, NombrePCP, FechaEfectividad, FechaTermin
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "LogReclamacionesAjustadas";
+            tableMapping.ColumnMappings.Add("idLogReclamacionesAjustadas", "idLogReclamacionesAjustadas");
             tableMapping.ColumnMappings.Add("idReclamacion", "idReclamacion");
             tableMapping.ColumnMappings.Add("NumReclamacion", "NumReclamacion");
             tableMapping.ColumnMappings.Add("NumeroIPA", "NumeroIPA");
@@ -9896,11 +9988,41 @@ SELECT NumeroIPA, NombreIPA, NumeroPCP, NombrePCP, FechaEfectividad, FechaTermin
             tableMapping.ColumnMappings.Add("IDUsuario", "IDUsuario");
             tableMapping.ColumnMappings.Add("Comentarios", "Comentarios");
             tableMapping.ColumnMappings.Add("Seleccionar", "Seleccionar");
+            tableMapping.ColumnMappings.Add("FechaEntrada", "FechaEntrada");
+            tableMapping.ColumnMappings.Add("TIMESTAMP", "TIMESTAMP");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[LogReclamacionesAjustadas] WHERE (([idLogReclamacionesAjustada" +
+                "s] = @Original_idLogReclamacionesAjustadas) AND ([TIMESTAMP] = @Original_TIMESTA" +
+                "MP))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idLogReclamacionesAjustadas", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLogReclamacionesAjustadas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TIMESTAMP", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TIMESTAMP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [LogReclamacionesAjustadas] ([idReclamacion], [NumReclamacion], [NumeroIPA], [NumeroPCP], [NombrePCP], [Tier], [Cuenta], [NumeroContrato], [NombreAsegurado], [Edad], [FechaServicio], [FechaPago], [TipoServicio], [LugarServicio], [NumeroServicio], [CargoTotal], [ICD9], [ICD10], [IdCodigoCatastrofico], [Especialidad], [Municipio], [CantidadPagada], [EstatusAjuste], [CantidadAjustada], [FechaAjuste], [EstatusReclamacion], [IDUsuario], [Comentarios], [Seleccionar]) VALUES (@idReclamacion, @NumReclamacion, @NumeroIPA, @NumeroPCP, @NombrePCP, @Tier, @Cuenta, @NumeroContrato, @NombreAsegurado, @Edad, @FechaServicio, @FechaPago, @TipoServicio, @LugarServicio, @NumeroServicio, @CargoTotal, @ICD9, @ICD10, @IdCodigoCatastrofico, @Especialidad, @Municipio, @CantidadPagada, @EstatusAjuste, @CantidadAjustada, @FechaAjuste, @EstatusReclamacion, @IDUsuario, @Comentarios, @Seleccionar)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[LogReclamacionesAjustadas] ([idLogReclamacionesAjustadas], [id" +
+                "Reclamacion], [NumReclamacion], [NumeroIPA], [NumeroPCP], [NombrePCP], [Tier], [" +
+                "Cuenta], [NumeroContrato], [NombreAsegurado], [Edad], [FechaServicio], [FechaPag" +
+                "o], [TipoServicio], [LugarServicio], [NumeroServicio], [CargoTotal], [ICD9], [IC" +
+                "D10], [IdCodigoCatastrofico], [Especialidad], [Municipio], [CantidadPagada], [Es" +
+                "tatusAjuste], [CantidadAjustada], [FechaAjuste], [EstatusReclamacion], [IDUsuari" +
+                "o], [Comentarios], [Seleccionar], [FechaEntrada]) VALUES (@idLogReclamacionesAju" +
+                "stadas, @idReclamacion, @NumReclamacion, @NumeroIPA, @NumeroPCP, @NombrePCP, @Ti" +
+                "er, @Cuenta, @NumeroContrato, @NombreAsegurado, @Edad, @FechaServicio, @FechaPag" +
+                "o, @TipoServicio, @LugarServicio, @NumeroServicio, @CargoTotal, @ICD9, @ICD10, @" +
+                "IdCodigoCatastrofico, @Especialidad, @Municipio, @CantidadPagada, @EstatusAjuste" +
+                ", @CantidadAjustada, @FechaAjuste, @EstatusReclamacion, @IDUsuario, @Comentarios" +
+                ", @Seleccionar, @FechaEntrada);\r\nSELECT idLogReclamacionesAjustadas, idReclamaci" +
+                "on, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrat" +
+                "o, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, LugarServicio," +
+                " NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Mu" +
+                "nicipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, EstatusRe" +
+                "clamacion, IDUsuario, Comentarios, Seleccionar, FechaEntrada, TIMESTAMP FROM Log" +
+                "ReclamacionesAjustadas WHERE (idLogReclamacionesAjustadas = @idLogReclamacionesA" +
+                "justadas)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLogReclamacionesAjustadas", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLogReclamacionesAjustadas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReclamacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumReclamacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroIPA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroIPA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9930,6 +10052,64 @@ SELECT NumeroIPA, NombreIPA, NumeroPCP, NombrePCP, FechaEfectividad, FechaTermin
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comentarios", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comentarios", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seleccionar", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seleccionar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaEntrada", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[LogReclamacionesAjustadas] SET [idLogReclamacionesAjustadas] = @idL" +
+                "ogReclamacionesAjustadas, [idReclamacion] = @idReclamacion, [NumReclamacion] = @" +
+                "NumReclamacion, [NumeroIPA] = @NumeroIPA, [NumeroPCP] = @NumeroPCP, [NombrePCP] " +
+                "= @NombrePCP, [Tier] = @Tier, [Cuenta] = @Cuenta, [NumeroContrato] = @NumeroCont" +
+                "rato, [NombreAsegurado] = @NombreAsegurado, [Edad] = @Edad, [FechaServicio] = @F" +
+                "echaServicio, [FechaPago] = @FechaPago, [TipoServicio] = @TipoServicio, [LugarSe" +
+                "rvicio] = @LugarServicio, [NumeroServicio] = @NumeroServicio, [CargoTotal] = @Ca" +
+                "rgoTotal, [ICD9] = @ICD9, [ICD10] = @ICD10, [IdCodigoCatastrofico] = @IdCodigoCa" +
+                "tastrofico, [Especialidad] = @Especialidad, [Municipio] = @Municipio, [CantidadP" +
+                "agada] = @CantidadPagada, [EstatusAjuste] = @EstatusAjuste, [CantidadAjustada] =" +
+                " @CantidadAjustada, [FechaAjuste] = @FechaAjuste, [EstatusReclamacion] = @Estatu" +
+                "sReclamacion, [IDUsuario] = @IDUsuario, [Comentarios] = @Comentarios, [Seleccion" +
+                "ar] = @Seleccionar, [FechaEntrada] = @FechaEntrada WHERE (([idLogReclamacionesAj" +
+                "ustadas] = @Original_idLogReclamacionesAjustadas) AND ([TIMESTAMP] = @Original_T" +
+                "IMESTAMP));\r\nSELECT idLogReclamacionesAjustadas, idReclamacion, NumReclamacion, " +
+                "NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, " +
+                "Edad, FechaServicio, FechaPago, TipoServicio, LugarServicio, NumeroServicio, Car" +
+                "goTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPag" +
+                "ada, EstatusAjuste, CantidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario" +
+                ", Comentarios, Seleccionar, FechaEntrada, TIMESTAMP FROM LogReclamacionesAjustad" +
+                "as WHERE (idLogReclamacionesAjustadas = @idLogReclamacionesAjustadas)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idLogReclamacionesAjustadas", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLogReclamacionesAjustadas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReclamacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumReclamacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroIPA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroIPA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroPCP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroPCP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombrePCP", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombrePCP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tier", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cuenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroContrato", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroContrato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreAsegurado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreAsegurado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Edad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Edad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaServicio", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaServicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaPago", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaPago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoServicio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoServicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LugarServicio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LugarServicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroServicio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroServicio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CargoTotal", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CargoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ICD9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ICD9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ICD10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ICD10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCodigoCatastrofico", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCodigoCatastrofico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Especialidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Especialidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Municipio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Municipio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadPagada", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadPagada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstatusAjuste", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstatusAjuste", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CantidadAjustada", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CantidadAjustada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaAjuste", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaAjuste", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstatusReclamacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstatusReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comentarios", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comentarios", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seleccionar", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seleccionar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaEntrada", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FechaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idLogReclamacionesAjustadas", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idLogReclamacionesAjustadas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TIMESTAMP", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TIMESTAMP", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9945,10 +10125,7 @@ SELECT NumeroIPA, NombreIPA, NumeroPCP, NombrePCP, FechaEfectividad, FechaTermin
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT   idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, 
-                         LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, 
-                         EstatusReclamacion, IDUsuario, Comentarios, Seleccionar
-FROM         LogReclamacionesAjustadas";
+            this._commandCollection[0].CommandText = @"SELECT idLogReclamacionesAjustadas, idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario, Comentarios, Seleccionar, FechaEntrada, TIMESTAMP FROM dbo.LogReclamacionesAjustadas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10008,9 +10185,38 @@ FROM         LogReclamacionesAjustadas";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(System.Guid Original_idLogReclamacionesAjustadas, byte[] Original_TIMESTAMP) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((System.Guid)(Original_idLogReclamacionesAjustadas));
+            if ((Original_TIMESTAMP == null)) {
+                throw new global::System.ArgumentNullException("Original_TIMESTAMP");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((byte[])(Original_TIMESTAMP));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
-                    global::System.Nullable<int> idReclamacion, 
+                    System.Guid idLogReclamacionesAjustadas, 
+                    int idReclamacion, 
                     string NumReclamacion, 
                     global::System.Nullable<int> NumeroIPA, 
                     string NumeroPCP, 
@@ -10038,181 +10244,179 @@ FROM         LogReclamacionesAjustadas";
                     string EstatusReclamacion, 
                     global::System.Nullable<int> IDUsuario, 
                     string Comentarios, 
-                    global::System.Nullable<bool> Seleccionar) {
-            if ((idReclamacion.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idReclamacion.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
+                    global::System.Nullable<bool> Seleccionar, 
+                    System.DateTime FechaEntrada) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(idLogReclamacionesAjustadas));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idReclamacion));
             if ((NumReclamacion == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NumReclamacion));
-            }
-            if ((NumeroIPA.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(NumeroIPA.Value));
-            }
-            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((NumeroPCP == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NumReclamacion));
+            }
+            if ((NumeroIPA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(NumeroIPA.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NumeroPCP));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((NombrePCP == null)) {
+            if ((NumeroPCP == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NombrePCP));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NumeroPCP));
             }
-            if ((Tier.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Tier.Value));
-            }
-            else {
+            if ((NombrePCP == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Cuenta.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Cuenta.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(NombrePCP));
+            }
+            if ((Tier.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Tier.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((NumeroContrato == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((Cuenta.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Cuenta.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(NumeroContrato));
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((NombreAsegurado == null)) {
+            if ((NumeroContrato == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(NombreAsegurado));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(NumeroContrato));
             }
-            if ((Edad == null)) {
+            if ((NombreAsegurado == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Edad));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(NombreAsegurado));
             }
-            if ((FechaServicio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(FechaServicio.Value));
-            }
-            else {
+            if ((Edad == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((FechaPago.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(FechaPago.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Edad));
+            }
+            if ((FechaServicio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(FechaServicio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((TipoServicio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(TipoServicio.Value));
+            if ((FechaPago.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(FechaPago.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((LugarServicio == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((TipoServicio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(TipoServicio.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(LugarServicio));
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((NumeroServicio == null)) {
+            if ((LugarServicio == null)) {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(NumeroServicio));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(LugarServicio));
             }
-            if ((CargoTotal.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(CargoTotal.Value));
-            }
-            else {
+            if ((NumeroServicio == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((ICD9 == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(NumeroServicio));
+            }
+            if ((CargoTotal.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(CargoTotal.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(ICD9));
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((ICD10 == null)) {
+            if ((ICD9 == null)) {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(ICD10));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(ICD9));
             }
-            if ((IdCodigoCatastrofico.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((int)(IdCodigoCatastrofico.Value));
-            }
-            else {
+            if ((ICD10 == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Especialidad.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((int)(Especialidad.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(ICD10));
+            }
+            if ((IdCodigoCatastrofico.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((int)(IdCodigoCatastrofico.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Municipio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((int)(Municipio.Value));
+            if ((Especialidad.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((int)(Especialidad.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((CantidadPagada.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((double)(CantidadPagada.Value));
+            if ((Municipio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((int)(Municipio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((EstatusAjuste == null)) {
+            if ((CantidadPagada.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((double)(CantidadPagada.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(EstatusAjuste));
-            }
-            if ((CantidadAjustada.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((double)(CantidadAjustada.Value));
-            }
-            else {
+            if ((EstatusAjuste == null)) {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((FechaAjuste.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((System.DateTime)(FechaAjuste.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(EstatusAjuste));
+            }
+            if ((CantidadAjustada.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((double)(CantidadAjustada.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((EstatusReclamacion == null)) {
+            if ((FechaAjuste.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((System.DateTime)(FechaAjuste.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(EstatusReclamacion));
-            }
-            if ((IDUsuario.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((int)(IDUsuario.Value));
-            }
-            else {
+            if ((EstatusReclamacion == null)) {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Comentarios == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(EstatusReclamacion));
+            }
+            if ((IDUsuario.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((int)(IDUsuario.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Comentarios));
-            }
-            if ((Seleccionar.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((bool)(Seleccionar.Value));
-            }
-            else {
+            if ((Comentarios == null)) {
                 this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Comentarios));
+            }
+            if ((Seleccionar.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((bool)(Seleccionar.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[30].Value = ((System.DateTime)(FechaEntrada));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10227,6 +10431,278 @@ FROM         LogReclamacionesAjustadas";
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    System.Guid idLogReclamacionesAjustadas, 
+                    int idReclamacion, 
+                    string NumReclamacion, 
+                    global::System.Nullable<int> NumeroIPA, 
+                    string NumeroPCP, 
+                    string NombrePCP, 
+                    global::System.Nullable<int> Tier, 
+                    global::System.Nullable<int> Cuenta, 
+                    string NumeroContrato, 
+                    string NombreAsegurado, 
+                    string Edad, 
+                    global::System.Nullable<global::System.DateTime> FechaServicio, 
+                    global::System.Nullable<global::System.DateTime> FechaPago, 
+                    global::System.Nullable<int> TipoServicio, 
+                    string LugarServicio, 
+                    string NumeroServicio, 
+                    global::System.Nullable<double> CargoTotal, 
+                    string ICD9, 
+                    string ICD10, 
+                    global::System.Nullable<int> IdCodigoCatastrofico, 
+                    global::System.Nullable<int> Especialidad, 
+                    global::System.Nullable<int> Municipio, 
+                    global::System.Nullable<double> CantidadPagada, 
+                    string EstatusAjuste, 
+                    global::System.Nullable<double> CantidadAjustada, 
+                    global::System.Nullable<global::System.DateTime> FechaAjuste, 
+                    string EstatusReclamacion, 
+                    global::System.Nullable<int> IDUsuario, 
+                    string Comentarios, 
+                    global::System.Nullable<bool> Seleccionar, 
+                    System.DateTime FechaEntrada, 
+                    System.Guid Original_idLogReclamacionesAjustadas, 
+                    byte[] Original_TIMESTAMP) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(idLogReclamacionesAjustadas));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idReclamacion));
+            if ((NumReclamacion == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(NumReclamacion));
+            }
+            if ((NumeroIPA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(NumeroIPA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((NumeroPCP == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(NumeroPCP));
+            }
+            if ((NombrePCP == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(NombrePCP));
+            }
+            if ((Tier.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Tier.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Cuenta.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Cuenta.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((NumeroContrato == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(NumeroContrato));
+            }
+            if ((NombreAsegurado == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(NombreAsegurado));
+            }
+            if ((Edad == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Edad));
+            }
+            if ((FechaServicio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(FechaServicio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((FechaPago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(FechaPago.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((TipoServicio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(TipoServicio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((LugarServicio == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(LugarServicio));
+            }
+            if ((NumeroServicio == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(NumeroServicio));
+            }
+            if ((CargoTotal.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(CargoTotal.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((ICD9 == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(ICD9));
+            }
+            if ((ICD10 == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(ICD10));
+            }
+            if ((IdCodigoCatastrofico.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(IdCodigoCatastrofico.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Especialidad.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Especialidad.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Municipio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Municipio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((CantidadPagada.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(CantidadPagada.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((EstatusAjuste == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(EstatusAjuste));
+            }
+            if ((CantidadAjustada.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(CantidadAjustada.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((FechaAjuste.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(FechaAjuste.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((EstatusReclamacion == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(EstatusReclamacion));
+            }
+            if ((IDUsuario.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(IDUsuario.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((Comentarios == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Comentarios));
+            }
+            if ((Seleccionar.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Seleccionar.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(FechaEntrada));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((System.Guid)(Original_idLogReclamacionesAjustadas));
+            if ((Original_TIMESTAMP == null)) {
+                throw new global::System.ArgumentNullException("Original_TIMESTAMP");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((byte[])(Original_TIMESTAMP));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int idReclamacion, 
+                    string NumReclamacion, 
+                    global::System.Nullable<int> NumeroIPA, 
+                    string NumeroPCP, 
+                    string NombrePCP, 
+                    global::System.Nullable<int> Tier, 
+                    global::System.Nullable<int> Cuenta, 
+                    string NumeroContrato, 
+                    string NombreAsegurado, 
+                    string Edad, 
+                    global::System.Nullable<global::System.DateTime> FechaServicio, 
+                    global::System.Nullable<global::System.DateTime> FechaPago, 
+                    global::System.Nullable<int> TipoServicio, 
+                    string LugarServicio, 
+                    string NumeroServicio, 
+                    global::System.Nullable<double> CargoTotal, 
+                    string ICD9, 
+                    string ICD10, 
+                    global::System.Nullable<int> IdCodigoCatastrofico, 
+                    global::System.Nullable<int> Especialidad, 
+                    global::System.Nullable<int> Municipio, 
+                    global::System.Nullable<double> CantidadPagada, 
+                    string EstatusAjuste, 
+                    global::System.Nullable<double> CantidadAjustada, 
+                    global::System.Nullable<global::System.DateTime> FechaAjuste, 
+                    string EstatusReclamacion, 
+                    global::System.Nullable<int> IDUsuario, 
+                    string Comentarios, 
+                    global::System.Nullable<bool> Seleccionar, 
+                    System.DateTime FechaEntrada, 
+                    System.Guid Original_idLogReclamacionesAjustadas, 
+                    byte[] Original_TIMESTAMP) {
+            return this.Update(Original_idLogReclamacionesAjustadas, idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario, Comentarios, Seleccionar, FechaEntrada, Original_idLogReclamacionesAjustadas, Original_TIMESTAMP);
         }
     }
     
@@ -10745,43 +11221,43 @@ SELECT idMunicipio, Nombre, Region FROM Municipio WHERE (idMunicipio = @idMunici
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Reclamaciones] WHERE (([idReclamacion] = @Original_idReclamacion) AN" +
-                "D ((@IsNull_NumReclamacion = 1 AND [NumReclamacion] IS NULL) OR ([NumReclamacion" +
-                "] = @Original_NumReclamacion)) AND ((@IsNull_NumeroIPA = 1 AND [NumeroIPA] IS NU" +
-                "LL) OR ([NumeroIPA] = @Original_NumeroIPA)) AND ((@IsNull_NumeroPCP = 1 AND [Num" +
-                "eroPCP] IS NULL) OR ([NumeroPCP] = @Original_NumeroPCP)) AND ((@IsNull_NombrePCP" +
-                " = 1 AND [NombrePCP] IS NULL) OR ([NombrePCP] = @Original_NombrePCP)) AND ((@IsN" +
-                "ull_Tier = 1 AND [Tier] IS NULL) OR ([Tier] = @Original_Tier)) AND ((@IsNull_Cue" +
-                "nta = 1 AND [Cuenta] IS NULL) OR ([Cuenta] = @Original_Cuenta)) AND ((@IsNull_Nu" +
-                "meroContrato = 1 AND [NumeroContrato] IS NULL) OR ([NumeroContrato] = @Original_" +
-                "NumeroContrato)) AND ((@IsNull_NombreAsegurado = 1 AND [NombreAsegurado] IS NULL" +
-                ") OR ([NombreAsegurado] = @Original_NombreAsegurado)) AND ((@IsNull_Edad = 1 AND" +
-                " [Edad] IS NULL) OR ([Edad] = @Original_Edad)) AND ((@IsNull_FechaServicio = 1 A" +
-                "ND [FechaServicio] IS NULL) OR ([FechaServicio] = @Original_FechaServicio)) AND " +
-                "((@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_Fec" +
-                "haPago)) AND ((@IsNull_TipoServicio = 1 AND [TipoServicio] IS NULL) OR ([TipoSer" +
-                "vicio] = @Original_TipoServicio)) AND ((@IsNull_LugarServicio = 1 AND [LugarServ" +
-                "icio] IS NULL) OR ([LugarServicio] = @Original_LugarServicio)) AND ((@IsNull_Num" +
-                "eroServicio = 1 AND [NumeroServicio] IS NULL) OR ([NumeroServicio] = @Original_N" +
-                "umeroServicio)) AND ((@IsNull_CargoTotal = 1 AND [CargoTotal] IS NULL) OR ([Carg" +
-                "oTotal] = @Original_CargoTotal)) AND ((@IsNull_ICD9 = 1 AND [ICD9] IS NULL) OR (" +
-                "[ICD9] = @Original_ICD9)) AND ((@IsNull_ICD10 = 1 AND [ICD10] IS NULL) OR ([ICD1" +
-                "0] = @Original_ICD10)) AND ((@IsNull_IdCodigoCatastrofico = 1 AND [IdCodigoCatas" +
-                "trofico] IS NULL) OR ([IdCodigoCatastrofico] = @Original_IdCodigoCatastrofico)) " +
-                "AND ((@IsNull_Especialidad = 1 AND [Especialidad] IS NULL) OR ([Especialidad] = " +
-                "@Original_Especialidad)) AND ((@IsNull_Municipio = 1 AND [Municipio] IS NULL) OR" +
-                " ([Municipio] = @Original_Municipio)) AND ((@IsNull_CantidadPagada = 1 AND [Cant" +
-                "idadPagada] IS NULL) OR ([CantidadPagada] = @Original_CantidadPagada)) AND ((@Is" +
-                "Null_EstatusAjuste = 1 AND [EstatusAjuste] IS NULL) OR ([EstatusAjuste] = @Origi" +
-                "nal_EstatusAjuste)) AND ((@IsNull_CantidadAjustada = 1 AND [CantidadAjustada] IS" +
-                " NULL) OR ([CantidadAjustada] = @Original_CantidadAjustada)) AND ((@IsNull_Fecha" +
-                "Ajuste = 1 AND [FechaAjuste] IS NULL) OR ([FechaAjuste] = @Original_FechaAjuste)" +
-                ") AND ((@IsNull_EstatusReclamacion = 1 AND [EstatusReclamacion] IS NULL) OR ([Es" +
-                "tatusReclamacion] = @Original_EstatusReclamacion)) AND ((@IsNull_IDUsuario = 1 A" +
-                "ND [IDUsuario] IS NULL) OR ([IDUsuario] = @Original_IDUsuario)) AND ((@IsNull_Co" +
-                "mentarios = 1 AND [Comentarios] IS NULL) OR ([Comentarios] = @Original_Comentari" +
-                "os)) AND ((@IsNull_Seleccionar = 1 AND [Seleccionar] IS NULL) OR ([Seleccionar] " +
-                "= @Original_Seleccionar)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Reclamaciones] WHERE (([idReclamacion] = @Original_idReclamaci" +
+                "on) AND ((@IsNull_NumReclamacion = 1 AND [NumReclamacion] IS NULL) OR ([NumRecla" +
+                "macion] = @Original_NumReclamacion)) AND ((@IsNull_NumeroIPA = 1 AND [NumeroIPA]" +
+                " IS NULL) OR ([NumeroIPA] = @Original_NumeroIPA)) AND ((@IsNull_NumeroPCP = 1 AN" +
+                "D [NumeroPCP] IS NULL) OR ([NumeroPCP] = @Original_NumeroPCP)) AND ((@IsNull_Nom" +
+                "brePCP = 1 AND [NombrePCP] IS NULL) OR ([NombrePCP] = @Original_NombrePCP)) AND " +
+                "((@IsNull_Tier = 1 AND [Tier] IS NULL) OR ([Tier] = @Original_Tier)) AND ((@IsNu" +
+                "ll_Cuenta = 1 AND [Cuenta] IS NULL) OR ([Cuenta] = @Original_Cuenta)) AND ((@IsN" +
+                "ull_NumeroContrato = 1 AND [NumeroContrato] IS NULL) OR ([NumeroContrato] = @Ori" +
+                "ginal_NumeroContrato)) AND ((@IsNull_NombreAsegurado = 1 AND [NombreAsegurado] I" +
+                "S NULL) OR ([NombreAsegurado] = @Original_NombreAsegurado)) AND ((@IsNull_Edad =" +
+                " 1 AND [Edad] IS NULL) OR ([Edad] = @Original_Edad)) AND ((@IsNull_FechaServicio" +
+                " = 1 AND [FechaServicio] IS NULL) OR ([FechaServicio] = @Original_FechaServicio)" +
+                ") AND ((@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Origin" +
+                "al_FechaPago)) AND ((@IsNull_TipoServicio = 1 AND [TipoServicio] IS NULL) OR ([T" +
+                "ipoServicio] = @Original_TipoServicio)) AND ((@IsNull_LugarServicio = 1 AND [Lug" +
+                "arServicio] IS NULL) OR ([LugarServicio] = @Original_LugarServicio)) AND ((@IsNu" +
+                "ll_NumeroServicio = 1 AND [NumeroServicio] IS NULL) OR ([NumeroServicio] = @Orig" +
+                "inal_NumeroServicio)) AND ((@IsNull_CargoTotal = 1 AND [CargoTotal] IS NULL) OR " +
+                "([CargoTotal] = @Original_CargoTotal)) AND ((@IsNull_ICD9 = 1 AND [ICD9] IS NULL" +
+                ") OR ([ICD9] = @Original_ICD9)) AND ((@IsNull_ICD10 = 1 AND [ICD10] IS NULL) OR " +
+                "([ICD10] = @Original_ICD10)) AND ((@IsNull_IdCodigoCatastrofico = 1 AND [IdCodig" +
+                "oCatastrofico] IS NULL) OR ([IdCodigoCatastrofico] = @Original_IdCodigoCatastrof" +
+                "ico)) AND ((@IsNull_Especialidad = 1 AND [Especialidad] IS NULL) OR ([Especialid" +
+                "ad] = @Original_Especialidad)) AND ((@IsNull_Municipio = 1 AND [Municipio] IS NU" +
+                "LL) OR ([Municipio] = @Original_Municipio)) AND ((@IsNull_CantidadPagada = 1 AND" +
+                " [CantidadPagada] IS NULL) OR ([CantidadPagada] = @Original_CantidadPagada)) AND" +
+                " ((@IsNull_EstatusAjuste = 1 AND [EstatusAjuste] IS NULL) OR ([EstatusAjuste] = " +
+                "@Original_EstatusAjuste)) AND ((@IsNull_CantidadAjustada = 1 AND [CantidadAjusta" +
+                "da] IS NULL) OR ([CantidadAjustada] = @Original_CantidadAjustada)) AND ((@IsNull" +
+                "_FechaAjuste = 1 AND [FechaAjuste] IS NULL) OR ([FechaAjuste] = @Original_FechaA" +
+                "juste)) AND ((@IsNull_EstatusReclamacion = 1 AND [EstatusReclamacion] IS NULL) O" +
+                "R ([EstatusReclamacion] = @Original_EstatusReclamacion)) AND ((@IsNull_IDUsuario" +
+                " = 1 AND [IDUsuario] IS NULL) OR ([IDUsuario] = @Original_IDUsuario)) AND ((@IsN" +
+                "ull_Comentarios = 1 AND [Comentarios] IS NULL) OR ([Comentarios] = @Original_Com" +
+                "entarios)) AND ((@IsNull_Seleccionar = 1 AND [Seleccionar] IS NULL) OR ([Selecci" +
+                "onar] = @Original_Seleccionar)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idReclamacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReclamacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NumReclamacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumReclamacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10842,7 +11318,7 @@ SELECT idMunicipio, Nombre, Region FROM Municipio WHERE (idMunicipio = @idMunici
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Seleccionar", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seleccionar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Reclamaciones] ([idReclamacion], [NumReclamacion], [NumeroIPA], [NumeroPCP], [NombrePCP], [Tier], [Cuenta], [NumeroContrato], [NombreAsegurado], [Edad], [FechaServicio], [FechaPago], [TipoServicio], [LugarServicio], [NumeroServicio], [CargoTotal], [ICD9], [ICD10], [IdCodigoCatastrofico], [Especialidad], [Municipio], [CantidadPagada], [EstatusAjuste], [CantidadAjustada], [FechaAjuste], [EstatusReclamacion], [IDUsuario], [Comentarios], [Seleccionar]) VALUES (@idReclamacion, @NumReclamacion, @NumeroIPA, @NumeroPCP, @NombrePCP, @Tier, @Cuenta, @NumeroContrato, @NombreAsegurado, @Edad, @FechaServicio, @FechaPago, @TipoServicio, @LugarServicio, @NumeroServicio, @CargoTotal, @ICD9, @ICD10, @IdCodigoCatastrofico, @Especialidad, @Municipio, @CantidadPagada, @EstatusAjuste, @CantidadAjustada, @FechaAjuste, @EstatusReclamacion, @IDUsuario, @Comentarios, @Seleccionar);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Reclamaciones] ([idReclamacion], [NumReclamacion], [NumeroIPA], [NumeroPCP], [NombrePCP], [Tier], [Cuenta], [NumeroContrato], [NombreAsegurado], [Edad], [FechaServicio], [FechaPago], [TipoServicio], [LugarServicio], [NumeroServicio], [CargoTotal], [ICD9], [ICD10], [IdCodigoCatastrofico], [Especialidad], [Municipio], [CantidadPagada], [EstatusAjuste], [CantidadAjustada], [FechaAjuste], [EstatusReclamacion], [IDUsuario], [Comentarios], [Seleccionar]) VALUES (@idReclamacion, @NumReclamacion, @NumeroIPA, @NumeroPCP, @NombrePCP, @Tier, @Cuenta, @NumeroContrato, @NombreAsegurado, @Edad, @FechaServicio, @FechaPago, @TipoServicio, @LugarServicio, @NumeroServicio, @CargoTotal, @ICD9, @ICD10, @IdCodigoCatastrofico, @Especialidad, @Municipio, @CantidadPagada, @EstatusAjuste, @CantidadAjustada, @FechaAjuste, @EstatusReclamacion, @IDUsuario, @Comentarios, @Seleccionar);
 SELECT idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario, Comentarios, Seleccionar FROM Reclamaciones WHERE (idReclamacion = @idReclamacion)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReclamacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10876,59 +11352,59 @@ SELECT idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cue
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Seleccionar", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Seleccionar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Reclamaciones] SET [idReclamacion] = @idReclamacion, [NumReclamacion] = @" +
-                "NumReclamacion, [NumeroIPA] = @NumeroIPA, [NumeroPCP] = @NumeroPCP, [NombrePCP] " +
-                "= @NombrePCP, [Tier] = @Tier, [Cuenta] = @Cuenta, [NumeroContrato] = @NumeroCont" +
-                "rato, [NombreAsegurado] = @NombreAsegurado, [Edad] = @Edad, [FechaServicio] = @F" +
-                "echaServicio, [FechaPago] = @FechaPago, [TipoServicio] = @TipoServicio, [LugarSe" +
-                "rvicio] = @LugarServicio, [NumeroServicio] = @NumeroServicio, [CargoTotal] = @Ca" +
-                "rgoTotal, [ICD9] = @ICD9, [ICD10] = @ICD10, [IdCodigoCatastrofico] = @IdCodigoCa" +
-                "tastrofico, [Especialidad] = @Especialidad, [Municipio] = @Municipio, [CantidadP" +
-                "agada] = @CantidadPagada, [EstatusAjuste] = @EstatusAjuste, [CantidadAjustada] =" +
-                " @CantidadAjustada, [FechaAjuste] = @FechaAjuste, [EstatusReclamacion] = @Estatu" +
-                "sReclamacion, [IDUsuario] = @IDUsuario, [Comentarios] = @Comentarios, [Seleccion" +
-                "ar] = @Seleccionar WHERE (([idReclamacion] = @Original_idReclamacion) AND ((@IsN" +
-                "ull_NumReclamacion = 1 AND [NumReclamacion] IS NULL) OR ([NumReclamacion] = @Ori" +
-                "ginal_NumReclamacion)) AND ((@IsNull_NumeroIPA = 1 AND [NumeroIPA] IS NULL) OR (" +
-                "[NumeroIPA] = @Original_NumeroIPA)) AND ((@IsNull_NumeroPCP = 1 AND [NumeroPCP] " +
-                "IS NULL) OR ([NumeroPCP] = @Original_NumeroPCP)) AND ((@IsNull_NombrePCP = 1 AND" +
-                " [NombrePCP] IS NULL) OR ([NombrePCP] = @Original_NombrePCP)) AND ((@IsNull_Tier" +
-                " = 1 AND [Tier] IS NULL) OR ([Tier] = @Original_Tier)) AND ((@IsNull_Cuenta = 1 " +
-                "AND [Cuenta] IS NULL) OR ([Cuenta] = @Original_Cuenta)) AND ((@IsNull_NumeroCont" +
-                "rato = 1 AND [NumeroContrato] IS NULL) OR ([NumeroContrato] = @Original_NumeroCo" +
-                "ntrato)) AND ((@IsNull_NombreAsegurado = 1 AND [NombreAsegurado] IS NULL) OR ([N" +
-                "ombreAsegurado] = @Original_NombreAsegurado)) AND ((@IsNull_Edad = 1 AND [Edad] " +
-                "IS NULL) OR ([Edad] = @Original_Edad)) AND ((@IsNull_FechaServicio = 1 AND [Fech" +
-                "aServicio] IS NULL) OR ([FechaServicio] = @Original_FechaServicio)) AND ((@IsNul" +
-                "l_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_FechaPago))" +
-                " AND ((@IsNull_TipoServicio = 1 AND [TipoServicio] IS NULL) OR ([TipoServicio] =" +
-                " @Original_TipoServicio)) AND ((@IsNull_LugarServicio = 1 AND [LugarServicio] IS" +
-                " NULL) OR ([LugarServicio] = @Original_LugarServicio)) AND ((@IsNull_NumeroServi" +
-                "cio = 1 AND [NumeroServicio] IS NULL) OR ([NumeroServicio] = @Original_NumeroSer" +
-                "vicio)) AND ((@IsNull_CargoTotal = 1 AND [CargoTotal] IS NULL) OR ([CargoTotal] " +
-                "= @Original_CargoTotal)) AND ((@IsNull_ICD9 = 1 AND [ICD9] IS NULL) OR ([ICD9] =" +
-                " @Original_ICD9)) AND ((@IsNull_ICD10 = 1 AND [ICD10] IS NULL) OR ([ICD10] = @Or" +
-                "iginal_ICD10)) AND ((@IsNull_IdCodigoCatastrofico = 1 AND [IdCodigoCatastrofico]" +
-                " IS NULL) OR ([IdCodigoCatastrofico] = @Original_IdCodigoCatastrofico)) AND ((@I" +
-                "sNull_Especialidad = 1 AND [Especialidad] IS NULL) OR ([Especialidad] = @Origina" +
-                "l_Especialidad)) AND ((@IsNull_Municipio = 1 AND [Municipio] IS NULL) OR ([Munic" +
-                "ipio] = @Original_Municipio)) AND ((@IsNull_CantidadPagada = 1 AND [CantidadPaga" +
-                "da] IS NULL) OR ([CantidadPagada] = @Original_CantidadPagada)) AND ((@IsNull_Est" +
-                "atusAjuste = 1 AND [EstatusAjuste] IS NULL) OR ([EstatusAjuste] = @Original_Esta" +
-                "tusAjuste)) AND ((@IsNull_CantidadAjustada = 1 AND [CantidadAjustada] IS NULL) O" +
-                "R ([CantidadAjustada] = @Original_CantidadAjustada)) AND ((@IsNull_FechaAjuste =" +
-                " 1 AND [FechaAjuste] IS NULL) OR ([FechaAjuste] = @Original_FechaAjuste)) AND ((" +
-                "@IsNull_EstatusReclamacion = 1 AND [EstatusReclamacion] IS NULL) OR ([EstatusRec" +
-                "lamacion] = @Original_EstatusReclamacion)) AND ((@IsNull_IDUsuario = 1 AND [IDUs" +
-                "uario] IS NULL) OR ([IDUsuario] = @Original_IDUsuario)) AND ((@IsNull_Comentario" +
-                "s = 1 AND [Comentarios] IS NULL) OR ([Comentarios] = @Original_Comentarios)) AND" +
-                " ((@IsNull_Seleccionar = 1 AND [Seleccionar] IS NULL) OR ([Seleccionar] = @Origi" +
-                "nal_Seleccionar)));\r\nSELECT idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP," +
-                " NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, " +
-                "FechaPago, TipoServicio, LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10," +
-                " IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, C" +
-                "antidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario, Comentarios, Selecc" +
-                "ionar FROM Reclamaciones WHERE (idReclamacion = @idReclamacion)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Reclamaciones] SET [idReclamacion] = @idReclamacion, [NumReclamacio" +
+                "n] = @NumReclamacion, [NumeroIPA] = @NumeroIPA, [NumeroPCP] = @NumeroPCP, [Nombr" +
+                "ePCP] = @NombrePCP, [Tier] = @Tier, [Cuenta] = @Cuenta, [NumeroContrato] = @Nume" +
+                "roContrato, [NombreAsegurado] = @NombreAsegurado, [Edad] = @Edad, [FechaServicio" +
+                "] = @FechaServicio, [FechaPago] = @FechaPago, [TipoServicio] = @TipoServicio, [L" +
+                "ugarServicio] = @LugarServicio, [NumeroServicio] = @NumeroServicio, [CargoTotal]" +
+                " = @CargoTotal, [ICD9] = @ICD9, [ICD10] = @ICD10, [IdCodigoCatastrofico] = @IdCo" +
+                "digoCatastrofico, [Especialidad] = @Especialidad, [Municipio] = @Municipio, [Can" +
+                "tidadPagada] = @CantidadPagada, [EstatusAjuste] = @EstatusAjuste, [CantidadAjust" +
+                "ada] = @CantidadAjustada, [FechaAjuste] = @FechaAjuste, [EstatusReclamacion] = @" +
+                "EstatusReclamacion, [IDUsuario] = @IDUsuario, [Comentarios] = @Comentarios, [Sel" +
+                "eccionar] = @Seleccionar WHERE (([idReclamacion] = @Original_idReclamacion) AND " +
+                "((@IsNull_NumReclamacion = 1 AND [NumReclamacion] IS NULL) OR ([NumReclamacion] " +
+                "= @Original_NumReclamacion)) AND ((@IsNull_NumeroIPA = 1 AND [NumeroIPA] IS NULL" +
+                ") OR ([NumeroIPA] = @Original_NumeroIPA)) AND ((@IsNull_NumeroPCP = 1 AND [Numer" +
+                "oPCP] IS NULL) OR ([NumeroPCP] = @Original_NumeroPCP)) AND ((@IsNull_NombrePCP =" +
+                " 1 AND [NombrePCP] IS NULL) OR ([NombrePCP] = @Original_NombrePCP)) AND ((@IsNul" +
+                "l_Tier = 1 AND [Tier] IS NULL) OR ([Tier] = @Original_Tier)) AND ((@IsNull_Cuent" +
+                "a = 1 AND [Cuenta] IS NULL) OR ([Cuenta] = @Original_Cuenta)) AND ((@IsNull_Nume" +
+                "roContrato = 1 AND [NumeroContrato] IS NULL) OR ([NumeroContrato] = @Original_Nu" +
+                "meroContrato)) AND ((@IsNull_NombreAsegurado = 1 AND [NombreAsegurado] IS NULL) " +
+                "OR ([NombreAsegurado] = @Original_NombreAsegurado)) AND ((@IsNull_Edad = 1 AND [" +
+                "Edad] IS NULL) OR ([Edad] = @Original_Edad)) AND ((@IsNull_FechaServicio = 1 AND" +
+                " [FechaServicio] IS NULL) OR ([FechaServicio] = @Original_FechaServicio)) AND ((" +
+                "@IsNull_FechaPago = 1 AND [FechaPago] IS NULL) OR ([FechaPago] = @Original_Fecha" +
+                "Pago)) AND ((@IsNull_TipoServicio = 1 AND [TipoServicio] IS NULL) OR ([TipoServi" +
+                "cio] = @Original_TipoServicio)) AND ((@IsNull_LugarServicio = 1 AND [LugarServic" +
+                "io] IS NULL) OR ([LugarServicio] = @Original_LugarServicio)) AND ((@IsNull_Numer" +
+                "oServicio = 1 AND [NumeroServicio] IS NULL) OR ([NumeroServicio] = @Original_Num" +
+                "eroServicio)) AND ((@IsNull_CargoTotal = 1 AND [CargoTotal] IS NULL) OR ([CargoT" +
+                "otal] = @Original_CargoTotal)) AND ((@IsNull_ICD9 = 1 AND [ICD9] IS NULL) OR ([I" +
+                "CD9] = @Original_ICD9)) AND ((@IsNull_ICD10 = 1 AND [ICD10] IS NULL) OR ([ICD10]" +
+                " = @Original_ICD10)) AND ((@IsNull_IdCodigoCatastrofico = 1 AND [IdCodigoCatastr" +
+                "ofico] IS NULL) OR ([IdCodigoCatastrofico] = @Original_IdCodigoCatastrofico)) AN" +
+                "D ((@IsNull_Especialidad = 1 AND [Especialidad] IS NULL) OR ([Especialidad] = @O" +
+                "riginal_Especialidad)) AND ((@IsNull_Municipio = 1 AND [Municipio] IS NULL) OR (" +
+                "[Municipio] = @Original_Municipio)) AND ((@IsNull_CantidadPagada = 1 AND [Cantid" +
+                "adPagada] IS NULL) OR ([CantidadPagada] = @Original_CantidadPagada)) AND ((@IsNu" +
+                "ll_EstatusAjuste = 1 AND [EstatusAjuste] IS NULL) OR ([EstatusAjuste] = @Origina" +
+                "l_EstatusAjuste)) AND ((@IsNull_CantidadAjustada = 1 AND [CantidadAjustada] IS N" +
+                "ULL) OR ([CantidadAjustada] = @Original_CantidadAjustada)) AND ((@IsNull_FechaAj" +
+                "uste = 1 AND [FechaAjuste] IS NULL) OR ([FechaAjuste] = @Original_FechaAjuste)) " +
+                "AND ((@IsNull_EstatusReclamacion = 1 AND [EstatusReclamacion] IS NULL) OR ([Esta" +
+                "tusReclamacion] = @Original_EstatusReclamacion)) AND ((@IsNull_IDUsuario = 1 AND" +
+                " [IDUsuario] IS NULL) OR ([IDUsuario] = @Original_IDUsuario)) AND ((@IsNull_Come" +
+                "ntarios = 1 AND [Comentarios] IS NULL) OR ([Comentarios] = @Original_Comentarios" +
+                ")) AND ((@IsNull_Seleccionar = 1 AND [Seleccionar] IS NULL) OR ([Seleccionar] = " +
+                "@Original_Seleccionar)));\r\nSELECT idReclamacion, NumReclamacion, NumeroIPA, Nume" +
+                "roPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServ" +
+                "icio, FechaPago, TipoServicio, LugarServicio, NumeroServicio, CargoTotal, ICD9, " +
+                "ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAju" +
+                "ste, CantidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario, Comentarios, " +
+                "Seleccionar FROM Reclamaciones WHERE (idReclamacion = @idReclamacion)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReclamacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumReclamacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumReclamacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -11031,10 +11507,7 @@ SELECT idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cue
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT   idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, 
-                         LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, 
-                         EstatusReclamacion, IDUsuario, Comentarios, Seleccionar
-FROM         Reclamaciones";
+            this._commandCollection[0].CommandText = @"SELECT idReclamacion, NumReclamacion, NumeroIPA, NumeroPCP, NombrePCP, Tier, Cuenta, NumeroContrato, NombreAsegurado, Edad, FechaServicio, FechaPago, TipoServicio, LugarServicio, NumeroServicio, CargoTotal, ICD9, ICD10, IdCodigoCatastrofico, Especialidad, Municipio, CantidadPagada, EstatusAjuste, CantidadAjustada, FechaAjuste, EstatusReclamacion, IDUsuario, Comentarios, Seleccionar FROM dbo.Reclamaciones";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

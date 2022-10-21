@@ -36,5 +36,6 @@ namespace AjusteIPA.Data
         public virtual DbSet<Tier> Tiers { get; set; }
         public virtual DbSet<TipoServicio> TipoServicios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<LogReclamacionesAjustada> LogReclamacionesAjustadas1 { get; set; }
     }
 }
