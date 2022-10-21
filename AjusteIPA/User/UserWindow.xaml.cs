@@ -1,5 +1,4 @@
-﻿using GemBox.Pdf;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,22 +22,8 @@ namespace AjusteIPA.User
     {
         public UserWindow()
         {
-            InitializeComponent();
-            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+            InitializeComponent(); 
         }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "PDF files (*.pdf)|*.pdf";
-
-            if (fileDialog.ShowDialog() == true)
-            {
-                using (var document = PdfDocument.Load(fileDialog.FileName))
-                {
-                    this.ImageControl.Source = document.ConvertToImageSource(SaveOptions.Image);
-                }
-            }
-        }
+ 
     }
 }

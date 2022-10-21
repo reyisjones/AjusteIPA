@@ -46,5 +46,10 @@ namespace AjusteIPA.Claims
                 Mouse.OverrideCursor = null;
             });
         }
+
+        private void Adjust_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

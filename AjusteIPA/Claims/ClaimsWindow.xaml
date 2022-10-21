@@ -3,17 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AjusteIPA.Claims"
-        xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data" 
         x:Class="AjusteIPA.Claims.ClaimsWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:domain="clr-namespace:AjusteIPA.Domain"
+        xmlns:themes="clr-namespace:AjusteIPA.Themes"
+        Style="{StaticResource MaterialDesignWindow}"
+        WindowStartupLocation="CenterScreen" 
+        xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data" 
         mc:Ignorable="d"
         Title="Cargar Reclamaciones para Ajuste" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
-        <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
+        <ResourceDictionary>
+            <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     <Grid DataContext="{StaticResource reclamacionesViewSource}">
-
-        <DataGrid x:Name="reclamacionesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="0,0,2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="327*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="14*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="reclamacionesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="0,0,2,0" Grid.Column="1" Grid.RowSpan="5">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="cantidadAjustadaColumn" Binding="{Binding CantidadAjustada}" Header="Cantidad Ajustada" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="cantidadPagadaColumn" Binding="{Binding CantidadPagada}" Header="Cantidad Pagada" Width="SizeToHeader"/>
@@ -63,6 +83,44 @@
                 <DataGridTextColumn x:Name="tipoServicioColumn" Binding="{Binding TipoServicio}" Header="Tipo Servicio" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+
+
+
+        <TextBox x:Name="btnSearchBox"
+                    Grid.Row="1"
+                   Margin="16,4,16,4"
+                   materialDesign:HintAssist.Hint="Search"
+                   materialDesign:HintAssist.IsFloating="True"
+                   materialDesign:TextFieldAssist.DecorationVisibility="Collapsed"
+                   materialDesign:TextFieldAssist.HasClearButton="True"
+                   materialDesign:TextFieldAssist.HasOutlinedTextField="True"
+                   materialDesign:TextFieldAssist.TextFieldCornerRadius="8"
+                   DockPanel.Dock="Top"
+                   Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button x:Name="btnAdjustClaim" 
+                      Grid.Row="2" 
+                      Height="56" 
+                      Width="300"
+                      Margin="16,6,16,32"
+                      HorizontalContentAlignment="Left"
+                      materialDesign:ButtonAssist.CornerRadius="16"
+                      Background="#4472c4"
+                      BorderThickness="0"
+                      Click="Adjust_OnClick"
+                      DockPanel.Dock="Top"
+                      Foreground="White">
+            <StackPanel Orientation="Horizontal">
+                <!--<materialDesign:PackIcon Width="24"
+                                       Height="24"
+                                       VerticalAlignment="Center"
+                                       Kind="MedicalBag" />-->
+                <TextBlock Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             FontSize="16"
+                             Text="Ajustar" />
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

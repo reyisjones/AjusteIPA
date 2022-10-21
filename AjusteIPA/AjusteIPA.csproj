@@ -62,9 +62,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="GemBox.Pdf, Version=17.0.0.1208, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\packages\GemBox.Pdf.17.0.1208\lib\net35\GemBox.Pdf.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.9.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.9\lib\net462\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -475,7 +472,5 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets'))" />
-    <Error Condition="!Exists('..\packages\GemBox.Pdf.17.0.1208\build\netstandard2.0\GemBox.Pdf.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GemBox.Pdf.17.0.1208\build\netstandard2.0\GemBox.Pdf.targets'))" />
   </Target>
-  <Import Project="..\packages\GemBox.Pdf.17.0.1208\build\netstandard2.0\GemBox.Pdf.targets" Condition="Exists('..\packages\GemBox.Pdf.17.0.1208\build\netstandard2.0\GemBox.Pdf.targets')" />
 </Project>

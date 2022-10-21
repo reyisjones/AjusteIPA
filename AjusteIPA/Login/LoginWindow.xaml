@@ -79,7 +79,7 @@
                                 <ComboBox Name="LocalDatabaseComboBox" Style="{StaticResource LoginComboboxStyle}" TabIndex="6"/>
                             </Grid>-->
 
-                            <ProgressBar x:Name="LocalMetroProgressBar" Visibility="Visible" Height="16" Margin="0,4,0,8" HorizontalAlignment="Center"  Width="220" Background="Transparent" BorderBrush="{StaticResource ThemeColorBrush}" Foreground="{DynamicResource ThemeColorBrush}" BorderThickness="1" IsIndeterminate="False"/>
+                            <!--<ProgressBar x:Name="LocalMetroProgressBar" Visibility="Visible" Height="16" Margin="0,4,0,8" HorizontalAlignment="Center"  Width="220" Background="Transparent" BorderBrush="{StaticResource ThemeColorBrush}" Foreground="{DynamicResource ThemeColorBrush}" BorderThickness="1" IsIndeterminate="False"/>-->
 
                             <!--<CheckBox Visibility="Visible" Name="WindowsCredentialsCheckBox" Content="Windows Credentials" Height="26" Margin="-6,0,0,8" HorizontalAlignment="Center" IsChecked="False" VerticalAlignment="Center" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged" TabIndex="7"/>-->
                             <Button Name="LocalLoginButton" Content="Login" Width="220" Height="36" Margin="0,0,0,32" TabIndex="8" Click="LocalLoginButton_Click" />

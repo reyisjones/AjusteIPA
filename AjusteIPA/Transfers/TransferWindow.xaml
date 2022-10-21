@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:AjusteIPA.Transfers"
         xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data" x:Class="AjusteIPA.Transfers.TransferWindow"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" 
         Title="Transferir Reclamaciones Ajustadas" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
