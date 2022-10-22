@@ -440,7 +440,9 @@
     <EmbeddedResource Include="Reports\TotalAdjustedClaimsbyUser.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="Resources\ManualDelUsuario-SistemaIPA.pdf" />
+    <EmbeddedResource Include="Resources\ManualDelUsuario-SistemaIPA.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="User\ManualDelUsuario-SistemaIPA.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
