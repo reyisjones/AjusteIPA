@@ -84,7 +84,7 @@
 
                     <StackPanel Grid.ColumnSpan="6" Grid.Row="3" Name="sp1" >
 
-                    <!--<Button x:Name="DrawerFAB"
+                        <!--<Button x:Name="DrawerFAB"
                       Height="56"
                       Width="300"                            
                       Margin="16,6,16,32"
@@ -107,7 +107,7 @@
                             </StackPanel>
                         </Button>-->
 
-                    <Button x:Name="btnLoad"
+                        <Button x:Name="btnLoad"
                       Height="56" 
                       Width="300"
                       Margin="16,6,16,32"
@@ -130,7 +130,7 @@
                             </StackPanel>
                         </Button>
 
-                    <Button x:Name="btnTransfer"
+                        <Button x:Name="btnTransfer"
                       Height="56" 
                       Width="300"
                       Margin="16,6,16,32"
@@ -315,8 +315,8 @@
                        VerticalAlignment="Center"
                        AutomationProperties.Name="Ajuste IPA"
                        FontSize="22"
-                       Text="Sistema de Ajustes de Reclamaciones Catastróficas de IPA" />
-                        
+                       Text="Sistema de Ajustes de Reclamaciones Catastróficas de IPA" FontWeight="Bold" />
+
 
                         <materialDesign:PopupBox Grid.Column="2"
                                      PlacementMode="BottomAndAlignRightEdges"
@@ -419,8 +419,10 @@
 
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="9*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <!--<domain:DocumentationLinks DataContext="{Binding SelectedItem}" />-->
 
@@ -440,13 +442,15 @@
                             </ContentControl>
                         </ScrollViewer>
 
-                        <TextBlock HorizontalAlignment="Center" Grid.Row="5" Width="800" Height="300" VerticalAlignment="Center" Opacity="0.7" Margin="0,0,0,70" >
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="1" Width="968" Height="432" VerticalAlignment="Center" Opacity="0.7" >
                             <TextBlock.Background>
                                 <ImageBrush ImageSource="/backgroundHome.png" Stretch="UniformToFill"/>
                             </TextBlock.Background>
                         </TextBlock>
 
-
+                        <TextBlock HorizontalAlignment="Center" Grid.Row="2" Width="456" Height="30" VerticalAlignment="Top" FontSize="18"   FontWeight="Bold" >
+                             GC Inc., subsidiaria de GCC Management Corporation
+                        </TextBlock>
 
                         <!--<materialDesign:Card x:Name="NotificationPanel"
                                  Grid.Row="0"

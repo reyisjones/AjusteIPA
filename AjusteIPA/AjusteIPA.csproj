@@ -428,7 +428,6 @@
     <EmbeddedResource Include="Reports\AdjustedDeniedClaims.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="Reports\ProcessedAdjustedAcceptedStatusClaims.rdlc" />
     <EmbeddedResource Include="Reports\ProcessedAdjustedClaims.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
