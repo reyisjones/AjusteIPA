@@ -60,6 +60,7 @@ namespace AjusteIPA.Claims
             ValidateLogReclamacionesAjustadas();
             ValidateRegistroCatastrofico();
             ValidateContratoEspecialidadIPA();
+            context.SaveChanges();
             UpdateSeleccionar();
 
             context.SaveChanges();
@@ -87,8 +88,6 @@ namespace AjusteIPA.Claims
                 item.Seleccionar = false;
 
                 context.Entry(item).State = EntityState.Modified;
-                //context.SaveChanges();
-                //this.reclamacionesDataGrid.Items.Refresh();
             }
         }
 
@@ -106,8 +105,6 @@ namespace AjusteIPA.Claims
                 item.Seleccionar = false;
 
                 context.Entry(item).State = EntityState.Modified;
-                //context.SaveChanges();
-                //this.reclamacionesDataGrid.Items.Refresh();
             }
         }
 
@@ -119,7 +116,7 @@ namespace AjusteIPA.Claims
             foreach (var item in selectedClaims)
             {
                 var validIpa = item.NumeroIPA.HasValue ? true : false;
-                var validNumContrato = string.IsNullOrWhiteSpace(item.NumeroContrato) ? true : false;
+                var validNumContrato = string.IsNullOrWhiteSpace(item.NumeroContrato) ? false : true;
                 var validEsp = item.Especialidad.HasValue ? true : false;
 
                 if (validIpa && validEsp && validNumContrato)
@@ -136,8 +133,6 @@ namespace AjusteIPA.Claims
                 }
 
                 context.Entry(item).State = EntityState.Modified;
-                //context.SaveChanges();
-                //this.reclamacionesDataGrid.Items.Refresh();
             }
         }
 
@@ -150,8 +145,7 @@ namespace AjusteIPA.Claims
                 item.Seleccionar = false;
 
                 context.Entry(item).State = EntityState.Modified;
-                //context.SaveChanges();
-                //this.reclamacionesDataGrid.Items.Refresh();
+                context.SaveChanges();
             }
         }
 
