@@ -9,14 +9,33 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
         Title="Informes" Height="450" Width="800">
-        <Window.Resources>
-            <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
-        </Window.Resources>
-        <Grid DataContext="{StaticResource reclamacionesViewSource}">
-            <WindowsFormsHost Name="winForms">
-                <rv:ReportViewer x:Name="rptWellBalanceClaims" DocumentMapCollapsed="True">
-                    
-                </rv:ReportViewer>
-            </WindowsFormsHost>
-        </Grid>
+    <Window.Resources>
+        <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource reclamacionesViewSource}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="380*"/>
+        </Grid.RowDefinitions>
+        <WindowsFormsHost Name="winForms" Margin="0,0,0,0" Grid.Row="1" Grid.ColumnSpan="9">
+            <rv:ReportViewer x:Name="rptWellBalanceClaims" DocumentMapCollapsed="True">
+            </rv:ReportViewer>
+        </WindowsFormsHost>
+        <Button Grid.Column="1" Grid.Row="0" Margin="5,1,5,1" Click="AceptadaOnClick">Aceptada</Button>
+        <Button Grid.Column="2" Grid.Row="0" Margin="5,1,5,1" Click="DenegadaOnClick">Denegada</Button>
+        <Button Grid.Column="3" Grid.Row="0" Margin="5,1,5,1" Click="StatusOnClick">Status</Button>
+        <Button Grid.Column="4" Grid.Row="0" Margin="5,1,5,1" Click="AjustadaOnClick">Ajustada</Button>
+        <Button Grid.Column="5" Grid.Row="0" Margin="5,1,5,1" Click="IPAOnClick">Total IPA</Button>
+        <Button Grid.Column="6" Grid.Row="0" Margin="5,1,5,1" Click="UserOnClick">Total User</Button>
+    </Grid>
 </Window>

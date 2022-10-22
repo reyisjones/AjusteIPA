@@ -31,9 +31,6 @@ namespace AjusteIPA.Claims
             context.LogReclamacionesAjustadas.Load();
             context.RegistroCatastroficoes.Load();
 
-            // After the data is loaded, call the DbSet<T>.Local property    
-            // to use the DbSet<T> as a binding source.   
-
             claimsViewSource.Source = context.Reclamaciones.Local.Where(x => x.EstatusReclamacion == "Pendiente").ToList();
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -63,6 +60,7 @@ namespace AjusteIPA.Claims
             ValidateLogReclamacionesAjustadas();
             ValidateRegistroCatastrofico();
             ValidateContratoEspecialidadIPA();
+            UpdateSeleccionar();
 
             context.SaveChanges();
             this.reclamacionesDataGrid.Items.Refresh();
@@ -124,13 +122,17 @@ namespace AjusteIPA.Claims
                 var validNumContrato = string.IsNullOrWhiteSpace(item.NumeroContrato) ? true : false;
                 var validEsp = item.Especialidad.HasValue ? true : false;
 
-
                 if (validIpa && validEsp && validNumContrato)
                 {
                     item.EstatusAjuste = "Aceptado";
+                    item.EstatusReclamacion = "Procesado";
+                    item.CantidadAjustada = item.CargoTotal;
+                    item.CantidadPagada = item.CargoTotal;
                 }
-                else {
+                else
+                {
                     item.EstatusAjuste = "Denegado";
+                    item.EstatusReclamacion = "Procesado";
                 }
 
                 context.Entry(item).State = EntityState.Modified;
@@ -138,24 +140,20 @@ namespace AjusteIPA.Claims
                 //this.reclamacionesDataGrid.Items.Refresh();
             }
         }
-    }
 
-    public static class AdjustedClaimsRules
-    {
-        /*
-         Paso 2: Verificar NumeroReclamacion existe en [dbo].[LogReclamacionesAjustadas]
-            Si existe 
-	            - Update al campo [EstatusAjuste] from [dbo].[Reclamaciones] ==> 'Denegado' 
-	            - Update al campo [EstatusReclamacion] == "Duplicado"
-            Paso 3: 
-             [EstatusReclamacion] == "Pendiente" (default value) 
-            -- If [NumeroContrato] Not Exists [dbo].[RegistroCatastrofico] Then  ==> EstatusAjuste = Denegado 
+        private void UpdateSeleccionar()
+        {
+            var claims = context.Reclamaciones.Local;
 
-            If Not Null 
-	            ,t1.[NumeroIPA]
-                ,t1.[NumeroContrato]
-                ,t1.[Especialidad] 
-            &&  [NumeroContrato] Exists [dbo].[RegistroCatastrofico] Then  ==> EstatusAjuste = Aceptado 
-         */
+            foreach (var item in claims)
+            {
+                item.Seleccionar = false;
+
+                context.Entry(item).State = EntityState.Modified;
+                //context.SaveChanges();
+                //this.reclamacionesDataGrid.Items.Refresh();
+            }
+        }
+
     }
 }

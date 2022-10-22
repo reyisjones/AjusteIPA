@@ -19,6 +19,15 @@ namespace AjusteIPA.Reports
     {
         AjusteIpaDBEntities context = new AjusteIpaDBEntities();
         CollectionViewSource claimsViewSource;
+
+        private readonly string adjustedAcceptedClaims = @"Reports\AdjustedAcceptedClaims.rdlc";
+        private readonly string adjustedDeniedClaims = @"Reports\AdjustedDeniedClaims.rdlc";
+        private readonly string processedAdjustedClaims = @"Reports\ProcessedAdjustedClaims.rdlc";
+        private readonly string processedAdjustedAcceptedStatusClaims = @"Reports\ProcessedAdjustedAcceptedStatusClaims.rdlc";
+        private readonly string processedAdjustedClaimsNew = @"Reports\ProcessedAdjustedClaimsNew.rdlc";
+        private readonly string totalAdjustedClaimsbyIPA = @"Reports\TotalAdjustedClaimsbyIPA.rdlc";
+        private readonly string totalAdjustedClaimsbyUser = @"Reports\TotalAdjustedClaimsbyUser.rdlc";
+
         public ReportWindow()
         {
             InitializeComponent();
@@ -33,37 +42,65 @@ namespace AjusteIPA.Reports
             {
                 Mouse.OverrideCursor = Cursors.Wait;
             });
-            context.Reclamaciones.Load();
 
+            context.Reclamaciones.Load();
             claimsViewSource.Source = context.Reclamaciones.Local.Where(x => x.EstatusReclamacion == "Pendiente").ToList();
+            BuildReport(processedAdjustedClaims);
+
             Application.Current.Dispatcher.Invoke(() =>
             {
                 Mouse.OverrideCursor = null;
             });
 
-            var dsClaims = claimsViewSource.Source;
+        }
+
+        private void BuildReport(string reportPath) {
             ReportDataSource datasource = new ReportDataSource("AjusteIpaDataSet", context.Reclamaciones);
-            //DataSet dataset = new DataSet("AjusteIpaDataSet"); 
-            datasource.Value = dsClaims;
+            datasource.Value = claimsViewSource.Source;
 
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
-            string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Reports\ProcessedAdjustedClaims.rdlc");
+            string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), reportPath);
 
-            //this.rptWellBalanceClaims = new Microsoft.Reporting.WinForms.ReportViewer();
-            // Set the processing mode for the ReportViewer to Local  
             rptWellBalanceClaims.ProcessingMode = ProcessingMode.Local;
-
             LocalReport localReport = rptWellBalanceClaims.LocalReport;
             localReport.ReportPath = rdlFilePath;
-
-
-            //rptWellBalanceClaims.LocalReport.ReportEmbeddedResource = rdlFilePath;
-            //rptWellBalanceClaims.LocalReport.DataSources.Clear();
-            //rptWellBalanceClaims.LocalReport.DataSources.Add(datasource);
             localReport.DataSources.Clear();
             localReport.DataSources.Add(datasource);
 
             rptWellBalanceClaims.RefreshReport();
+        }
+
+        private void AceptadaOnClick(object sender, RoutedEventArgs e)
+        {
+            context.LogReclamacionesAjustadas.Load();
+            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada" 
+            && x.EstatusAjuste == "Aceptado" 
+            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+            BuildReport(adjustedAcceptedClaims);
+        }
+
+        private void DenegadaOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StatusOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AjustadaOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void IPAOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UserOnClick(object sender, RoutedEventArgs e)
+        {
 
         }
     }
