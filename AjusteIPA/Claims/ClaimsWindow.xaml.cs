@@ -85,8 +85,7 @@ namespace AjusteIPA.Claims
             {
                 item.EstatusAjuste = "Denegado";
                 item.EstatusReclamacion = "Duplicado";
-                item.Seleccionar = false;
-
+                item.Seleccionar = false; 
                 context.Entry(item).State = EntityState.Modified;
             }
         }

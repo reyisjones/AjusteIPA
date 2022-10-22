@@ -1,6 +1,7 @@
 ﻿using AjusteIPA.Data;
 using Microsoft.Reporting.WinForms;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace AjusteIPA.Reports
 
             context.Reclamaciones.Load();
             claimsViewSource.Source = context.Reclamaciones.Local.Where(x => x.EstatusReclamacion == "Pendiente").ToList();
-            BuildReport(processedAdjustedClaims);
+            BuildReport(processedAdjustedClaims, ReportTypes.Ajustada);
 
             Application.Current.Dispatcher.Invoke(() =>
             {
@@ -52,14 +53,46 @@ namespace AjusteIPA.Reports
             });
         }
 
-        private void BuildReport(string reportPath)
+        private void BuildReport(string reportPath, ReportTypes reportTypes)
         {
-            ReportDataSource datasource = new ReportDataSource("AjusteIpaDataSet", context.Reclamaciones);
-            datasource.Value = claimsViewSource.Source;
+            ReportDataSource datasource = new ReportDataSource();
+            List<LogReclamacionesAjustada> query = new List<LogReclamacionesAjustada>();
+            context.LogReclamacionesAjustadas.Load();
 
+            switch (reportTypes)
+            {
+                case ReportTypes.Aceptada:
+                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+                    && x.EstatusAjuste == "Aceptado"
+                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+                    break;
+                case ReportTypes.Denegada:
+                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+                    && x.EstatusAjuste == "Denegado"
+                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+                    break;
+                case ReportTypes.Ajustada:
+                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+                    break;
+                case ReportTypes.IPA:
+                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+                    break;
+                case ReportTypes.User:
+                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+                    break;
+                default:
+                    datasource = new ReportDataSource("AjusteIpaDataSet", context.LogReclamacionesAjustadas);
+                    break;
+            }
+
+            claimsViewSource.Source = query;
+            datasource = new ReportDataSource("AjusteIpaDataSet", query);
+            datasource.Value = claimsViewSource.Source;
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), reportPath);
-
             rptWellBalanceClaims.ProcessingMode = ProcessingMode.Local;
             LocalReport localReport = rptWellBalanceClaims.LocalReport;
             localReport.ReportPath = rdlFilePath;
@@ -71,53 +104,37 @@ namespace AjusteIPA.Reports
 
         private void AceptadaOnClick(object sender, RoutedEventArgs e)
         {
-            context.LogReclamacionesAjustadas.Load();
-            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-            && x.EstatusAjuste == "Aceptado"
-            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-            BuildReport(adjustedAcceptedClaims);
+            BuildReport(adjustedAcceptedClaims, ReportTypes.Aceptada);
         }
 
         private void DenegadaOnClick(object sender, RoutedEventArgs e)
         {
-            context.LogReclamacionesAjustadas.Load();
-            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-            && x.EstatusAjuste == "Denegado"
-            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-            BuildReport(adjustedDeniedClaims);
-        }
-
-        private void StatusOnClick(object sender, RoutedEventArgs e)
-        {
-            context.LogReclamacionesAjustadas.Load();
-            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-            && x.EstatusAjuste == "Denegado"
-            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-            BuildReport(adjustedDeniedClaims);
+            BuildReport(adjustedDeniedClaims, ReportTypes.Denegada);
         }
 
         private void AjustadaOnClick(object sender, RoutedEventArgs e)
         {
-            context.Reclamaciones.Load();
-            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-            BuildReport(processedAdjustedClaimsNew);
+            BuildReport(processedAdjustedClaimsNew, ReportTypes.Ajustada);
         }
 
         private void IPAOnClick(object sender, RoutedEventArgs e)
         {
-            context.LogReclamacionesAjustadas.Load();
-            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-            BuildReport(totalAdjustedClaimsbyIPA);
+            BuildReport(totalAdjustedClaimsbyIPA, ReportTypes.IPA);
         }
 
         private void UserOnClick(object sender, RoutedEventArgs e)
         {
-            context.LogReclamacionesAjustadas.Load();
-            claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-            BuildReport(totalAdjustedClaimsbyUser);
+            BuildReport(totalAdjustedClaimsbyUser, ReportTypes.User);
         }
     }
+
+    public enum ReportTypes
+    {
+        Aceptada,
+        Denegada,
+        Ajustada,
+        IPA,
+        User
+    }
+
 }

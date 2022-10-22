@@ -4,25 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AjusteIPA.Transfers"
-        xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data" 
-        x:Class="AjusteIPA.Transfers.TransferWindow"
+        xmlns:Data="clr-namespace:AjusteIPA.Data;assembly=AjusteIPA.Data"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:domain="clr-namespace:AjusteIPA.Domain"
         xmlns:themes="clr-namespace:AjusteIPA.Themes"
-        Style="{StaticResource MaterialDesignWindow}"
+        xmlns:AjusteIPA="clr-namespace:AjusteIPA" 
+        x:Class="AjusteIPA.Transfers.TransferWindow"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" 
-        Title="Transferir Reclamaciones Ajustadas" Height="450" Width="800" Loaded="Window_Loaded"> 
+        Title="Transferir Reclamaciones Ajustadas" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary>
-            <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <CollectionViewSource x:Key="reclamacionesViewSource" d:DesignSource="{d:DesignInstance {x:Type Data:Reclamaciones}}"/>
+            <AjusteIPA:AjusteIpaDBDataSet x:Key="ajusteIpaDBDataSet"/>
         </ResourceDictionary>
     </Window.Resources>
+    <Window.Style>
+        <StaticResource ResourceKey="MaterialDesignWindow"/>
+    </Window.Style>
     <Grid DataContext="{StaticResource reclamacionesViewSource}">
         <Grid.RowDefinitions>
             <RowDefinition Height="29*"/>
@@ -34,21 +38,23 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="14*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="reclamacionesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="2,2,1,0" Grid.Column="1" Grid.RowSpan="5">
+
+        <DataGrid x:Name="reclamacionesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource reclamacionesViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="1,2,0,2" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="cantidadAjustadaColumn" Binding="{Binding CantidadAjustada}" Header="Cantidad Ajustada" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="cantidadPagadaColumn" Binding="{Binding CantidadPagada}" Header="Cantidad Pagada" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="cargoTotalColumn" Binding="{Binding CargoTotal}" Header="Cargo Total" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="comentariosColumn" Binding="{Binding Comentarios}" Header="Comentarios" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="idReclamacionColumn" Binding="{Binding idReclamacion}" Header="id Reclamacion" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numReclamacionColumn" Binding="{Binding NumReclamacion}" Header="Num Reclamacion" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numeroIPAColumn" Binding="{Binding NumeroIPA}" Header="Numero IPA" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numeroPCPColumn" Binding="{Binding NumeroPCP}" Header="Numero PCP" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nombrePCPColumn" Binding="{Binding NombrePCP}" Header="Nombre PCP" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="tierColumn" Binding="{Binding Tier}" Header="Tier" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="cuentaColumn" Binding="{Binding Cuenta}" Header="Cuenta" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numeroContratoColumn" Binding="{Binding NumeroContrato}" Header="Numero Contrato" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nombreAseguradoColumn" Binding="{Binding NombreAsegurado}" Header="Nombre Asegurado" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="edadColumn" Binding="{Binding Edad}" Header="Edad" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="especialidadColumn" Binding="{Binding Especialidad}" Header="Especialidad" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="estatusAjusteColumn" Binding="{Binding EstatusAjuste}" Header="Estatus Ajuste" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="estatusReclamacionColumn" Binding="{Binding EstatusReclamacion}" Header="Estatus Reclamacion" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="fechaAjusteColumn" Header="Fecha Ajuste" Width="SizeToHeader">
+                <DataGridTemplateColumn x:Name="fechaServicioColumn" Header="Fecha Servicio" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <DatePicker SelectedDate="{Binding FechaAjuste, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            <DatePicker SelectedDate="{Binding FechaServicio, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -59,29 +65,29 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn x:Name="fechaServicioColumn" Header="Fecha Servicio" Width="SizeToHeader">
+                <DataGridTextColumn x:Name="tipoServicioColumn" Binding="{Binding TipoServicio}" Header="Tipo Servicio" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="lugarServicioColumn" Binding="{Binding LugarServicio}" Header="Lugar Servicio" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numeroServicioColumn" Binding="{Binding NumeroServicio}" Header="Numero Servicio" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="cargoTotalColumn" Binding="{Binding CargoTotal}" Header="Cargo Total" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iCD9Column" Binding="{Binding ICD9}" Header="ICD 9" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iCD10Column" Binding="{Binding ICD10}" Header="ICD 10" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="idCodigoCatastroficoColumn" Binding="{Binding IdCodigoCatastrofico}" Header="Id Codigo Catastrofico" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="especialidadColumn" Binding="{Binding Especialidad}" Header="Especialidad" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="municipioColumn" Binding="{Binding Municipio}" Header="Municipio" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="cantidadPagadaColumn" Binding="{Binding CantidadPagada}" Header="Cantidad Pagada" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="estatusAjusteColumn" Binding="{Binding EstatusAjuste}" Header="Estatus Ajuste" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="cantidadAjustadaColumn" Binding="{Binding CantidadAjustada}" Header="Cantidad Ajustada" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="fechaAjusteColumn" Header="Fecha Ajuste" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <DatePicker SelectedDate="{Binding FechaServicio, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            <DatePicker SelectedDate="{Binding FechaAjuste, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="iCD10Column" Binding="{Binding ICD10}" Header="ICD 10" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="iCD9Column" Binding="{Binding ICD9}" Header="ICD 9" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="idCodigoCatastroficoColumn" Binding="{Binding IdCodigoCatastrofico}" Header="Id Codigo Catastrofico" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="idReclamacionColumn" Binding="{Binding idReclamacion}" Header="id Reclamacion" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="estatusReclamacionColumn" Binding="{Binding EstatusReclamacion}" Header="Estatus Reclamacion" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="iDUsuarioColumn" Binding="{Binding IDUsuario}" Header="IDUsuario" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="lugarServicioColumn" Binding="{Binding LugarServicio}" Header="Lugar Servicio" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="municipioColumn" Binding="{Binding Municipio}" Header="Municipio" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="nombreAseguradoColumn" Binding="{Binding NombreAsegurado}" Header="Nombre Asegurado" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="nombrePCPColumn" Binding="{Binding NombrePCP}" Header="Nombre PCP" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="numeroContratoColumn" Binding="{Binding NumeroContrato}" Header="Numero Contrato" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="numeroIPAColumn" Binding="{Binding NumeroIPA}" Header="Numero IPA" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="numeroPCPColumn" Binding="{Binding NumeroPCP}" Header="Numero PCP" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="numeroServicioColumn" Binding="{Binding NumeroServicio}" Header="Numero Servicio" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="numReclamacionColumn" Binding="{Binding NumReclamacion}" Header="Num Reclamacion" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="tierColumn" Binding="{Binding Tier}" Header="Tier" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="tipoServicioColumn" Binding="{Binding TipoServicio}" Header="Tipo Servicio" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="comentariosColumn" Binding="{Binding Comentarios}" Header="Comentarios" Width="SizeToHeader"/>
+                <DataGridCheckBoxColumn x:Name="seleccionarColumn" Binding="{Binding Seleccionar}" Header="Seleccionar" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
 
