@@ -173,7 +173,7 @@ namespace AjusteIPA.Reports
             ReportDataSource datasource = new ReportDataSource("AjusteIpaDataSet", subquery);
             datasource.Value = claimsViewSource.Source;
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
-            string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), totalAdjustedClaimsbyUser);
+            string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), totalAdjustedClaimsbyIPA);
             rptWellBalanceClaims.ProcessingMode = ProcessingMode.Local;
             LocalReport localReport = rptWellBalanceClaims.LocalReport;
             localReport.ReportPath = rdlFilePath;
