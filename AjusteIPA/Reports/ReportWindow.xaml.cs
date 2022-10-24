@@ -4,11 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using static AjusteIPA.Reports.ReportWindow;
 using Path = System.IO.Path;
 
 namespace AjusteIPA.Reports
@@ -44,7 +47,6 @@ namespace AjusteIPA.Reports
             });
 
             context.LogReclamacionesAjustadas.Load();
-            //claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Pendiente").ToList();
             BuildReport(processedAdjustedClaims, ReportTypes.Ajustada);
 
             Application.Current.Dispatcher.Invoke(() =>
@@ -75,13 +77,11 @@ namespace AjusteIPA.Reports
                     && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
                     break;
                 case ReportTypes.IPA:
-                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-                    break;
+                    ClaimsByIPA();
+                    return;
                 case ReportTypes.User:
-                    query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
-                    && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
-                    break;
+                    ClaimsByUser();
+                    return;
                 default:
                     break;
             }
@@ -124,6 +124,65 @@ namespace AjusteIPA.Reports
         {
             BuildReport(totalAdjustedClaimsbyUser, ReportTypes.User);
         }
+
+        private void ClaimsByUser()
+        {
+            var query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+
+            var subquery = query.GroupBy(y => y.IDUsuario, (key, g) => new
+            {
+                IdAjustador = key,
+                CantidadReclamaciones = g.Select(x => x.idReclamacion).Count(),
+                TotalCargo = g.Select(x => x.CargoTotal).Sum(),
+                TotalCantidadPagada = g.Select(x => x.CantidadPagada).Sum(),
+                TotalCantidadAjustada = g.Select(x => x.CantidadAjustada).Sum(),
+            });
+
+            claimsViewSource.Source = subquery;
+            ReportDataSource datasource = new ReportDataSource("AjusteIpaDataSet", subquery);
+            datasource.Value = claimsViewSource.Source;
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
+            string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), totalAdjustedClaimsbyUser);
+            rptWellBalanceClaims.ProcessingMode = ProcessingMode.Local;
+            LocalReport localReport = rptWellBalanceClaims.LocalReport;
+            localReport.ReportPath = rdlFilePath;
+            localReport.DataSources.Clear();
+            localReport.DataSources.Add(datasource);
+
+            rptWellBalanceClaims.RefreshReport();
+        }
+
+
+        private void ClaimsByIPA()
+        {
+            var query = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Procesada"
+            && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
+
+            var subquery = query.GroupBy(n => new { n.NumeroIPA, n.EstatusAjuste }).Select(g => new
+            {
+                NumeroIPA = g.Key.NumeroIPA,
+                EstatusAjuste = g.Key.EstatusAjuste,
+                CantidadReclamaciones = g.Select(x => x.idReclamacion).Count(),
+                TotalCargo = g.Select(x => x.CargoTotal).Sum(),
+                TotalCantidadPagada = g.Select(x => x.CantidadPagada).Sum(),
+                TotalCantidadAjustada = g.Select(x => x.CantidadAjustada).Sum(),
+            });
+
+            claimsViewSource.Source = subquery;
+            ReportDataSource datasource = new ReportDataSource("AjusteIpaDataSet", subquery);
+            datasource.Value = claimsViewSource.Source;
+            SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
+            string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), totalAdjustedClaimsbyUser);
+            rptWellBalanceClaims.ProcessingMode = ProcessingMode.Local;
+            LocalReport localReport = rptWellBalanceClaims.LocalReport;
+            localReport.ReportPath = rdlFilePath;
+            localReport.DataSources.Clear();
+            localReport.DataSources.Add(datasource);
+
+            rptWellBalanceClaims.RefreshReport();
+        }
+
     }
 
     public enum ReportTypes

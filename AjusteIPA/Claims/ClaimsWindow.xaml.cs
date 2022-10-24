@@ -87,6 +87,7 @@ namespace AjusteIPA.Claims
                 item.EstatusReclamacion = "Duplicado";
                 item.Seleccionar = false;
                 item.FechaAjuste = System.DateTime.Now;
+                item.IDUsuario = 1002;
                 context.Entry(item).State = EntityState.Modified;
             }
         }
@@ -104,6 +105,7 @@ namespace AjusteIPA.Claims
                 item.EstatusReclamacion = "Duplicado";
                 item.Seleccionar = false;
                 item.FechaAjuste = System.DateTime.Now;
+                item.IDUsuario = 1002;
                 context.Entry(item).State = EntityState.Modified;
             }
         }
@@ -126,12 +128,14 @@ namespace AjusteIPA.Claims
                     item.CantidadAjustada = item.CargoTotal;
                     item.CantidadPagada = item.CargoTotal;
                     item.FechaAjuste = System.DateTime.Now;
+                    item.IDUsuario = 1002;
                 }
                 else
                 {
                     item.EstatusAjuste = "Denegado";
                     item.EstatusReclamacion = "Procesada";
                     item.FechaAjuste = System.DateTime.Now;
+                    item.IDUsuario = 1002;
                 }
 
                 context.Entry(item).State = EntityState.Modified;
