@@ -85,7 +85,8 @@ namespace AjusteIPA.Claims
             {
                 item.EstatusAjuste = "Denegado";
                 item.EstatusReclamacion = "Duplicado";
-                item.Seleccionar = false; 
+                item.Seleccionar = false;
+                item.FechaAjuste = System.DateTime.Now;
                 context.Entry(item).State = EntityState.Modified;
             }
         }
@@ -102,7 +103,7 @@ namespace AjusteIPA.Claims
                 item.EstatusAjuste = "Denegado";
                 item.EstatusReclamacion = "Duplicado";
                 item.Seleccionar = false;
-
+                item.FechaAjuste = System.DateTime.Now;
                 context.Entry(item).State = EntityState.Modified;
             }
         }
@@ -121,14 +122,16 @@ namespace AjusteIPA.Claims
                 if (validIpa && validEsp && validNumContrato)
                 {
                     item.EstatusAjuste = "Aceptado";
-                    item.EstatusReclamacion = "Procesado";
+                    item.EstatusReclamacion = "Procesada";
                     item.CantidadAjustada = item.CargoTotal;
                     item.CantidadPagada = item.CargoTotal;
+                    item.FechaAjuste = System.DateTime.Now;
                 }
                 else
                 {
                     item.EstatusAjuste = "Denegado";
-                    item.EstatusReclamacion = "Procesado";
+                    item.EstatusReclamacion = "Procesada";
+                    item.FechaAjuste = System.DateTime.Now;
                 }
 
                 context.Entry(item).State = EntityState.Modified;

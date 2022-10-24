@@ -43,8 +43,8 @@ namespace AjusteIPA.Reports
                 Mouse.OverrideCursor = Cursors.Wait;
             });
 
-            context.Reclamaciones.Load();
-            claimsViewSource.Source = context.Reclamaciones.Local.Where(x => x.EstatusReclamacion == "Pendiente").ToList();
+            context.LogReclamacionesAjustadas.Load();
+            //claimsViewSource.Source = context.LogReclamacionesAjustadas.Local.Where(x => x.EstatusReclamacion == "Pendiente").ToList();
             BuildReport(processedAdjustedClaims, ReportTypes.Ajustada);
 
             Application.Current.Dispatcher.Invoke(() =>
@@ -55,7 +55,6 @@ namespace AjusteIPA.Reports
 
         private void BuildReport(string reportPath, ReportTypes reportTypes)
         {
-            ReportDataSource datasource = new ReportDataSource();
             List<LogReclamacionesAjustada> query = new List<LogReclamacionesAjustada>();
             context.LogReclamacionesAjustadas.Load();
 
@@ -84,12 +83,11 @@ namespace AjusteIPA.Reports
                     && x.FechaAjuste.Value.Month == DateTime.UtcNow.Month).ToList();
                     break;
                 default:
-                    datasource = new ReportDataSource("AjusteIpaDataSet", context.LogReclamacionesAjustadas);
                     break;
             }
 
             claimsViewSource.Source = query;
-            datasource = new ReportDataSource("AjusteIpaDataSet", query);
+            ReportDataSource datasource = new ReportDataSource("AjusteIpaDataSet", query);
             datasource.Value = claimsViewSource.Source;
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
             string rdlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), reportPath);

@@ -39,6 +39,12 @@ namespace AjusteIPA.Transfers
 
         private void Transfer_OnClick(object sender, RoutedEventArgs e)
         {
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Mouse.OverrideCursor = Cursors.Wait;
+            });
+
             var claims = context.Reclamaciones.Local.Where(x => x.EstatusReclamacion.Contains("Procesad"));
             foreach (var item in claims)
             {
@@ -78,6 +84,11 @@ namespace AjusteIPA.Transfers
                 });
             }
             context.SaveChanges();
+
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                Mouse.OverrideCursor = null;
+            });
         }
     }
 }
