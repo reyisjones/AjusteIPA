@@ -225,7 +225,8 @@ namespace AjusteIPA
 
         private void LoadUserGuide_OnClick(object sender, RoutedEventArgs e)
         {
-            var window = new AjusteIPA.User.UserWindow();
+            //var window = new AjusteIPA.User.UserWindow();
+            var window = new AjusteIPA.User.UserManualWindow();
             window.Owner = this;
             window.ShowDialog();
         }
