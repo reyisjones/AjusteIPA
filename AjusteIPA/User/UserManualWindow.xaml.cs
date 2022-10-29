@@ -1,7 +1,6 @@
 ﻿using Microsoft.Web.WebView2.Core;
 using System;
 using System.Reflection;
-using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using Path = System.IO.Path;
@@ -20,8 +19,6 @@ namespace AjusteIPA.User
             {
                 Mouse.OverrideCursor = Cursors.Wait;
             });
-
-            Thread.Sleep(2000);
 
             webView.NavigationStarting += DisplayPdf;
 
