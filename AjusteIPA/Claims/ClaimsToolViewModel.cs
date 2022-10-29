@@ -1,9 +1,6 @@
-﻿using AjusteIPA.Domain;
-using AjusteIPA.Data;
-using System.Data.Entity;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data; 
+﻿using AjusteIPA.Data;
+using AjusteIPA.Domain;
+using System.Windows.Data;
 
 namespace AjusteIPA.Claims
 {

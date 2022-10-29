@@ -153,9 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Admin\AdminTool.xaml.cs">
-      <DependentUpon>AdminTool.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Admin\AdminUserControl.xaml.cs">
       <DependentUpon>AdminUserControl.xaml</DependentUpon>
     </Compile>
@@ -166,9 +163,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AjusteIpaDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Claims\ClaimsDetail.xaml.cs">
-      <DependentUpon>ClaimsDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Claims\ClaimsTool.xaml.cs">
       <DependentUpon>ClaimsTool.xaml</DependentUpon>
@@ -239,19 +233,11 @@
     <Compile Include="User\UserManualWindow.xaml.cs">
       <DependentUpon>UserManualWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Admin\AdminTool.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Admin\AdminUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Admin\AdminWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Claims\ClaimsDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -466,9 +452,7 @@
     <Resource Include="Resources\ms-icon-310x310.png" />
     <Resource Include="Resources\ProfilePic.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CatastrophicCode\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.1264.42\build\Microsoft.Web.WebView2.targets')" />
   <Import Project="packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.14\build\Microsoft.NetCore.UniversalWindowsPlatform.targets" Condition="Exists('packages\Microsoft.NETCore.UniversalWindowsPlatform.6.2.14\build\Microsoft.NetCore.UniversalWindowsPlatform.targets')" />

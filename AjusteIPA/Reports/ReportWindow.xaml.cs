@@ -4,14 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
-using static AjusteIPA.Reports.ReportWindow;
 using Path = System.IO.Path;
 
 namespace AjusteIPA.Reports
